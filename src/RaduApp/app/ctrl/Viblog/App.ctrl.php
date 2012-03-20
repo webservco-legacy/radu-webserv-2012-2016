@@ -70,7 +70,7 @@ class Controller_Viblog_App extends ControllerApp {
 
 		$data['videos'] = $this->Module()->GetPostVideos($post_id);
 
-		$data['menu_id'] = 'post';
+		$data['menu_id'] = 'viblog';
 
 		echo $this->GetOutput($data);
 

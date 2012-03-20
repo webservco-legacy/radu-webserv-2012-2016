@@ -55,7 +55,10 @@
 		
 <?php if ('viblog' == $module) { ?>
 		<link rel="stylesheet" media="all" href="<?php echo $url_skin; ?>css/photoswipe.css" />
-<?php } ?>	
+<?php } ?>
+
+		<link rel="stylesheet" media="all" href="<?php echo $url_skin; ?>css/prettify.css" />
+		<link rel="stylesheet" media="all" href="<?php echo $url_skin; ?>css/prettify-desert.css" />
 		
 		<script src="<?php echo $url_scripts; ?>lib/modernizr-custom.js"></script>
 		
@@ -63,15 +66,13 @@
 		
 	</head>
 	
-	<body onload="">
+	<body onload="prettyPrint()">
 	
 		<section id="layout">
 		
 			<header>
 			
-				<h1>
-					<?php echo htmlspecialchars($title_app); ?>
-				</h1>
+				<pre id="title" class="prettyprint">&lt;?Radu_Maier&gt;</pre>
 				
 				<nav id="menu">
 					<ul>
@@ -99,7 +100,7 @@
 			
 			</article>
 			
-			<footer class="box_border">
+			<footer id="footer" class="box_border">
 				<a href="http://www.webserv.co" title="Web Services">Web Services</a>
 			</footer>
 		
@@ -113,6 +114,8 @@
 		<script>
 		MBP.scaleFix();
 		</script>
+		
+		<script src="<?php echo $url_scripts; ?>lib/prettify/prettify.js"></script>
 		
 		<script defer src="<?php echo $url_scripts; ?>script.js"></script>
 		<script defer src="<?php echo $url_scripts; ?>appcache.js"></script>

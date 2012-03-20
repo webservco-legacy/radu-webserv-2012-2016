@@ -19,12 +19,6 @@ if (!empty($post)) {
 		
 	</section>
 	
-	<section>
-		
-		
-		
-	</section>
-	
 	<section class="box_border">
 		
 		<h4>Images</h4>
@@ -79,6 +73,14 @@ if (!empty($post)) {
 			<p>No videos for this post</p>
 			
 		<?php } ?>
+		
+	</section>
+	
+	<section class="box_border back">
+		
+		<a href="<?php echo $url_app; ?>viblog.html" title="VIBlog">
+			Back
+		</a>
 		
 	</section>
 	<?php

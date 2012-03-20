@@ -6,7 +6,7 @@
 	<dev>
 		<!-- Application settings -->
 		<app>
-			<title><![CDATA[<Radu_Maier>]]></title>
+			<title><![CDATA[Radu Maier]]></title>
 			<prefix>r_</prefix>
 			<sessions>0</sessions>
 		</app>

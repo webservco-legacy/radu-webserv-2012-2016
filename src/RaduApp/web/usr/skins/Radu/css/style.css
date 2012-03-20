@@ -379,14 +379,11 @@ a:hover {
 	border-bottom: 1px dotted #aaa;
 }
 
-body {
-	text-align: center;
-}
-
 #layout {
 	position: relative;
 	width: 96%;
 	margin: 0 auto;
+	padding-bottom: 20px;
 }
 
 #layout header {
@@ -401,13 +398,17 @@ body {
 	border: 2px solid #444;
 }
 
-#layout header h1 {
+#layout header #title {
 	float: left;
 	display: inline;
 	width: auto;
 	margin: 13px 0 0 13px;
 	padding: 0;
+	font-size: 1.7em;
+	font-weight: bold;
 }
+
+
 
 #menu {
 	float: left;
@@ -429,6 +430,7 @@ body {
 	display: inline;
 	margin: 0 auto;
 	list-style: none;
+	text-align: center;
 }
 
 #menu ul li {
@@ -481,6 +483,7 @@ body {
 
 #layout article section {
 	clear: both;
+	
 }
 
 #layout .padding-h {
@@ -495,24 +498,29 @@ body {
 
 #layout article h1,#layout article h2,#layout article h3,#layout article h4,#layout article h5,#layout article h6,#layout article h7
 	{
-	padding: 0;
+	padding: 3px 0;
 	margin: 0;
 }
 
 #layout article p {
 	margin: 0;
-	padding: 3px;
+	padding: 3px 0;
 }
 
 #layout .box_border {
 	width: auto;
 	margin: 7px auto;
+	padding: 10px 5px 10px 10px !important;
 	overflow: hidden;
 	padding: 10px 0px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border: 2px solid #444;
+}
+
+#layout .back {
+	text-align: center;
 }
 
 #layout .noborder {
@@ -528,7 +536,7 @@ body {
 }
 
 #layout article .images {
-	margin: 0 0 0 10px;
+	margin: 0;
 	padding: 0;
 }
 
@@ -575,9 +583,10 @@ body {
 	list-style: none;
 }
 
-footer {
-	padding: 25px;
+#layout #footer {
+	padding-bottom: 15px !important;
 	font-size: 0.9em;
+	text-align: center;
 }
 
 /*
