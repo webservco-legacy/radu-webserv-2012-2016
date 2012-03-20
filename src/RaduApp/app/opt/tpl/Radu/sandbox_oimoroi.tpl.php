@@ -1,5 +1,5 @@
 			<header>
-				<img src="<?php echo $url_assets_sandbox; ?>oimoroi/img/oimoroi-logo.png" title="Oi MoRoi" alt="Oi MoRoi" />
+				<img style="margin: 10px 0 0 10px" src="<?php echo $url_assets_sandbox; ?>oimoroi/img/oimoroi-logo.png" title="Oi MoRoi" alt="Oi MoRoi" />
 			</header>
 			
 			<article class="box_border">

@@ -3,10 +3,11 @@
 # $Id$
 
 P_PATH='/home/radu/Documents/workspace/wsRadu/src/RaduAdmin/'
-P_NAME=$(basename $0)
+P_ENV=`cat "${P_PATH}config/.env"`
+P_NAME="$(basename $0) [${P_ENV}]"
 P_VERSION='$Revision$'
 P_USER=$USER
-P_ENV=`cat "${P_PATH}config/.env"`
+
 
 . "${P_PATH}config/${P_ENV}.sh"
 
