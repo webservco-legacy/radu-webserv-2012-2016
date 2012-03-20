@@ -51,7 +51,7 @@ class Controller_Content_App extends ControllerApp {
 		
 		$data['menu_id'] = 'home';
 
-		echo $this->GetOutput($data, 'display');
+		echo $this->GetOutput($data, 'home');
 
 		return TRUE;
 	}

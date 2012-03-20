@@ -523,6 +523,10 @@ body {
 	
 }
 
+#layout article .post_summary h2 span {
+	font-size: 0.6em;
+}
+
 #layout article .images {
 	margin: 0 0 0 10px;
 	padding: 0;

@@ -70,7 +70,7 @@
 			<header>
 			
 				<h1>
-					<?php echo $title_app; ?>
+					<?php echo htmlspecialchars($title_app); ?>
 				</h1>
 				
 				<nav id="menu">
