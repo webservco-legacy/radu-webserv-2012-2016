@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Configuration -->
+<config>
+	<!-- Development Environment -->
+	<dev>
+		<path>
+			<core>/home/radu/Documents/workspace/wsWEb/src/WEb/</core>
+			<app>/home/radu/Documents/workspace/wsRadu/src/RaduApp/app/</app>
+			<www>/home/radu/Documents/workspace/wsRadu/src/RaduApp/web/</www>
+		</path>
+		<url>
+			<app>http://192.168.1.64/</app>
+		</url>
+	</dev>
+	<!-- Test Environment -->
+	<test>
+		<path>
+			<core></core>
+			<app></app>
+			<www></www>
+		</path>
+		<url>
+			<app></app>
+		</url>
+	</test>
+	<!-- Production Environment -->
+	<prod>
+		<path>
+			<core></core>
+			<app></app>
+			<www></www>
+		</path>
+		<url>
+			<app></app>
+		</url>
+	</prod>
+</config>
+<!-- $Id$ -->

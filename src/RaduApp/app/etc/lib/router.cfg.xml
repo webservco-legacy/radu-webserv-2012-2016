@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Configuration -->
+<config>
+	<!-- Development Environment -->
+	<dev>
+		<!-- Default configuration -->
+		<router>
+			<default>
+				<module>Content</module>
+				<controller>App</controller>
+				<action>Home</action>
+			</default>
+		</router>
+		
+		<!-- SEO settings -->
+		<seo>
+			<full>1</full>
+			<extension>.html</extension>
+			<extension>.htm</extension>
+			<extension>.appcache</extension>
+		</seo>
+		
+		<!-- Custom routes configuration -->
+		<route>
+			<!-- "index" is the default route. It doesn't have to be the fist one. -->
+			<name>index</name>
+			<value>Content/App/Home</value>
+		</route>
+		
+		<route>
+			<name>cache</name>
+			<value>Cache/App/Cache</value>
+		</route>
+		
+		<route>
+			<name>offline</name>
+			<value>Cache/App/Offline</value>
+		</route>
+		
+		<route>
+			<name>home</name>
+			<value>Content/App/Home</value>
+		</route>
+		
+		<route>
+			<name>about</name>
+			<value>Content/App/About</value>
+		</route>
+		
+		<route>
+			<name>contact</name>
+			<value>Content/App/Contact</value>
+		</route>
+		
+		<route>
+			<name>viblog</name>
+			<value>Viblog/App/Browse</value>
+		</route>
+		
+		<route>
+			<name>viblog-({num})</name>
+			<value>Viblog/App/Post/id/$1</value>
+		</route>
+		
+	</dev>
+	<!-- Test Environment -->
+	<test>
+		<!-- Default configuration -->
+		<router>
+			<default>
+				<module>Content</module>
+				<controller>App</controller>
+				<action>Home</action>
+			</default>
+		</router>
+		
+		<!-- SEO settings -->
+		<seo>
+			<full>1</full>
+			<extension>.html</extension>
+			<extension>.htm</extension>
+			<extension>.appcache</extension>
+		</seo>
+		
+		<!-- Custom routes configuration -->
+		<route>
+			<!-- "index" is the default route. It doesn't have to be the fist one. -->
+			<name>index</name>
+			<value>Content/App/Home</value>
+		</route>
+		
+		<route>
+			<name>cache</name>
+			<value>Cache/App/Cache</value>
+		</route>
+		
+		<route>
+			<name>offline</name>
+			<value>Cache/App/Offline</value>
+		</route>
+		
+		<route>
+			<name>home</name>
+			<value>Content/App/Home</value>
+		</route>
+		
+		<route>
+			<name>about</name>
+			<value>Content/App/About</value>
+		</route>
+		
+		<route>
+			<name>contact</name>
+			<value>Content/App/Contact</value>
+		</route>
+		
+		<route>
+			<name>viblog</name>
+			<value>Viblog/App/Browse</value>
+		</route>
+		
+		<route>
+			<name>viblog-({num})</name>
+			<value>Viblog/App/Post/id/$1</value>
+		</route>
+				
+	</test>
+	<!-- Production Environment -->
+	<prod>
+		<!-- Default configuration -->
+		<router>
+			<default>
+				<module>Content</module>
+				<controller>App</controller>
+				<action>Home</action>
+			</default>
+		</router>
+		
+		<!-- SEO settings -->
+		<seo>
+			<full>1</full>
+			<extension>.html</extension>
+			<extension>.htm</extension>
+			<extension>.appcache</extension>
+		</seo>
+		
+		<!-- Custom routes configuration -->
+		<route>
+			<!-- "index" is the default route. It doesn't have to be the fist one. -->
+			<name>index</name>
+			<value>Content/App/Home</value>
+		</route>
+		
+		<route>
+			<name>cache</name>
+			<value>Cache/App/Cache</value>
+		</route>
+		
+		<route>
+			<name>offline</name>
+			<value>Cache/App/Offline</value>
+		</route>
+		
+		<route>
+			<name>home</name>
+			<value>Content/App/Home</value>
+		</route>
+		
+		<route>
+			<name>about</name>
+			<value>Content/App/About</value>
+		</route>
+		
+		<route>
+			<name>contact</name>
+			<value>Content/App/Contact</value>
+		</route>
+		
+		<route>
+			<name>viblog</name>
+			<value>Viblog/App/Browse</value>
+		</route>
+		
+		<route>
+			<name>viblog-({num})</name>
+			<value>Viblog/App/Post/id/$1</value>
+		</route>
+		
+	</prod>
+</config>
+<!-- $Id$ -->
