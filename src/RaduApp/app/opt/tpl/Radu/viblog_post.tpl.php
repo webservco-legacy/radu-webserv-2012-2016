@@ -38,8 +38,8 @@ if (!empty($post)) {
 				if (empty($image['image_description'])) { $image['image_description'] = $image['image_file']; }
 				 ?>
 				<li>
-					<a href="<?php echo $url_post_assets; ?><?php echo $post['post_id']; ?>/images/<?php echo $image['image_file']; ?>.<?php echo $image['image_type']; ?>" title="<?php echo $image['image_description']; ?>">
-						<img src="<?php echo $url_post_assets; ?><?php echo $post['post_id']; ?>/thumbnails/<?php echo $image['image_file']; ?>.<?php echo $image['image_type']; ?>" title="<?php echo $image['image_description']; ?>" alt="<?php echo $image['image_description']; ?>" />
+					<a href="<?php echo $url_assets_viblog; ?><?php echo $post['post_id']; ?>/images/<?php echo $image['image_file']; ?>.<?php echo $image['image_type']; ?>" title="<?php echo $image['image_description']; ?>">
+						<img src="<?php echo $url_assets_viblog; ?><?php echo $post['post_id']; ?>/thumbnails/<?php echo $image['image_file']; ?>.<?php echo $image['image_type']; ?>" title="<?php echo $image['image_description']; ?>" alt="<?php echo $image['image_description']; ?>" />
 					</a>
 				</li>		
 			<?php } ?>
@@ -64,10 +64,10 @@ if (!empty($post)) {
 				if (empty($video['video_description'])) { $video['video_description'] = $video['video_file']; }
 				 ?>
 				<li>
-					<video id="video" width="90%" poster="<?php echo $url_post_assets; ?><?php echo $post['post_id']; ?>/videos/<?php echo $video['video_file']; ?>.jpg" autobuffer="true" controls="controls">
-						<source src='<?php echo $url_post_assets; ?><?php echo $post['post_id']; ?>/videos/<?php echo $video['video_file']; ?>.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
-						<source src='<?php echo $url_post_assets; ?><?php echo $post['post_id']; ?>/videos/<?php echo $video['video_file']; ?>.webm' type='video/webm; codecs="vp8, vorbis"'></source>
-						<source src='<?php echo $url_post_assets; ?><?php echo $post['post_id']; ?>/videos/<?php echo $video['video_file']; ?>.ogv' type='video/ogg; codecs="theora, vorbis"'></source>
+					<video id="video" width="90%" poster="<?php echo $url_assets_viblog; ?><?php echo $post['post_id']; ?>/videos/<?php echo $video['video_file']; ?>.jpg" autobuffer="true" controls="controls">
+						<source src='<?php echo $url_assets_viblog; ?><?php echo $post['post_id']; ?>/videos/<?php echo $video['video_file']; ?>.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+						<source src='<?php echo $url_assets_viblog; ?><?php echo $post['post_id']; ?>/videos/<?php echo $video['video_file']; ?>.webm' type='video/webm; codecs="vp8, vorbis"'></source>
+						<source src='<?php echo $url_assets_viblog; ?><?php echo $post['post_id']; ?>/videos/<?php echo $video['video_file']; ?>.ogv' type='video/ogg; codecs="theora, vorbis"'></source>
 					</video>					
 					<p><?php echo $video['video_description']; ?></p>
 				</li>		

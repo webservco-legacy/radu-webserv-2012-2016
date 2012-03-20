@@ -72,10 +72,9 @@ class ModuleApp extends Module {
 		 */
 		$default_data['url_scripts'] = Core :: Config()->Get('url.app') . Core :: Config()->Get('dir.app.usr') . '/scripts/';
 
-		/**
-		 * @var string
-		 */
-		$default_data['url_viblog_assets'] = $this->GetViblogAssetsUrl(); //XXX
+		$default_data['url_assets_viblog'] = $this->GetAssetsUrl('viblog');
+
+		$default_data['url_assets_sandbox'] = $this->GetAssetsUrl('sandbox');
 
 		/**
 		 * @var array
@@ -91,7 +90,7 @@ class ModuleApp extends Module {
 		 * @var array
 		 */
 		$default_data['menu'] = $this->GetMenu();
-		
+
 		$default_data['menu_id'] = NULL;
 
 		/**
@@ -151,14 +150,14 @@ class ModuleApp extends Module {
 			'link' => 'home',
 			'url' => NULL
 		),
+		'sandbox' => array(
+			'title' => 'Sandbox',
+			'link' => 'sandbox',
+			'url' => NULL
+		),
 		'viblog' => array(
 			'title' => 'VIBlog',
 			'link' => 'viblog',
-			'url' => NULL
-		),
-		'about' => array(
-			'title' => 'About',
-			'link' => 'about',
 			'url' => NULL
 		),
 		'contact' => array(
@@ -171,14 +170,9 @@ class ModuleApp extends Module {
 		return $menu;
 	}
 
-	/**
-	 * Get images url for current client.
-	 *
-	 * @return string
-	 */
-	public function GetViblogAssetsUrl() {
+	public function GetAssetsUrl($type) {
 
-		return Core :: Config()->Get('url.app') . Core :: Config()->Get('dir.app.usr') . '/viblog/assets/';
+		return Core :: Config()->Get('url.app') . Core :: Config()->Get('dir.app.usr') . '/assets/' . $type . '/';
 	}
 
 	/**

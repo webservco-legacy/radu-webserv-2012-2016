@@ -56,23 +56,6 @@ class Controller_Content_App extends ControllerApp {
 		return TRUE;
 	}
 	
-	public function About() {
-
-		$this->InitController();
-
-		$data = $this->Module()->GetDefaultData($this->_mRequest);
-		
-		$data['title'] = 'About';
-
-		$data['message'] = 'Copyright 2012 Radu Maier';
-		
-		$data['menu_id'] = 'about';
-
-		echo $this->GetOutput($data, 'display');
-
-		return TRUE;
-	}
-	
 	public function Contact() {
 	
 		$this->InitController();

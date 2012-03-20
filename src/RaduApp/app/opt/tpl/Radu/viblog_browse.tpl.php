@@ -7,7 +7,7 @@ if (!empty($posts)) {
 	<section class="box_border post_summary">
 		
 		<h2>
-			<a class="noborder" href="<?php echo $url_app; ?>post-<?php echo $item['post_id'];?>.html" title="<?php echo $item['post_title']; ?>">
+			<a class="noborder" href="<?php echo $url_app; ?>viblog-<?php echo $item['post_id'];?>.html" title="<?php echo $item['post_title']; ?>">
 				<?php echo $item['post_title']; ?>
 			</a>
 		</h2>
@@ -23,7 +23,7 @@ if (!empty($posts)) {
 		<?php } ?>
 		
 		<p>
-			<a href="<?php echo $url_app; ?>post-<?php echo $item['post_id'];?>.html" title="<?php echo $item['post_title']; ?>">
+			<a href="<?php echo $url_app; ?>viblog-<?php echo $item['post_id'];?>.html" title="<?php echo $item['post_title']; ?>">
 			open gallery
 			</a>
 		</p>

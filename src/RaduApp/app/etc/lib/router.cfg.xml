@@ -44,8 +44,8 @@
 		</route>
 		
 		<route>
-			<name>about</name>
-			<value>Content/App/About</value>
+			<name>sandbox</name>
+			<value>Sandbox/App/Sandbox</value>
 		</route>
 		
 		<route>
@@ -61,6 +61,11 @@
 		<route>
 			<name>viblog-({num})</name>
 			<value>Viblog/App/Post/id/$1</value>
+		</route>
+		
+		<route>
+			<name>oimoroi</name>
+			<value>Sandbox/App/Oimoroi</value>
 		</route>
 		
 	</dev>
@@ -106,8 +111,8 @@
 		</route>
 		
 		<route>
-			<name>about</name>
-			<value>Content/App/About</value>
+			<name>sandbox</name>
+			<value>Sandbox/App/Sandbox</value>
 		</route>
 		
 		<route>
@@ -123,6 +128,11 @@
 		<route>
 			<name>viblog-({num})</name>
 			<value>Viblog/App/Post/id/$1</value>
+		</route>
+		
+		<route>
+			<name>oimoroi</name>
+			<value>Sandbox/App/Oimoroi</value>
 		</route>
 				
 	</test>
@@ -168,8 +178,8 @@
 		</route>
 		
 		<route>
-			<name>about</name>
-			<value>Content/App/About</value>
+			<name>sandbox</name>
+			<value>Sandbox/App/Sandbox</value>
 		</route>
 		
 		<route>
@@ -185,6 +195,11 @@
 		<route>
 			<name>viblog-({num})</name>
 			<value>Viblog/App/Post/id/$1</value>
+		</route>
+		
+		<route>
+			<name>oimoroi</name>
+			<value>Sandbox/App/Oimoroi</value>
 		</route>
 		
 	</prod>

@@ -93,7 +93,7 @@ class Controller_Cache_App extends ControllerApp {
 		*/
 			"\n" .
 			"home.html\n";
-			"about.html\n";
+			"sandbox.html\n";
 			"contact.html\n";
 			"viblog.html\n";
 		
