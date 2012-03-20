@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# $Id$
+
+function p_header
+{
+    clear
+    echo "--------------------------------------------------------------------------------"
+    echo " ${P_NAME} run by $P_USER"
+    echo " TASK: $1" 1>&2
+    echo "--------------------------------------------------------------------------------"
+    echo ""
+}
+
+function p_footer
+{
+    echo ""
+    echo "--------------------------------------------------------------------------------"
+    echo " done! | Press ENTER to continue"
+    echo "--------------------------------------------------------------------------------"
+    read
+    clear
+}
+
+function show_gui
+{
+	while [ 0 ]; do
+		dialog --title "${P_NAME}" --menu \
+		"Hello $P_USER!" \
+		20 60 13 \
+		"vi" "VIBlog >>" \
+		"h" "Help" \
+		"a" "About" \
+		"x" "Exit" \
+		2> "/tmp/${P_NAME}"
+		if [ $? = 1 ]; then
+			exit_ok
+		fi
+		handle_menu
+	done;
+}
