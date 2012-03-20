@@ -13,7 +13,7 @@ function page_viblog
 		"v" "Video >>" \
 		"s" "Server >>" \
 		"f" "Files >>" \
-		"b" "Back" \
+		"g" "Back" \
 		"x" "Exit" \
 		2> "/tmp/${P_NAME}"
 		if [ $? = 1 ]; then

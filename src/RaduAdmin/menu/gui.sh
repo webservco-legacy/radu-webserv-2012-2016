@@ -28,7 +28,7 @@ function show_gui
 		dialog --title "${P_NAME}" --menu \
 		"Hello $P_USER!" \
 		20 60 13 \
-		"vi" "VIBlog >>" \
+		"b" "VIBlog >>" \
 		"h" "Help" \
 		"a" "About" \
 		"x" "Exit" \

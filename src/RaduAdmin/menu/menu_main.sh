@@ -6,11 +6,11 @@ function handle_menu
 {
 	R=`cat "/tmp/${P_NAME}"`
 	
-	if [ "$R" == "b" ]; then
+	if [ "$R" == "g" ]; then
 		show_gui
 	
 	# VIBLOG
-	elif [ "$R" == "vi" ]; then
+	elif [ "$R" == "b" ]; then
 		page_viblog
 		
 	# FILE
