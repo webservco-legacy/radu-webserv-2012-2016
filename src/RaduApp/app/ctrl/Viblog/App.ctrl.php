@@ -65,6 +65,8 @@ class Controller_Viblog_App extends ControllerApp {
 		$post_id = (!empty($this->_mRequest['query']['id'])) ? $this->_mRequest['query']['id'] : 0;
 
 		$data['post'] = $this->Module()->GetPostDetails($post_id);
+		
+		$data['title'] = 'VIBlog';
 
 		$data['images'] = $this->Module()->GetPostImages($post_id);
 
