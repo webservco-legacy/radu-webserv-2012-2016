@@ -27,12 +27,12 @@
 	<!-- Production Environment -->
 	<prod>
 		<path>
-			<core></core>
-			<app></app>
-			<www></www>
+			<core>/opt/WEb/</core>
+			<app>/opt/RaduApp/app/</app>
+			<www>/web/</www>
 		</path>
 		<url>
-			<app></app>
+			<app>http://radu.webserv.co/</app>
 		</url>
 	</prod>
 </config>
