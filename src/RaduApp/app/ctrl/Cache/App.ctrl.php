@@ -127,6 +127,8 @@ class Controller_Cache_App extends ControllerApp {
 			"\n" .
 			"usr/skins/Radu/css/style.css\n" .
 			"usr/skins/Radu/css/photoswipe.css\n" .
+			"usr/skins/Radu/css/prettify.css\n" .
+			"usr/skins/Radu/css/prettify-desert.css\n" .
 		/**
 		 * JavaScript
 		*/
@@ -137,6 +139,7 @@ class Controller_Cache_App extends ControllerApp {
 			"usr/scripts/lib/klass.min.js\n" .
 			"usr/scripts/lib/modernizr-custom.js\n" .
 			"usr/scripts/lib/respond.min.js\n" .
+			"usr/scripts/lib/prettify/prettify.js\n" .
 			"usr/scripts/script.js\n" .
 			
 		/**
