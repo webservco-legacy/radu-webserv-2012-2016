@@ -70,7 +70,7 @@ function viblog_video_cut
 		mv "${WORKPATH}${DIR_IN}/${FILE_NAME}" "${WORKPATH}${DIR_IN}/${FILE_NAME%.*}.${FILE_NAME##*.}_ORIGINAL"
 		
 		echo "Cutting file"
-		ffmpeg < /dev/null -y -ss ${CUT_START}00:00:10.00 -t ${CUT_DURATION} \
+		ffmpeg < /dev/null -y -ss ${CUT_START} -t ${CUT_DURATION} \
 		-i "${WORKPATH}${DIR_IN}/${FILE_NAME%.*}.${FILE_NAME##*.}_ORIGINAL" \
 		-vcodec copy -acodec copy \
 		"${WORKPATH}${DIR_IN}/${FILE_NAME}" >> "${WORKPATH}${DIR_TMP}/${LOG_FILE}" 2>&1
