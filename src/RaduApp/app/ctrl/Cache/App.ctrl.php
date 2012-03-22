@@ -94,7 +94,7 @@ class Controller_Cache_App extends ControllerApp {
 			"\n" .
 			"home.html\n" .
 			"sandbox.html\n" .
-			"viblog.html\n" .
+			//"viblog.html\n" . /* DISABLED WHILE PASSWORD PROTECTED */
 			"contact.html\n" .
 			"\n";
 
