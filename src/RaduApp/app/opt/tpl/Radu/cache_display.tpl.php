@@ -1,5 +1,5 @@
 <article>
-	<section class="padding-h padding-v">
+	<section class="box_border">
 		<?php echo $message; ?>
 	</section>
 </article>

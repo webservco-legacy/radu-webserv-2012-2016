@@ -49,7 +49,7 @@ function viblog_video_cut
 		read CUT_END
 		if [ "$CUT_END" = "" ]; then
 			
-			echo -n "Duration (SS) : "
+			echo -n "Duration (SS): "
 			read CUT_DURATION
 		fi
 		

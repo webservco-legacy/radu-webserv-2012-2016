@@ -55,22 +55,22 @@ class ModuleApp extends Module {
 		/**
 		 * @var array
 		 */
-		$default_data['lang'] = substr(Core :: Config()->Get('i18n.locale'), 0, 2);
+		$default_data['lang'] = substr(Core::Config()->Get('i18n.locale'), 0, 2);
 
 		/**
 		 * @var array
 		 */
-		$default_data['url_app'] = Core :: Config()->Get('url.app');
+		$default_data['url_app'] = Core::Config()->Get('url.app');
 
 		/**
 		 * @var array
 		 */
-		$default_data['url_skin'] = Core :: Config()->Get('url.app') . Core :: Config()->Get('dir.app.usr') . '/' . Core :: Config()->Get('dir.app.skins') . '/' . Core :: Config()->Get('output.skin') . '/';
+		$default_data['url_skin'] = Core::Config()->Get('url.app') . Core::Config()->Get('dir.app.usr') . '/' . Core::Config()->Get('dir.app.skins') . '/' . Core::Config()->Get('output.skin') . '/';
 
 		/**
 		 * @var array
 		 */
-		$default_data['url_scripts'] = Core :: Config()->Get('url.app') . Core :: Config()->Get('dir.app.usr') . '/scripts/';
+		$default_data['url_scripts'] = Core::Config()->Get('url.app') . Core::Config()->Get('dir.app.usr') . '/scripts/';
 
 		$default_data['url_assets_viblog'] = $this->GetAssetsUrl('viblog');
 
@@ -84,14 +84,14 @@ class ModuleApp extends Module {
 		/**
 		 * @var array
 		 */
-		$default_data['title_app'] = Core :: Config()->Get('app.title');
+		$default_data['title_app'] = Core::Config()->Get('app.title');
 
 		/**
 		 * @var array
 		 */
-		$default_data['menu'] = $this->GetMenu();
+		$default_data['sections'] = $this->GetSections();
 
-		$default_data['menu_id'] = NULL;
+		$default_data['section_id'] = 0;
 
 		/**
 		 * @var array
@@ -142,37 +142,27 @@ class ModuleApp extends Module {
 	/**
 	 * Get navigation menu
 	 */
-	public function GetMenu() {
+	public function GetSections() {
 
-		$menu = array(
-		'home' => array(
-			'title' => 'Home',
-			'link' => 'home',
-			'url' => NULL
-		),
-		'sandbox' => array(
-			'title' => 'Sandbox',
-			'link' => 'sandbox',
-			'url' => NULL
-		),
-		'viblog' => array(
-			'title' => 'VIBlog',
-			'link' => 'viblog',
-			'url' => NULL
-		),
-		'contact' => array(
-			'title' => 'Contact',
-			'link' => 'contact',
-			'url' => NULL
-		),
+		$db_fields = array(
+			'section_id:id',
+			'section_title:title',
+			'section_link:link',
+			'section_url:url',
 		);
 
-		return $menu;
+		$db_options['conditions'][] = array('section_active', 1);
+
+		$db_options['order'][] = array('section_order', 'asc');
+
+		$db_options['order'][] = array('section_title', 'asc');
+
+		return Core::Database()->Retrieve($db_fields, 'r_config_sections', $db_options);
 	}
 
 	public function GetAssetsUrl($type) {
 
-		return Core :: Config()->Get('url.app') . Core :: Config()->Get('dir.app.usr') . '/assets/' . $type . '/';
+		return Core::Config()->Get('url.app') . Core::Config()->Get('dir.app.usr') . '/assets/' . $type . '/';
 	}
 
 	/**
@@ -181,7 +171,7 @@ class ModuleApp extends Module {
 	 */
 	public function GetLastUpdate() {
 
-		return date('Y-m-d');
+		return Core::Database()->GetMax('section_update', 'r_config_sections');
 	}
 }
 ?>

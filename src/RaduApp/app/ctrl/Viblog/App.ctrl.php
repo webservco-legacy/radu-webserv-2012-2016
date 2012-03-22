@@ -49,7 +49,7 @@ class Controller_Viblog_App extends ControllerApp {
 
 		$data['posts'] = $this->Module()->GetPosts();
 
-		$data['menu_id'] = 'viblog';
+		$data['section_id'] = 3;
 
 		echo $this->GetOutput($data);
 
@@ -72,7 +72,7 @@ class Controller_Viblog_App extends ControllerApp {
 
 		$data['videos'] = $this->Module()->GetPostVideos($post_id);
 
-		$data['menu_id'] = 'viblog';
+		$data['section_id'] = 3;
 
 		echo $this->GetOutput($data);
 

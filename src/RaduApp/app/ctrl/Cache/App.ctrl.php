@@ -92,70 +92,71 @@ class Controller_Cache_App extends ControllerApp {
 		 * Pages
 		*/
 			"\n" .
-			"home.html\n";
-			"sandbox.html\n";
-			"contact.html\n";
-			"viblog.html\n";
-		
+			"home.html\n" .
+			"sandbox.html\n" .
+			"viblog.html\n" .
+			"contact.html\n" .
+			"\n";
+
 		/**
-		 * Layout images
+		 * Images
 		 */
 		$output .=	"\n" .
 			"usr/skins/Radu/img/apple-touch-icon-114x114-precomposed.png\n" .
 			"usr/skins/Radu/img/apple-touch-icon-72x72-precomposed.png\n" .
 			"usr/skins/Radu/img/apple-touch-icon-precomposed.png\n" .
 			
+			"usr/skins/Radu/img/background.jpg\n" .
+			"usr/skins/Radu/img/error.gif\n" .
+			"usr/skins/Radu/img/icons.png\n" .
+			"usr/skins/Radu/img/icons@2x.png\n" .
+			"usr/skins/Radu/img/loader.gif\n" .
+			"usr/skins/Radu/img/nothumb.jpg\n" .
 			"usr/skins/Radu/img/splash.png\n" .
 			"\n";
 
 		/**
-		 * General images.
-		 */
-		$output .=	"\n" .
-			"usr/skins/Radu/img/error.gif\n" .
-			
-			"usr/skins/Radu/img/icons.png\n" .
-			"usr/skins/Radu/img/icons@2x.png\n" .
-			"usr/skins/Radu/img/loader.gif\n" .
-			
-			"usr/skins/Radu/img/background.jpg\n" .
-			"usr/skins/Radu/img/nothumb.jpg\n" .
-			
-		/**
 		 * Css styles.
-		*/
-			"\n" .
-			"usr/skins/Radu/css/style.css\n" .
+		 */
+		$output .= "\n" .
 			"usr/skins/Radu/css/photoswipe.css\n" .
-			"usr/skins/Radu/css/prettify.css\n" .
 			"usr/skins/Radu/css/prettify-desert.css\n" .
+			"usr/skins/Radu/css/prettify.css\n" .
+			"usr/skins/Radu/css/style.css\n" .
+			"\n";
+
 		/**
 		 * JavaScript
-		*/
-			"\n" .
+		 */
+		$output .= "\n" .
+			"usr/scripts/lib/prettify/prettify.js\n" .
+			
 			"usr/scripts/lib/code.photoswipe.jquery-3.0.4.min.js\n" .
-			"usr/scripts/lib/jquery-1.7.1.min.js\n" .
 			"usr/scripts/lib/helper.js\n" .
+			"usr/scripts/lib/jquery-1.7.1.min.js\n" .
 			"usr/scripts/lib/klass.min.js\n" .
 			"usr/scripts/lib/modernizr-custom.js\n" .
 			"usr/scripts/lib/respond.min.js\n" .
-			"usr/scripts/lib/prettify/prettify.js\n" .
+		
+			"usr/scripts/appcache.js\n" .
+			/* DO NOT CACHE ping.js */
 			"usr/scripts/script.js\n" .
+			"\n";
 			
 		/**
 		 * Ignored files
-		*/
-			"\n" .
+		 */
+		$output .= "\n" .
 			"NETWORK:\n" .
-			"*\n" .
+			"*\n";
 			
 		/**
 		 * Offline page
-		*/
-			"\n" .
+		 */
+		$output .= "\n" .
 			"FALLBACK:\n" .
 			"/ offline.html\n" .
-			"";
+			"\n";
 
 		echo $output;
 	}

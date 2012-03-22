@@ -408,7 +408,17 @@ a:hover {
 	font-weight: bold;
 }
 
+#layout header #title a {
+	border: 0;
+}
 
+#layout header #title a:hover span.pun {
+	color: #98FB98;
+}
+
+#layout header #title a:hover span.typ {
+	color: #ffffff;
+}
 
 #menu {
 	float: left;

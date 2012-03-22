@@ -72,18 +72,18 @@
 		
 			<header>
 			
-				<pre id="title" class="prettyprint">&lt;?Radu_Maier&gt;</pre>
+				<pre id="title" class="prettyprint"><a href="<?php echo $url_app; ?>" title="<?php echo $title_app; ?>">&lt;?Radu_Maier&gt;</a></pre>
 				
 				<nav id="menu">
 					<ul>
-					<?php if(!empty($menu)) { ?>
-						<?php foreach ($menu as $menu_name => $menu_data) {
+					<?php if(!empty($sections)) { ?>
+						<?php foreach ($sections as $section_data) {
 							
-							$menu_url = (!empty($section_data['url'])) ? $section_data['url'] : $url_app . $menu_data['link'] . '.html'; 
+							$section_url = (!empty($section_data['url'])) ? $section_data['url'] : $url_app . $section_data['link'] . '.html'; 
 							?>
 							<li>
-								<a class="<?php if ($menu_name == $menu_id) {echo 'active';} ?>" href="<?php echo $menu_url; ?>" title="<?php echo $menu_data['title']; ?>">
-									<?php echo $menu_data['title']; ?>
+								<a class="<?php if ($section_data['id'] == $section_id) {echo 'active';} ?>" href="<?php echo $section_url; ?>" title="<?php echo $section_data['title']; ?>">
+									<?php echo $section_data['title']; ?>
 								</a>
 							</li>
 						<?php } ?>

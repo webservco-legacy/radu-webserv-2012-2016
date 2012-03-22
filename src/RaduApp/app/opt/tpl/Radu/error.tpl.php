@@ -1,3 +1,5 @@
 <article>
-	<p><?php echo $message; ?></p>
+	<section class="box_border">
+		<?php echo $message; ?>
+	</section>
 </article>

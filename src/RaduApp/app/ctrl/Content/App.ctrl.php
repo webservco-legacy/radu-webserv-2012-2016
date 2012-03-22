@@ -49,7 +49,7 @@ class Controller_Content_App extends ControllerApp {
 		
 		$data['message'] = 'Hello World!';
 		
-		$data['menu_id'] = 'home';
+		$data['section_id'] = 1;
 
 		echo $this->GetOutput($data, 'home');
 
@@ -66,7 +66,7 @@ class Controller_Content_App extends ControllerApp {
 		
 		$data['message'] = 'radu at webserv.co';
 		
-		$data['menu_id'] = 'contact';
+		$data['section_id'] = 4;
 	
 		echo $this->GetOutput($data, 'display');
 	

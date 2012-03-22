@@ -58,7 +58,7 @@ if (!empty($post)) {
 				if (empty($video['video_description'])) { $video['video_description'] = $video['video_file']; }
 				 ?>
 				<li>
-					<video id="video" width="90%" poster="<?php echo $url_assets_viblog; ?><?php echo $post['post_id']; ?>/videos/<?php echo $video['video_file']; ?>.jpg" autobuffer="true" controls="controls">
+					<video class="video" width="90%" poster="<?php echo $url_assets_viblog; ?><?php echo $post['post_id']; ?>/videos/<?php echo $video['video_file']; ?>.jpg" autobuffer="true" controls="controls">
 						<source src='<?php echo $url_assets_viblog; ?><?php echo $post['post_id']; ?>/videos/<?php echo $video['video_file']; ?>.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
 						<source src='<?php echo $url_assets_viblog; ?><?php echo $post['post_id']; ?>/videos/<?php echo $video['video_file']; ?>.webm' type='video/webm; codecs="vp8, vorbis"'></source>
 						<source src='<?php echo $url_assets_viblog; ?><?php echo $post['post_id']; ?>/videos/<?php echo $video['video_file']; ?>.ogv' type='video/ogg; codecs="theora, vorbis"'></source>

@@ -11,7 +11,7 @@ Options -Indexes
 	RewriteEngine On
 	
 	# Change to reflect application web directory path.
-	RewriteBase /
+	RewriteBase /radu/
 	
 	# Disable rewriting for existing files and directories.
 	RewriteCond %{REQUEST_FILENAME} !-f
