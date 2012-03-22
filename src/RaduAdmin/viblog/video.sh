@@ -167,7 +167,7 @@ function viblog_video_fade_all
 	
 		echo ""
 		
-		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${VIDEO_EXT}" | while read FILE;
+		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${VIDEO_EXT}" | sort | while read FILE;
 		do
 			FILE_NAME=`basename "${FILE}"`
 			
@@ -251,7 +251,7 @@ function viblog_video_encode_all
 	
 		echo ""
 		
-		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${VIDEO_EXT}" | while read FILE;
+		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${VIDEO_EXT}" | sort | while read FILE;
 		do
 			FILE_NAME=`basename "${FILE}"`
 			
@@ -341,6 +341,17 @@ function viblog_video_process
 	
 	echo ""
 	
+	echo -n "Ask for missing descriptions? [empty to skip]: "
+	read ASK_DESCRIPTION
+	
+	if [ "${ASK_DESCRIPTION}" != "" ]; then
+		echo "Will be asking for missing descriptions"
+	else
+		echo "Will not be asking for missing descriptions"
+	fi
+	
+	echo ""
+	
 	TOTAL_VIDEOS=`find "${WORKPATH}${DIR_IN}" -type f -iname "*.${VIDEO_EXT}" | wc -l`
 	echo -n "Total video files found: ${TOTAL_VIDEOS}"
 	
@@ -366,7 +377,7 @@ function viblog_video_process
 		echo "Done"
 		echo ""
 		
-		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${VIDEO_EXT}" | while read FILE;
+		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${VIDEO_EXT}" | sort | while read FILE;
 		do
 			FILE_NAME=`basename "${FILE}"`
 			
@@ -406,14 +417,17 @@ function viblog_video_process
 					
 					echo "Not found or empty"
 					
-					echo -n "Opening preview... ";
-					xdg-open "${FILE}" > /dev/null 2>&1
-					echo "Done"
+					if [ "${ASK_DESCRIPTION}" != "" ]; then
 					
-					echo -n "Last chance to enter a description for \"${FILE_NAME}\": "
-					read CAPTION < /dev/tty
+						echo -n "Opening preview... ";
+						xdg-open "${FILE}" > /dev/null 2>&1
+						echo "Done"
 					
-					if [ "${CAPTION}" != "" ]; then
+						echo -n "Last chance to enter a description for \"${FILE_NAME}\": "
+						read CAPTION < /dev/tty
+					fi
+					
+					if [ "${CAPTION}" == "" ]; then
 						echo "Empty description, using file name instead."
 						CAPTION=${FILE_NAME%.*}
 					fi
@@ -516,7 +530,7 @@ function viblog_video_add_description_meta_all
 	
 		echo ""
 		
-		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${FILE_EXT}" | while read FILE;
+		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${FILE_EXT}" | sort | while read FILE;
 		do
 			
 			FILE_NAME=`basename "${FILE}"`
@@ -574,7 +588,7 @@ function video_get_description_all
 	
 		echo ""
 		
-		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${FILE_EXT}" | while read FILE;
+		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${FILE_EXT}" | sort | while read FILE;
 		do
 			
 			FILE_NAME=`basename "${FILE}"`

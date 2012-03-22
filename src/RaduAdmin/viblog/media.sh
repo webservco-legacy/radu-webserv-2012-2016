@@ -75,7 +75,7 @@ function viblog_media_add_description_file_all
 	
 		echo ""
 		
-		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${FILE_EXT}" | while read FILE;
+		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${FILE_EXT}" | sort | while read FILE;
 		do
 			
 			FILE_NAME=`basename "${FILE}"`

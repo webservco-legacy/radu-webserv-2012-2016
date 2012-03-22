@@ -37,6 +37,18 @@ function viblog_image_process
 	echo ""
 	
 	echo "Will be processing input images for the post id \"$POST_ID\""
+	
+	echo ""
+	
+	echo -n "Ask for missing descriptions? [empty to skip]: "
+	read ASK_DESCRIPTION
+	
+	if [ "${ASK_DESCRIPTION}" != "" ]; then
+		echo "Will be asking for missing descriptions"
+	else
+		echo "Will not be asking for missing descriptions"
+	fi
+	
 	echo ""
 	
 	TOTAL_IMAGES=`find "${WORKPATH}${DIR_IN}" -type f -iname "*.${IMG_EXT_IN}" | wc -l`
@@ -64,7 +76,7 @@ function viblog_image_process
 		echo "Done"
 		echo ""
 		
-		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${IMG_EXT_IN}" | while read FILE;
+		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${IMG_EXT_IN}" | sort | while read FILE;
 		do
 			FILE_NAME=`basename "${FILE}"`
 			
@@ -106,7 +118,6 @@ function viblog_image_process
 				
 				echo -n "Getting description from media file... "
 				
-				# XXX
 				CAPTION=`viblog_image_get_description_meta_func "${FILE}"`
 				
 				if [ "${CAPTION}" != "" ]; then
@@ -118,15 +129,18 @@ function viblog_image_process
 					
 					echo "Not found or empty"
 					
-					echo -n "Opening preview... ";
-					xdg-open "${FILE}" > /dev/null 2>&1
-					echo "Done"
-					echo ""
+					if [ "${ASK_DESCRIPTION}" != "" ]; then
 					
-					echo -n "Last chance to enter a description for \"${FILE_NAME}\": "
-					read CAPTION < /dev/tty
+						echo -n "Opening preview... ";
+						xdg-open "${FILE}" > /dev/null 2>&1
+						echo "Done"
+						echo ""
 					
-					if [ "${CAPTION}" != "" ]; then
+						echo -n "Last chance to enter a description for \"${FILE_NAME}\": "
+						read CAPTION < /dev/tty
+					fi
+					
+					if [ "${CAPTION}" == "" ]; then
 						echo "Empty description, using file name instead."
 						CAPTION=${NEW_FILE%.*}
 					fi
@@ -227,7 +241,7 @@ function viblog_image_add_description_meta_all
 	
 		echo ""
 		
-		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${FILE_EXT}" | while read FILE;
+		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${FILE_EXT}" | sort | while read FILE;
 		do
 			
 			FILE_NAME=`basename "${FILE}"`
@@ -287,7 +301,7 @@ function viblog_image_get_description_all
 	
 		echo ""
 		
-		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${FILE_EXT}" | while read FILE;
+		find "${WORKPATH}${DIR_IN}" -type f -iname "*.${FILE_EXT}" | sort | while read FILE;
 		do
 			
 			FILE_NAME=`basename "${FILE}"`
