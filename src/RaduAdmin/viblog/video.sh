@@ -123,12 +123,14 @@ function viblog_video_fade
 				FADE_DURATION=${VID_FADE_DURATION}
 			fi
 			
-			echo "Adding fade effect to video ${FILE_NAME} for ${FADE_DURATION} frames"
+			echo -n "Adding fade effect to video ${FILE_NAME} for ${FADE_DURATION} frames... "
 			VIDEO_WIDTH=`viblog_video_get_width "${WORKPATH}${DIR_IN}/${FILE_NAME}"`
 			VIDEO_HEIGHT=`viblog_video_get_height "${WORKPATH}${DIR_IN}/${FILE_NAME}"`
 			VIDEO_RESIZE_WIDTH=${VID_RESIZE_W}
 			VIDEO_RESIZE_HEIGHT=`viblog_get_media_resize_height ${VIDEO_WIDTH} ${VIDEO_HEIGHT} ${VIDEO_RESIZE_WIDTH}`
 			viblog_viblog_video_fade_func "${FILE_NAME}" ${FADE_DURATION} ${VIDEO_RESIZE_WIDTH} ${VIDEO_RESIZE_HEIGHT}
+			echo "Done"
+			echo ""
 		
 	else
 		echo "ERROR: File not found"
@@ -171,12 +173,14 @@ function viblog_video_fade_all
 		do
 			FILE_NAME=`basename "${FILE}"`
 			
-			echo "Encoding and adding fade effect to video \"${FILE_NAME}\" for \"${FADE_DURATION}\" frames"
+			echo -n "Encoding and adding fade effect to video \"${FILE_NAME}\" for \"${FADE_DURATION}\" frames... "
 			VIDEO_WIDTH=`viblog_video_get_width "${WORKPATH}${DIR_IN}/${FILE_NAME}"`
 			VIDEO_HEIGHT=`viblog_video_get_height "${WORKPATH}${DIR_IN}/${FILE_NAME}"`
 			VIDEO_RESIZE_WIDTH=${VID_RESIZE_W}
 			VIDEO_RESIZE_HEIGHT=`viblog_get_media_resize_height ${VIDEO_WIDTH} ${VIDEO_HEIGHT} ${VIDEO_RESIZE_WIDTH}`
 			viblog_viblog_video_fade_func "${FILE_NAME}" ${FADE_DURATION} ${VIDEO_RESIZE_WIDTH} ${VIDEO_RESIZE_HEIGHT}
+			echo "Done"
+			echo ""
 		done
 	
 	else
@@ -213,12 +217,14 @@ function viblog_video_encode
 	
 	if [ -f "${WORKPATH}${DIR_IN}/${FILE_NAME}" ]; then
 		
-			echo "Encoding video \"${FILE_NAME}\""
+			echo -n "Encoding video \"${FILE_NAME}\"... "
 			VIDEO_WIDTH=`viblog_video_get_width "${WORKPATH}${DIR_IN}/${FILE_NAME}"`
 			VIDEO_HEIGHT=`viblog_video_get_height "${WORKPATH}${DIR_IN}/${FILE_NAME}"`
 			VIDEO_RESIZE_WIDTH=${VID_RESIZE_W}
 			VIDEO_RESIZE_HEIGHT=`viblog_get_media_resize_height ${VIDEO_WIDTH} ${VIDEO_HEIGHT} ${VIDEO_RESIZE_WIDTH}`
 			viblog_viblog_video_encode_func "${FILE_NAME}" ${VIDEO_RESIZE_WIDTH} ${VIDEO_RESIZE_HEIGHT}
+			echo "Done"
+			echo ""
 		
 	else
 		echo "ERROR: File not found"
@@ -255,12 +261,14 @@ function viblog_video_encode_all
 		do
 			FILE_NAME=`basename "${FILE}"`
 			
-			echo "Encoding video \"${FILE_NAME}\""
+			echo -n "Encoding video \"${FILE_NAME}\"... "
 			VIDEO_WIDTH=`viblog_video_get_width "${WORKPATH}${DIR_IN}/${FILE_NAME}"`
 			VIDEO_HEIGHT=`viblog_video_get_height "${WORKPATH}${DIR_IN}/${FILE_NAME}"`
 			VIDEO_RESIZE_WIDTH=${VID_RESIZE_W}
 			VIDEO_RESIZE_HEIGHT=`viblog_get_media_resize_height ${VIDEO_WIDTH} ${VIDEO_HEIGHT} ${VIDEO_RESIZE_WIDTH}`
 			viblog_viblog_video_encode_func "${FILE_NAME}" ${VIDEO_RESIZE_WIDTH} ${VIDEO_RESIZE_HEIGHT}
+			echo "Done"
+			echo ""
 		done
 	
 	else

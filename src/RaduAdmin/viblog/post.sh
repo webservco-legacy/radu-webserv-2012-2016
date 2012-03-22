@@ -56,6 +56,7 @@ function viblog_post_prepare
 			POST_DATE_END="0000-00-00"
 		fi
 		
+		echo ""
 		echo "The following information will be saved:"
 		echo "Post ID: ${POST_ID}"
 		echo "Post title: ${POST_TITLE}"
