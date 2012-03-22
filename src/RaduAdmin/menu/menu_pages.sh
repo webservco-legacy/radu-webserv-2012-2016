@@ -100,6 +100,7 @@ function page_viblog_server
 		20 60 13 \
 		"su" "Upload files" \
 		"sd" "Database insert" \
+		"sc" "Cache update" \
 		"b" "Back" \
 		"x" "Exit" \
 		2> "/tmp/${P_NAME}"

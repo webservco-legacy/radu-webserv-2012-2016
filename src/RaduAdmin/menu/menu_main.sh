@@ -97,6 +97,9 @@ function handle_menu
 	
 	elif [ "$R" == "sd" ]; then
 		viblog_server_database_insert
+	
+	elif [ "$R" == "sc" ]; then
+		viblog_server_cache_update
 		
 	# FILES
 	elif [ "$R" == "f" ]; then

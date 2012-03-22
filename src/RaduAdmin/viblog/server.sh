@@ -46,3 +46,18 @@ function viblog_server_database_insert
 	
 	p_footer
 }
+
+function viblog_server_cache_update
+{
+	p_header "Update Cache"
+	
+	echo -n "Execution query... "
+	mysql --host="${DB_HOST}" --user="${DB_USER}" --password="${DB_PASS}" --database="${DB_NAME}" \
+	--execute="UPDATE r_config_sections SET section_update = NOW() WHERE section_id = 4 LIMIT 1" -s \
+	>> "${WORKPATH}${DIR_TMP}/${LOG_FILE}" 2>&1
+	echo "Done"
+	echo ""
+		
+	
+	p_footer
+}
