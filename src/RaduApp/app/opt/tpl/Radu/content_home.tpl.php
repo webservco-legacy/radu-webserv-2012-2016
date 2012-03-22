@@ -1,9 +1,11 @@
 <article>
 	<section class="box_border">
 
+<!-- 
 <pre>
 $ cat hello_world.sh
 </pre>
+-->
 
 <pre class="prettyprint">
 #!/bin/bash
@@ -13,6 +15,7 @@ MESSAGE='Hello World!'
 echo ${MESSAGE}
 </pre>
 
+<!-- 
 <pre>
 $ . hello_world.sh
 </pre>
@@ -20,6 +23,6 @@ $ . hello_world.sh
 <pre>
 Hello World!
 </pre>
-		
+-->
 	</section>
 </article>

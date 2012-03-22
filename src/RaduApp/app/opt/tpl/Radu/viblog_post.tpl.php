@@ -9,7 +9,7 @@ if (!empty($post)) {
 		</h2>
 		
 		<h3>
-			<?php echo date( 'd.m.y', strtotime($post['post_date_start'])); ?>
+			<?php echo date( 'd.m.Y', strtotime($post['post_date_start'])); ?>
 			<?php if ($post['post_date_end'] != '0000-00-00') { echo ' - ' . date( 'd.m.y', strtotime($post['post_date_end'])); } ?>
 		</h3>
 		
