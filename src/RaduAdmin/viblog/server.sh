@@ -4,10 +4,15 @@
 
 function viblog_server_upload
 {
-	p_header "Fiel upload"
+	p_header "File upload"
 	
-	echo -n "Please enter Post ID: "
+	echo -n "Please enter Post ID"
+	if [ "${POST_ID_NEXT}" != "" ]; then
+		echo -n " [next available: ${POST_ID_NEXT}] "
+	fi 
+	echo -n ": "
 	read POST_ID
+	
 	if [ "$POST_ID" != "" ]; then
 		
 		echo "Starting file upload"
@@ -27,8 +32,13 @@ function viblog_server_database_insert
 {
 	p_header "Database insert"
 	
-	echo -n "Please enter Post ID: "
+	echo -n "Please enter Post ID"
+	if [ "${POST_ID_NEXT}" != "" ]; then
+		echo -n " [next available: ${POST_ID_NEXT}] "
+	fi 
+	echo -n ": "
 	read POST_ID
+	
 	if [ "$POST_ID" != "" ]; then
 		
 		echo -n "Execution query... "

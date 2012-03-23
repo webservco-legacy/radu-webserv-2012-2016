@@ -94,8 +94,13 @@ function viblog_post_activate
 {
 	p_header "Activate Post"
 	
-	echo -n "Please enter Post ID: "
+	echo -n "Please enter Post ID"
+	if [ "${POST_ID_NEXT}" != "" ]; then
+		echo -n " [next available: ${POST_ID_NEXT}] "
+	fi 
+	echo -n ": "
 	read POST_ID
+	
 	if [ "$POST_ID" != "" ]; then
 		
 		echo -n "Execution query... "
@@ -116,8 +121,13 @@ function viblog_post_deactivate
 {
 	p_header "Deactivate Post"
 	
-	echo -n "Please enter Post ID: "
+	echo -n "Please enter Post ID"
+	if [ "${POST_ID_NEXT}" != "" ]; then
+		echo -n " [next available: ${POST_ID_NEXT}] "
+	fi 
+	echo -n ": "
 	read POST_ID
+	
 	if [ "$POST_ID" != "" ]; then
 		
 		echo -n "Execution query... "
