@@ -11,7 +11,7 @@
 ?>
 <!doctype html>
 
-<html class="no-js" lang="<?php echo $lang; ?>" dir="ltr" manifest="<?php echo $url_app; ?>cache.appcache">
+<html class="no-js" lang="<?php echo $lang; ?>" dir="ltr"<?php /* manifest="<?php echo $url_app; ?>cache.appcache" */ ?>>
 
 	<head>
 		
@@ -72,7 +72,7 @@
 		
 			<header>
 			
-				<pre id="title" class="prettyprint"><a href="<?php echo $url_app; ?>" title="<?php echo $title_app; ?>">&lt;?Radu_Maier&gt;</a></pre>
+				<h1 id="title"><a href="<?php echo $url_app; ?>" title="<?php echo $title_app; ?>"><span class="tag">&lt;?</span>Radu<span class="tag">_</span>Maier<span class="tag">&gt;</span></a></h1>
 				
 				<nav id="menu">
 					<ul>

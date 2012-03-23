@@ -406,18 +406,25 @@ a:hover {
 	padding: 0;
 	font-size: 1.7em;
 	font-weight: bold;
+	font-family: monospace, serif;
+	color: #eee;
 }
 
 #layout header #title a {
 	border: 0;
+	color: #eee;
 }
 
-#layout header #title a:hover span.pun {
+#layout header #title a span.tag {
 	color: #98FB98;
 }
 
-#layout header #title a:hover span.typ {
-	color: #ffffff;
+#layout header #title a:hover {
+	color: #98FB98;
+}
+
+#layout header #title a:hover span.tag {
+	color: #eee;
 }
 
 #menu {
