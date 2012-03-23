@@ -11,7 +11,7 @@
 ?>
 <!doctype html>
 
-<html class="no-js" lang="<?php echo $lang; ?>" dir="ltr"<?php /* manifest="<?php echo $url_app; ?>cache.appcache" */ ?>>
+<html class="no-js" lang="<?php echo $lang; ?>" dir="ltr" manifest="<?php echo $url_app; ?>cache.appcache">
 
 	<head>
 		
