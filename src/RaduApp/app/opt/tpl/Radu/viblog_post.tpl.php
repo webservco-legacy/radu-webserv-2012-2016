@@ -4,14 +4,14 @@ if (!empty($post)) {
 	?>
 	<section class="box_border">
 		
-		<h2>
+		<h1>
 			<?php echo $post['post_title']; ?>
-		</h2>
+		</h1>
 		
-		<h3>
+		<h2>
 			<?php echo date( 'd.m.Y', strtotime($post['post_date_start'])); ?>
 			<?php if ($post['post_date_end'] != '0000-00-00') { echo ' - ' . date( 'd.m.y', strtotime($post['post_date_end'])); } ?>
-		</h3>
+		</h2>
 		
 		<?php if (!empty($post['post_description'])) { ?>
 		<p><?php echo $post['post_description']; ?></p>

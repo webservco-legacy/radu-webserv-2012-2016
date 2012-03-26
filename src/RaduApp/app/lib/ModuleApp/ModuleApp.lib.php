@@ -60,6 +60,11 @@ class ModuleApp extends Module {
 		/**
 		 * @var array
 		 */
+		$default_data['appcache'] = (bool) Core::Config()->Get('appcache.enabled');
+
+		/**
+		 * @var array
+		 */
 		$default_data['url_app'] = Core::Config()->Get('url.app');
 
 		/**

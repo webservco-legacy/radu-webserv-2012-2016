@@ -19,6 +19,10 @@
 		<output>
 			<engine>Web</engine>
 		</output>
+		<!-- HTML5 Cache settings -->
+		<appcache>
+			<enabled>0</enabled>
+		</appcache>
 		<!-- Date settings -->
 		<date>
 			<timezone>Europe/Budapest</timezone>
@@ -41,6 +45,10 @@
 		<output>
 			<engine>Web</engine>
 		</output>
+		<!-- HTML5 Cache settings -->
+		<appcache>
+			<enabled>1</enabled>
+		</appcache>
 		<!-- Date settings -->
 		<date>
 			<timezone>Europe/Budapest</timezone>
@@ -63,6 +71,10 @@
 		<output>
 			<engine>Web</engine>
 		</output>
+		<!-- HTML5 Cache settings -->
+		<appcache>
+			<enabled>1</enabled>
+		</appcache>
 		<!-- Date settings -->
 		<date>
 			<timezone>Europe/Budapest</timezone>

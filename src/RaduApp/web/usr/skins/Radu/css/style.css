@@ -513,6 +513,18 @@ a:hover {
 	padding-bottom: 1em;
 }
 
+article h1 {
+	font-size: 1.4em;
+}
+
+article h2 {
+	font-size: 1.3em;
+}
+
+article h3 {
+	font-size: 1.2em;
+}
+
 #layout article h1,#layout article h2,#layout article h3,#layout article h4,#layout article h5,#layout article h6,#layout article h7
 	{
 	padding: 3px 0;
