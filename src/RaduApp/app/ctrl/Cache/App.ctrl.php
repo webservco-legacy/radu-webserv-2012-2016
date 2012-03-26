@@ -148,6 +148,7 @@ class Controller_Cache_App extends ControllerApp {
 		 */
 		$output .= "\n" .
 			"NETWORK:\n" .
+			"viblog.html\n" .
 			"*\n";
 			
 		/**
