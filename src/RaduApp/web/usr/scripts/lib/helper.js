@@ -30,27 +30,27 @@ MBP.hideUrlBar = function () {
 		doc = win.document;
 
 	// If there's a hash, or addEventListener is undefined, stop here
-	if( !location.hash || !win.addEventListener ){
+	if(!location.hash || !win.addEventListener){
 
 		//scroll to 1
-		window.scrollTo( 0, 1 );
+		window.scrollTo(0, 1);
 		var scrollTop = 1,
 
 		//reset to 0 on bodyready, if needed
 		bodycheck = setInterval(function(){
-			if( doc.body ){
-				clearInterval( bodycheck );
+			if(doc.body){
+				clearInterval(bodycheck);
 				scrollTop = "scrollTop" in doc.body ? doc.body.scrollTop : 1;
-				win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+				win.scrollTo(0, scrollTop === 1 ? 0 : 1);
 			}	
-		}, 15 );
+		}, 15);
 
-		win.addEventListener( "load", function(){
+		win.addEventListener("load", function(){
 			setTimeout(function(){
 				//reset to hide addr bar at onload
-				win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+				win.scrollTo(0, scrollTop === 1 ? 0 : 1);
 			}, 0);
-		}, false );
+		}, false);
 	}
 };
 
@@ -87,7 +87,7 @@ MBP.fastButton.prototype.onTouchStart = function(event) {
 
 MBP.fastButton.prototype.onTouchMove = function(event) {
     if(Math.abs(event.touches[0].clientX - this.startX) > 10 || 
-       Math.abs(event.touches[0].clientY - this.startY) > 10    ) {
+       Math.abs(event.touches[0].clientY - this.startY) > 10   ) {
         this.reset();
     }
 };
@@ -138,7 +138,7 @@ MBP.coords = [];
 
 MBP.splash = function () {
     var filename = navigator.platform === 'iPad' ? 'h/' : 'l/';
-    document.write('<link rel="apple-touch-startup-image" href="/img/' + filename + 'splash.png" />' );
+    document.write('<link rel="apple-touch-startup-image" href="/img/' + filename + 'splash.png" />');
 };
 
 

@@ -46,7 +46,7 @@ class ModuleApp extends Module {
 	 * @return array
 	 */
 	public function GetDefaultData($request) {
-
+		
 		/**
 		 * @var array
 		 */
@@ -107,6 +107,21 @@ class ModuleApp extends Module {
 		 * @var string
 		 */
 		$default_data['module'] = strtolower(str_replace('Module_', '', $request['module']));
+		
+		$module = ucfirst($default_data['module']);
+		
+		$controller = str_replace(array("{$module}_", 'Controller_'), NULL, $request['controller']);
+		
+		$default_data['resource'] = $module . '/' . $controller . '/' . $request['action'];
+		
+		Core::User()->Init();
+		
+		if (Core::User()->IsLogged()) {
+			
+			$default_data['user'] = array (
+				'name' => Core::User()->mProp['list']['user_login'],
+			);
+		}
 
 		return $default_data;
 	}

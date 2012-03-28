@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Configuration -->
+<config>
+	<!-- Development Environment -->
+	<dev>
+		<!-- Browser library settings -->
+		<browser>
+			<agent>Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2 GTB6 (.NET CLR 3.5.30729)</agent>
+			<referer></referer> <!-- If blank it will use the Application URL -->
+			<encoding>x-compress; x-zip</encoding>
+		</browser>
+	</dev>
+	<!-- Test Environment -->
+	<test>
+		<!-- Browser library settings -->
+		<browser>
+			<agent>Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2 GTB6 (.NET CLR 3.5.30729)</agent>
+			<referer></referer> <!-- If blank it will use the Application URL -->
+			<encoding>x-compress; x-zip</encoding>
+		</browser>
+	</test>
+	<!-- Production Environment -->
+	<prod>
+		<!-- Browser library settings -->
+		<browser>
+			<agent>Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2 GTB6 (.NET CLR 3.5.30729)</agent>
+			<referer></referer> <!-- If blank it will use the Application URL -->
+			<encoding>x-compress; x-zip</encoding>
+		</browser>
+	</prod>
+</config>
+<!-- $Id$ -->

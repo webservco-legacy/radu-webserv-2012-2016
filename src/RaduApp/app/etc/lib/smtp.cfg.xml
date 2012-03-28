@@ -9,9 +9,9 @@
 		<smtp>
 			<!-- Enable SSL? -->
 			<ssl>1</ssl>
-			<!-- SMTP Server hostname ( defaults to localhost ) -->
+			<!-- SMTP Server hostname (defaults to localhost) -->
 			<server>mail.webserv.co</server>
-			<!-- SMTP Server Port ( defaults to 25) -->
+			<!-- SMTP Server Port (defaults to 25) -->
 			<port>587</port>
 			<!-- SMTP connection timeout (defaults to 45) -->
 			<timeout>45</timeout>
@@ -29,9 +29,9 @@
 		<smtp>
 			<!-- Enable SSL? -->
 			<ssl>1</ssl>
-			<!-- SMTP Server hostname ( defaults to localhost ) -->
+			<!-- SMTP Server hostname (defaults to localhost) -->
 			<server>mail.webserv.co</server>
-			<!-- SMTP Server Port ( defaults to 25) -->
+			<!-- SMTP Server Port (defaults to 25) -->
 			<port>587</port>
 			<!-- SMTP connection timeout (defaults to 45) -->
 			<timeout>45</timeout>
@@ -49,9 +49,9 @@
 		<smtp>
 			<!-- Enable SSL? -->
 			<ssl>1</ssl>
-			<!-- SMTP Server hostname ( defaults to localhost ) -->
+			<!-- SMTP Server hostname (defaults to localhost) -->
 			<server>mail.webserv.co</server>
-			<!-- SMTP Server Port ( defaults to 25) -->
+			<!-- SMTP Server Port (defaults to 25) -->
 			<port>587</port>
 			<!-- SMTP connection timeout (defaults to 45) -->
 			<timeout>45</timeout>

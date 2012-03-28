@@ -94,7 +94,7 @@ class Controller_Cache_App extends ControllerApp {
 			"\n" .
 			"home.html\n" .
 			"sandbox.html\n" .
-			//"viblog.html\n" . /* DISABLED WHILE PASSWORD PROTECTED */
+			"viblog.html\n" .
 			"contact.html\n" .
 			"\n";
 
@@ -149,6 +149,8 @@ class Controller_Cache_App extends ControllerApp {
 		$output .= "\n" .
 			"NETWORK:\n" .
 			"viblog.html\n" .
+			"account.html\n" .
+			"logout.html\n" .
 			"*\n";
 			
 		/**

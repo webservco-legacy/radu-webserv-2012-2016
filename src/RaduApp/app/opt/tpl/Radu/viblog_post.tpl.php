@@ -1,6 +1,9 @@
 <article>
-<?php
-if (!empty($post)) {
+<?php if (!empty($error_message)) { ?>
+	<section class="box_border">
+	<p class="strong ko"><?php echo $error_message; ?></p>
+	</section>
+<?php } else if (!empty($post)) {
 	?>
 	<section class="box_border">
 		
@@ -9,8 +12,8 @@ if (!empty($post)) {
 		</h1>
 		
 		<h2>
-			<?php echo date( 'd.m.Y', strtotime($post['post_date_start'])); ?>
-			<?php if ($post['post_date_end'] != '0000-00-00') { echo ' - ' . date( 'd.m.y', strtotime($post['post_date_end'])); } ?>
+			<?php echo date('d.m.Y', strtotime($post['post_date_start'])); ?>
+			<?php if ($post['post_date_end'] != '0000-00-00') { echo ' - ' . date('d.m.y', strtotime($post['post_date_end'])); } ?>
 		</h2>
 		
 		<?php if (!empty($post['post_description'])) { ?>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Configuration -->
+<config>
+	<!-- Development Environment -->
+	<dev>
+		<!-- Form library settings -->
+		<form>
+			<!-- Form error messages -->
+			<error>
+				<required>
+					<text>The field "%s" is required.</text>
+				</required>
+				<default>
+					<text>There is an error regarding the field "%s".</text>
+				</default>
+				<haslengthmin>
+					<text>The field "%s" is too short.</text>
+				</haslengthmin>
+				<haslengthmax>
+					<text>The field "%s" is too long.</text>
+				</haslengthmax>
+				<equals>
+					<text>The field "%s" doesn't mach the specified item.</text>
+				</equals>
+				<isalphanumeric>
+					<text>The field "%s" must contain both letters and numbers.</text>
+				</isalphanumeric>
+				<isvalidemail>
+					<text>The field "%s" is not a valid email address.</text>
+				</isvalidemail>
+				<matchescaptcha>
+					<text>The field "%s" doesn't match the specified item.</text>
+				</matchescaptcha>
+			</error>
+		</form>
+	</dev>
+	<!-- Test Environment -->
+	<test>
+		<!-- Form library settings -->
+		<form>
+			<!-- Form error messages -->
+			<error>
+				<required>
+					<text>The field "%s" is required.</text>
+				</required>
+				<default>
+					<text>There is an error regarding the field "%s".</text>
+				</default>
+				<haslengthmin>
+					<text>The field "%s" is too short.</text>
+				</haslengthmin>
+				<haslengthmax>
+					<text>The field "%s" is too long.</text>
+				</haslengthmax>
+				<equals>
+					<text>The field "%s" doesn't mach the specified item.</text>
+				</equals>
+				<isalphanumeric>
+					<text>The field "%s" must contain both letters and numbers.</text>
+				</isalphanumeric>
+				<isvalidemail>
+					<text>The field "%s" is not a valid email address.</text>
+				</isvalidemail>
+				<matchescaptcha>
+					<text>The field "%s" doesn't match the specified item.</text>
+				</matchescaptcha>
+			</error>
+		</form>
+	</test>
+	<!-- Production Environment -->
+	<prod>
+		<!-- Form library settings -->
+		<form>
+			<!-- Form error messages -->
+			<error>
+				<required>
+					<text>The field "%s" is required.</text>
+				</required>
+				<default>
+					<text>There is an error regarding the field "%s".</text>
+				</default>
+				<haslengthmin>
+					<text>The field "%s" is too short.</text>
+				</haslengthmin>
+				<haslengthmax>
+					<text>The field "%s" is too long.</text>
+				</haslengthmax>
+				<equals>
+					<text>The field "%s" doesn't mach the specified item.</text>
+				</equals>
+				<isalphanumeric>
+					<text>The field "%s" must contain both letters and numbers.</text>
+				</isalphanumeric>
+				<isvalidemail>
+					<text>The field "%s" is not a valid email address.</text>
+				</isvalidemail>
+				<matchescaptcha>
+					<text>The field "%s" doesn't match the specified item.</text>
+				</matchescaptcha>
+			</error>
+		</form>
+	</prod>
+</config>
+<!-- $Id$ -->

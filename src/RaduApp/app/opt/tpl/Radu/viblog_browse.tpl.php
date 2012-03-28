@@ -1,6 +1,10 @@
 <article>
-<?php
-if (!empty($posts)) {
+
+<?php if (!empty($error_message)) { ?>
+	<section class="box_border">
+	<p class="strong ko"><?php echo $error_message; ?></p>
+	</section>
+<?php } else if (!empty($posts)) {
 
  	foreach ($posts as $item) {
 ?>
@@ -8,7 +12,7 @@ if (!empty($posts)) {
 		
 		<h2>
 			<a class="noborder" href="<?php echo $url_app; ?>viblog-<?php echo $item['post_id'];?>.html" title="<?php echo $item['post_title']; ?>">
-				<?php echo $item['post_title']; ?> <span>[<?php echo date( 'd.m.Y', strtotime($item['post_date'])); ?>]</span>
+				<?php echo $item['post_title']; ?> <span>[<?php echo date('d.m.Y', strtotime($item['post_date'])); ?>]</span>
 			</a>
 		</h2>
 		
@@ -34,4 +38,5 @@ if (!empty($posts)) {
 	<?php
 }
 ?>
+
 </article>

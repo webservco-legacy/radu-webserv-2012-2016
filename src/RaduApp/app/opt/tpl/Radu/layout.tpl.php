@@ -72,6 +72,23 @@
 		
 			<header>
 			
+				<nav id="user">
+					<ul>
+					<?php if (!empty($user)) { ?>
+						<li>
+							<?php echo $user['name']; ?>
+						</li>
+						<li>
+							<a href="<?php echo $url_app; ?>logout.html" title="Log in">Log out</a>
+						</li>
+					<?php } else { ?>
+						<li>
+							<a href="<?php echo $url_app; ?>account.html" title="Log in">Log in</a>
+						</li>
+					<?php } ?>
+					</ul>
+				</nav>
+			
 				<h1 id="title"><a href="<?php echo $url_app; ?>" title="<?php echo $title_app; ?>"><span class="tag">&lt;?</span>Radu<span class="tag">_</span>Maier<span class="tag">&gt;</span></a></h1>
 				
 				<nav id="menu">

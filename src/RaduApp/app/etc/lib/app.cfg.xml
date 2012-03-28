@@ -8,12 +8,12 @@
 		<app>
 			<title><![CDATA[Radu Maier]]></title>
 			<prefix>r_</prefix>
-			<sessions>0</sessions>
+			<sessions>1</sessions>
 		</app>
 		<!-- Database settings (general) -->
 		<database>
 			<type>MySQLi</type>
-			<binkey>0</binkey>
+			<binkey>1</binkey>
 		</database>
 		<!-- Output settings -->
 		<output>
@@ -34,12 +34,12 @@
 		<app>
 			<title>Radu Maier</title>
 			<prefix>r_</prefix>
-			<sessions>0</sessions>
+			<sessions>1</sessions>
 		</app>
 		<!-- Database settings (general) -->
 		<database>
 			<type>MySQLi</type>
-			<binkey>0</binkey>
+			<binkey>1</binkey>
 		</database>
 		<!-- Output settings -->
 		<output>
@@ -47,7 +47,7 @@
 		</output>
 		<!-- HTML5 Cache settings -->
 		<appcache>
-			<enabled>1</enabled>
+			<enabled>0</enabled>
 		</appcache>
 		<!-- Date settings -->
 		<date>
@@ -60,12 +60,12 @@
 		<app>
 			<title>Radu Maier</title>
 			<prefix>r_</prefix>
-			<sessions>0</sessions>
+			<sessions>1</sessions>
 		</app>
 		<!-- Database settings (general) -->
 		<database>
 			<type>MySQLi</type>
-			<binkey>0</binkey>
+			<binkey>1</binkey>
 		</database>
 		<!-- Output settings -->
 		<output>
@@ -73,7 +73,7 @@
 		</output>
 		<!-- HTML5 Cache settings -->
 		<appcache>
-			<enabled>1</enabled>
+			<enabled>0</enabled>
 		</appcache>
 		<!-- Date settings -->
 		<date>

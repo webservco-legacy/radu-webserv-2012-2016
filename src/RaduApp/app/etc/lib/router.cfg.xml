@@ -54,6 +54,21 @@
 		</route>
 		
 		<route>
+			<name>captcha.png</name>
+			<value>Users/App/Captcha</value>
+		</route>
+		
+		<route>
+			<name>account</name>
+			<value>Users/App/Account</value>
+		</route>
+		
+		<route>
+			<name>logout</name>
+			<value>Users/App/Logout</value>
+		</route>
+		
+		<route>
 			<name>viblog</name>
 			<value>Viblog/App/Browse</value>
 		</route>
@@ -121,6 +136,21 @@
 		</route>
 		
 		<route>
+			<name>captcha.png</name>
+			<value>Users/App/Captcha</value>
+		</route>
+		
+		<route>
+			<name>account</name>
+			<value>Users/App/Account</value>
+		</route>
+		
+		<route>
+			<name>logout</name>
+			<value>Users/App/Logout</value>
+		</route>
+		
+		<route>
 			<name>viblog</name>
 			<value>Viblog/App/Browse</value>
 		</route>
@@ -185,6 +215,21 @@
 		<route>
 			<name>contact</name>
 			<value>Content/App/Contact</value>
+		</route>
+		
+		<route>
+			<name>captcha.png</name>
+			<value>Users/App/Captcha</value>
+		</route>
+		
+		<route>
+			<name>account</name>
+			<value>Users/App/Account</value>
+		</route>
+		
+		<route>
+			<name>logout</name>
+			<value>Users/App/Logout</value>
 		</route>
 		
 		<route>

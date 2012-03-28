@@ -47,9 +47,25 @@ class Controller_Viblog_App extends ControllerApp {
 
 		$data['title'] = 'VIBlog';
 
-		$data['posts'] = $this->Module()->GetPosts();
-
 		$data['section_id'] = 3;
+
+		Core::User()->Init();
+
+		if (Core::User()->IsLogged())
+		{
+			if (Core::Acl()->Check(Core::User()->mProp['list']['bin.user_id'], $data['resource'])) {
+
+				$data['posts'] = $this->Module()->GetPosts();
+
+			} else {
+
+				$data['error_message'] = 'Error: You don\'t have permission to access this resource.';
+			}
+
+		} else {
+
+			$data['error_message'] = 'Error: You have to be logged in in order to access this resource.';
+		}
 
 		echo $this->GetOutput($data);
 
@@ -64,15 +80,31 @@ class Controller_Viblog_App extends ControllerApp {
 
 		$post_id = (!empty($this->_mRequest['query']['id'])) ? $this->_mRequest['query']['id'] : 0;
 
-		$data['post'] = $this->Module()->GetPostDetails($post_id);
-		
 		$data['title'] = 'VIBlog';
 
-		$data['images'] = $this->Module()->GetPostImages($post_id);
-
-		$data['videos'] = $this->Module()->GetPostVideos($post_id);
-
 		$data['section_id'] = 3;
+
+		Core::User()->Init();
+
+		if (Core::User()->IsLogged())
+		{
+			if (Core::Acl()->Check(Core::User()->mProp['list']['bin.user_id'], $data['resource'])) {
+
+				$data['post'] = $this->Module()->GetPostDetails($post_id);
+
+				$data['images'] = $this->Module()->GetPostImages($post_id);
+
+				$data['videos'] = $this->Module()->GetPostVideos($post_id);
+
+			} else {
+
+				$data['error_message'] = 'Error: You don\'t have permission to access this resource.';
+			}
+
+		} else {
+
+			$data['error_message'] = 'Error: You have to be logged in in order to access this resource.';
+		}
 
 		echo $this->GetOutput($data);
 

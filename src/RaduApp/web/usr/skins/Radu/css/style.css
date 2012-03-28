@@ -24,7 +24,7 @@ audio,canvas,video {
 	*zoom: 1;
 }
 
-audio:not ([controls] ) {
+audio:not ([controls]) {
 	display: none;
 }
 
@@ -220,7 +220,7 @@ img {
 /*
  * Correct overflow not hidden in IE9
  */
-svg:not (:root ) {
+svg:not (:root) {
 	overflow: hidden;
 }
 
@@ -427,6 +427,16 @@ a:hover {
 	color: #eee;
 }
 
+#user {
+	float: right;
+	display: inline;
+	width: auto;
+	font-weight: bold;
+	margin: 5px 10px 0 0;
+	font-size: 0.9em;
+	line-height: 150%;
+}
+
 #menu {
 	float: left;
 	display: inline;
@@ -612,10 +622,85 @@ article h3 {
 	list-style: none;
 }
 
+#layout form {
+
+}
+
+#layout form legend {
+}
+
+#layout form label {
+	float: left;
+	width: 100px;
+	display: inline;
+	text-align: right;
+	clear: left;
+	margin: 5px 0 0 0;
+	padding: 8px 10px 0 0;
+}
+
+#layout form p {
+	float: left;
+	width: auto;
+	display: inline;
+	margin: 5px 0 0 0;
+}
+
+#layout form p.form_error {
+	clear: left;
+	padding-left: 10px;
+}
+
+#layout form input {
+	background: transparent;
+	color: #eee;
+	padding: 5px 3px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px dashed #999;
+}
+
+#layout form input[type="text"],#layout form input[type="password"] {
+	float: left;
+	width: 150px;
+	display: inline;
+}
+
+#layout form input[type="checkbox"] {
+	float: left;
+	width: auto;
+	display: inline;
+	margin: 8px 0 0 0;
+	padding: 0;
+}
+
+#layout form input[type="submit"] {
+	padding: 5px 15px;
+	border: 1px solid #999;
+}
+
+#layout form input#captcha {
+	background: transparent url('./../../../../captcha.png') no-repeat scroll 2px 4px;
+	text-align: right;
+}
+
 #layout #footer {
 	padding-bottom: 15px !important;
 	font-size: 0.9em;
 	text-align: center;
+}
+
+.ok {
+	color: #0c0 !important;
+}
+
+.ko {
+	color: #c00 !important;
+}
+
+.strong {
+	font-weight: bold !important;
 }
 
 /*
@@ -623,6 +708,14 @@ article h3 {
  */
 
 /* Styles for desktop and large screen ----------- */
+
+@media only screen and (max-device-width: 480px) {
+	
+#layout form input[type="checkbox"] {
+	margin: 0;
+}	
+	
+}
 
 /*styles for 800px and up!*/
 @media only screen and (min-width: 800px) { /* Styles */
