@@ -45,8 +45,6 @@ class Controller_Content_App extends ControllerApp {
 
 		$data = $this->Module()->GetDefaultData($this->_mRequest);
 
-		$data['title'] = 'Home';
-		
 		$data['message'] = 'Hello World!';
 		
 		$data['section_id'] = 1;
