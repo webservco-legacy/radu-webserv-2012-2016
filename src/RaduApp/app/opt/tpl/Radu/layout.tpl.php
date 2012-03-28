@@ -19,7 +19,7 @@
 
 		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
 		
-		<title><?php echo $title; ?> - <?php echo $title_app; ?></title>
+		<title><?php echo !empty($title) ? "{$title} - {$title_app}" : $title_app; ?></title>
 		
 		<meta name="description" content="" />
 		<meta name="author" content="Radu Maier" />
