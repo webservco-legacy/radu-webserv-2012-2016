@@ -10,10 +10,6 @@
 	
 		<h1>Account</h1>
 		
-		<pre>
-		<?php //print_r($form);?>
-		</pre>
-		
 		<form class="login" enctype="multipart/form-data" method="post" action="">
 		
 			<fieldset>
