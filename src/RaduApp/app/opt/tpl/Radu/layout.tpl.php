@@ -53,7 +53,7 @@
 		
 		<link rel="stylesheet" media="all" href="<?php echo $url_skin; ?>css/style.css" />
 		
-<?php if ('viblog' == $module) { ?>
+<?php if (!empty($photoswipe)) { ?>
 		<link rel="stylesheet" media="all" href="<?php echo $url_skin; ?>css/photoswipe.css" />
 <?php } ?>
 
@@ -137,7 +137,7 @@
 		<script defer src="<?php echo $url_scripts; ?>script.js"></script>
 		<script defer src="<?php echo $url_scripts; ?>appcache.js"></script>
 		
-<?php if ('viblog' == $module) { ?>
+<?php if (!empty($photoswipe)) { ?>
 		<script src="<?php echo $url_scripts; ?>lib/klass.min.js"></script>
 		<script src="<?php echo $url_scripts; ?>lib/code.photoswipe.jquery-3.0.4.min.js"></script>
 		<script type="text/javascript"> 

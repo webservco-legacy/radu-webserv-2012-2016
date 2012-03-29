@@ -94,6 +94,11 @@ class Controller_Viblog_App extends ControllerApp {
 
 				$data['images'] = $this->Module()->GetPostImages($post_id);
 
+				if (!empty($data['images'])) {
+
+					$data['photoswipe'] = TRUE;
+				}
+
 				$data['videos'] = $this->Module()->GetPostVideos($post_id);
 
 			} else {
