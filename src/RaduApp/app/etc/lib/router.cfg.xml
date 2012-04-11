@@ -49,6 +49,11 @@
 		</route>
 		
 		<route>
+			<name>datetime</name>
+			<value>Sandbox/App/Datetime</value>
+		</route>
+		
+		<route>
 			<name>contact</name>
 			<value>Content/App/Contact</value>
 		</route>
@@ -131,6 +136,11 @@
 		</route>
 		
 		<route>
+			<name>datetime</name>
+			<value>Sandbox/App/Datetime</value>
+		</route>
+		
+		<route>
 			<name>contact</name>
 			<value>Content/App/Contact</value>
 		</route>
@@ -210,6 +220,11 @@
 		<route>
 			<name>sandbox</name>
 			<value>Sandbox/App/Sandbox</value>
+		</route>
+		
+		<route>
+			<name>datetime</name>
+			<value>Sandbox/App/Datetime</value>
 		</route>
 		
 		<route>

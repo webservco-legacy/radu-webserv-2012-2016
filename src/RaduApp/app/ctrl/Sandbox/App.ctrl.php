@@ -56,6 +56,23 @@ class Controller_Sandbox_App extends ControllerApp {
 		return TRUE;
 	}
 	
+	public function Datetime() {
+	
+		$this->InitController();
+	
+		$data = $this->Module()->GetDefaultData($this->_mRequest);
+	
+		$data['title'] = 'Date &amp; Time Calculations';
+		
+		$data['section_id'] = 2;
+		
+		$data['cst'] = $this->Module()->CalculateStartTime();
+	
+		echo $this->GetOutput($data);
+	
+		return TRUE;
+	}
+	
 	public function Oimoroi() {
 	
 		$this->InitController();

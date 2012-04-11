@@ -651,7 +651,7 @@ article h3 {
 	padding-left: 10px;
 }
 
-#layout form input {
+#layout form input, #layout form select {
 	background: transparent;
 	color: #eee;
 	padding: 5px 3px;
@@ -661,9 +661,20 @@ article h3 {
 	border: 1px dashed #999;
 }
 
+#layout form select {
+	/*background: #333;*/
+	color: #777;	
+}
+
 #layout form input[type="text"],#layout form input[type="password"] {
 	float: left;
 	width: 150px;
+	display: inline;
+}
+
+#layout form input.input_small, #layout form select.input_small {
+	float: left;
+	width: 30px;
 	display: inline;
 }
 
@@ -680,9 +691,36 @@ article h3 {
 	border: 1px solid #999;
 }
 
+#layout form a.submit {
+	background: transparent;
+	color: #eee;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 5px 15px;
+	border: 1px solid #999;
+}
+
+#layout form a.submit:hover {
+	color: #eee;
+}
+
 #layout form input#captcha {
 	background: transparent url('./../../../../captcha.png') no-repeat scroll 2px 4px;
 	text-align: right;
+}
+
+#layout form.datetime input[type="text"] {
+	color: #777;
+}
+
+#layout form.datetime legend {
+	padding: 5px;
+}
+
+.datetime_info {
+	font-style: italic;
+	margin-left: 10px;
 }
 
 #layout #footer {
