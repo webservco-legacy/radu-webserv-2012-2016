@@ -77,6 +77,7 @@
 					</select>
 				</p>
 				
+				<!--
 				<label class="tooltip" for="cst_offset" title="Offset">
 					Time offset:
 				</label>
@@ -93,6 +94,7 @@
 					</select>
 					<span class="datetime_info">Hours between GMT time and calculated time</span>
 				</p>
+				-->
 				
 				<label class="tooltip" for="send" title="">
 					&#160;
@@ -101,7 +103,7 @@
 				<p>
 					<input class="tooltip" title="" type="submit" name="cst" id="cst" value="Calculate" />
 					&#160;&#160;&#160;
-					<a class="submit" href="<?php echo $url_app; ?>datetime.html">Reset</a> 
+					<a class="submit" href="<?php echo $url_app; ?>datetime.html" title="Reset">Reset</a> 
 				</p>
 				
 				
@@ -109,11 +111,19 @@
 					&#160;
 				</label>
 				<p>
-					Start time is <?php echo ('00:00:00' != $cst['starttime']) ? "<strong class=\"ok\">{$cst['starttime']}</strong>" : 'empty'; ?>				
+					Start time is <?php echo ('00:00:00' != $cst['starttime']) ? "<strong class=\"\">{$cst['starttime']}</strong>" : 'empty'; ?>				
 				</p>
 					
 			</fieldset>
 		
 		</form>
+	</section>
+	
+	<section class="box_border back">
+		
+		<a href="<?php echo $url_app; ?>sandbox.html" title="Sandbox">
+			Back
+		</a>
+		
 	</section>
 </article>
