@@ -76,7 +76,7 @@ class Module_Users extends ModuleApp
 				/**
 				 * @var bool
 				 */
-				$result_login = Core::User()->Login($form['data']['username'], $form['data']['password'], $form['data']['remember']);
+				$result_login = Core::User()->Login($form['data']['email'], $form['data']['password'], $form['data']['remember']);
 
 				if (TRUE !== $result_login)
 				{

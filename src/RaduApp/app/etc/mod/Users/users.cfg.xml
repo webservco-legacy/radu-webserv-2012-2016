@@ -8,14 +8,14 @@
 		<users>
 			<form>
 				<login>
-					<username>
+					<email>
 						<type>text</type>
-						<title>Username</title>
-						<description>Your chosen user name</description>
+						<title>Email</title>
+						<description>Your email address</description>
 						<required>1</required>
-						<filters>StripTags|RemoveBadChars</filters>
+						<filters>StripTags</filters>
 						<conditions>HasLengthMin[4]|HasLengthMax[48]</conditions>
-					</username>
+					</email>
 					<password>
 						<type>password</type>
 						<title>Password</title>
@@ -23,14 +23,7 @@
 						<required>1</required>
 						<conditions>IsAlphanumeric|HasLengthMin[6]|HasLengthMax[20]</conditions>
 					</password>
-					<captcha>
-						<type>text</type>
-						<title>Security Code</title>
-						<description>Enter the code you see in the picture</description>
-						<required>1</required>
-						<filters>RemoveBadChars</filters>
-						<conditions>MatchesCaptcha</conditions>
-					</captcha>
+					
 					<remember>
 						<type>checkbox</type>
 						<title>Remember me</title>
@@ -52,14 +45,14 @@
 		<users>
 			<form>
 				<login>
-					<username>
+					<email>
 						<type>text</type>
-						<title>Username</title>
-						<description>Your chosen user name</description>
+						<title>Email</title>
+						<description>Your email address</description>
 						<required>1</required>
-						<filters>StripTags|RemoveBadChars</filters>
+						<filters>StripTags</filters>
 						<conditions>HasLengthMin[4]|HasLengthMax[48]</conditions>
-					</username>
+					</email>
 					<password>
 						<type>password</type>
 						<title>Password</title>
@@ -96,14 +89,14 @@
 		<users>
 			<form>
 				<login>
-					<username>
+					<email>
 						<type>text</type>
-						<title>Username</title>
-						<description>Your chosen user name</description>
+						<title>Email</title>
+						<description>Your email address</description>
 						<required>1</required>
-						<filters>StripTags|RemoveBadChars</filters>
+						<filters>StripTags</filters>
 						<conditions>HasLengthMin[4]|HasLengthMax[48]</conditions>
-					</username>
+					</email>
 					<password>
 						<type>password</type>
 						<title>Password</title>

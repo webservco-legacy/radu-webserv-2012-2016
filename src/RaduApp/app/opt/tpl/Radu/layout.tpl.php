@@ -91,7 +91,7 @@
 			
 				<h1 id="title"><a href="<?php echo $url_app; ?>" title="<?php echo $title_app; ?>"><span class="tag">&lt;?</span>Radu<span class="tag">_</span>Maier<span class="tag">&gt;</span></a></h1>
 				
-				<nav id="menu">
+				<nav class="menu">
 					<ul>
 					<?php if(!empty($sections)) { ?>
 						<?php foreach ($sections as $section_data) {

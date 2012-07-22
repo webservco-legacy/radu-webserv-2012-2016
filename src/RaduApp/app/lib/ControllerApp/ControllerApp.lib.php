@@ -36,13 +36,19 @@ if (!defined('_WEB')) {
  *
  */
 class ControllerApp extends Controller {
+	
+	protected $_mMobile = FALSE;
 
 	/**
 	 * Controller initialization.
 	 *
 	 * @return bool
 	 */
-	public function InitController() {
+	public function InitController($isMobile = FALSE) {
+		
+		if ($isMobile) {
+			$this->_mMobile = TRUE;
+		}
 
 		/**
 		 * Initialize output.
@@ -52,8 +58,32 @@ class ControllerApp extends Controller {
 		 * Output library configuration data.
 		 */
 		$this->Output()->Init();
+		
+		/**
+		 * No multilanguage!
+		 * 
+		 * $this->InitLocale();
+		 */
 
 		return TRUE;
+	}
+	
+	public function InitLocale() {
+
+		$app_langs = array(
+					'en' => 'en_US',
+					'it' => 'it_IT.UTF8',
+		);
+
+		$user_lang = !empty($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : NULL;
+
+		if (!empty($user_lang) && array_key_exists($user_lang, $app_langs)) {
+			Core::I18n()->SetLocale($app_langs[$user_lang]);
+
+			return TRUE;
+		}
+
+		return FALSE;
 	}
 
 	/**
@@ -80,7 +110,7 @@ class ControllerApp extends Controller {
 		 *
 		 * @var array
 		 */
-		$default_data = $this->Module()->GetDefaultData($this->_mRequest);
+		$default_data = $this->Module()->GetDefaultData($this->_mRequest, $this->_mMobile);
 
 		/**
 		 * Set the content var to the parsed content template.
@@ -100,8 +130,15 @@ class ControllerApp extends Controller {
 		 * Set charset
 		 */
 		header("Content-type: text/html; charset=utf-8");
+		
+		$main_template = $this->Output()->GetTemplate();
+		
+		if ($this->_mMobile) {
+			
+			$main_template .= '_mobile';
+		}
 
-		return $this->Output()->Out(NULL, $data);
+		return $this->Output()->Out($main_template, $data);
 	}
 }
 ?>

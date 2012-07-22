@@ -119,7 +119,8 @@ class ModuleApp extends Module {
 		if (Core::User()->IsLogged()) {
 			
 			$default_data['user'] = array (
-				'name' => Core::User()->mProp['list']['user_login'],
+				'id' => Core::User()->mProp['list']['user_id'],
+				'name' => Core::User()->mProp['list']['user_nickname'],
 			);
 		}
 
@@ -146,7 +147,8 @@ class ModuleApp extends Module {
 			/**
 			 * @var string
 			 */
-			$template_name = strtolower(str_replace('Module_', NULL, $request['module']) . '_' . $template_suffix);
+			$template_name = str_replace('Module_', NULL, $request['module']) . '/' . strtolower($template_suffix);
+
 
 		} else {
 

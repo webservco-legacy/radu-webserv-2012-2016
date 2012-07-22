@@ -5,9 +5,9 @@
 	<!-- Development Environment -->
 	<dev>
 		<path>
-			<core>/home/radu/Documents/workspace/wsWEb/src/WEb/</core>
-			<app>/home/radu/Documents/workspace/wsRadu/src/RaduApp/app/</app>
-			<www>/home/radu/Documents/workspace/wsRadu/src/RaduApp/web/</www>
+			<core>/home/radu/Projects/wsWEb/src/WEb/</core>
+			<app>/home/radu/Projects/wsRadu/src/RaduApp/app/</app>
+			<www>/home/radu/Projects/wsRadu/src/RaduApp/web/</www>
 		</path>
 		<url>
 			<app>http://192.168.1.64/radu/</app>

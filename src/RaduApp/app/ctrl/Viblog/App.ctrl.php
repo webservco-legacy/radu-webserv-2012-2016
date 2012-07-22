@@ -53,7 +53,7 @@ class Controller_Viblog_App extends ControllerApp {
 
 		if (Core::User()->IsLogged())
 		{
-			if (Core::Acl()->Check(Core::User()->mProp['list']['bin.user_id'], $data['resource'])) {
+			if (Core::Acl()->Check(Core::User()->mProp['list']['user_id'], $data['resource'])) {
 
 				$data['posts'] = $this->Module()->GetPosts();
 
@@ -88,7 +88,7 @@ class Controller_Viblog_App extends ControllerApp {
 
 		if (Core::User()->IsLogged())
 		{
-			if (Core::Acl()->Check(Core::User()->mProp['list']['bin.user_id'], $data['resource'])) {
+			if (Core::Acl()->Check(Core::User()->mProp['list']['user_id'], $data['resource'])) {
 
 				$data['post'] = $this->Module()->GetPostDetails($post_id);
 

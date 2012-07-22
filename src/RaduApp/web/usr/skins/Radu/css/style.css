@@ -192,6 +192,10 @@ ul,ol {
 	padding: 0 0 0 40px;
 }
 
+ul li {
+	margin: 5px 0 0 0;
+}
+
 dd {
 	margin: 0 0 0 40px;
 }
@@ -437,7 +441,7 @@ a:hover {
 	line-height: 150%;
 }
 
-#menu {
+.menu {
 	float: left;
 	display: inline;
 	width: auto;
@@ -450,7 +454,11 @@ a:hover {
 	border: 2px solid #444;
 }
 
-#menu ul {
+.car_menu {
+	margin: 7px 0 7px 0;
+}
+
+.menu ul {
 	float: left;
 	/*width: 240px*/;
 	width: auto;
@@ -460,23 +468,24 @@ a:hover {
 	text-align: center;
 }
 
-#menu ul li {
+.menu ul li {
 	float: left;
 	width: auto;
 	display: inline;
 	margin: 0;
+	padding: 0;
 	display: inline;
 	font-weight: bold;
 }
 
-#menu ul li a {
+.menu ul li a {
 	display: inline-block;
 	width: 69px;
 	padding: 8px 0;
 	text-decoration: none;
 }
 
-#menu ul li:first-child a {
+.menu ul li:first-child a {
 	border-top-left-radius: 5px;
 	-moz-border-radius-topleft: 5px;
 	-webkit-border-top-left-radius: 5px;
@@ -485,12 +494,12 @@ a:hover {
 	-webkit-border-bottom-left-radius: 5px;
 }
 
-#menu ul li a:link,#menu ul li a:visited {
+.menu ul li a:link,.menu ul li a:visited {
 	text-decoration: none;
 	border: 0;
 }
 
-#menu ul li a.active,#menu ul li a:hover,#menu ul li a:active {
+.menu ul li a.active,.menu ul li a:hover,.menu ul li a:active {
 	text-decoration: none;
 	border: 0;
 	background: #444;
@@ -501,7 +510,7 @@ a:hover {
 }
 
 #layout article { /*text-align: justify;*/
-	
+	clear: both;	
 }
 
 #layout article.nopadding {
@@ -740,6 +749,28 @@ article h3 {
 .strong {
 	font-weight: bold !important;
 }
+
+table.car_log {
+	font-size: 1.1em;
+}
+
+table.car_log th {
+	padding: 5px;
+	text-align: left;
+}
+
+table.car_log td {
+	padding: 5px;
+	border-top: 1px dashed #444;
+}
+
+table.car_log td.day {}
+table.car_log td.type {}
+table.car_log td.km {}
+table.car_log td.cost {}
+table.car_log td.notes {}
+
+/* XXX */
 
 /*
  * Media queries for responsive design https://github.com/shichuan/mobile-html5-boilerplate/wiki/The-Style
