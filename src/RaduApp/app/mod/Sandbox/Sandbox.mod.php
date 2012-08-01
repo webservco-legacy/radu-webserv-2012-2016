@@ -59,5 +59,28 @@ class Module_Sandbox extends ModuleApp {
 		
 		return $cst;
 	}
+	
+	public function CalculateEndTime() {
+		
+		$cet['duration_h'] = !empty($_POST['cet_duration_h']) ? (int) $_POST['cet_duration_h'] : 0; 
+		$cet['duration_m'] = !empty($_POST['cet_duration_m']) ? (int) $_POST['cet_duration_m'] : 0; 
+		$cet['duration_s'] = !empty($_POST['cet_duration_s']) ? (int) $_POST['cet_duration_s'] : 0;
+
+		$cet['starttime_h'] = !empty($_POST['cet_starttime_h']) ? (int) $_POST['cet_starttime_h'] : 0;
+		$cet['starttime_m'] = !empty($_POST['cet_starttime_m']) ? (int) $_POST['cet_starttime_m'] : 0;
+		$cet['starttime_s'] = !empty($_POST['cet_starttime_s']) ? (int) $_POST['cet_starttime_s'] : 0;
+		
+		$cet['offset'] = !empty($_POST['cet_offset']) ? (int) $_POST['cet_offset'] : 1;
+		
+		$duration = mktime($cet['duration_h'], $cet['duration_m'], $cet['duration_s']);
+		
+		$starttime = mktime($cet['starttime_h'], $cet['starttime_m'], $cet['starttime_s']);
+		
+		$offset = ($cet['offset'] * 60 * 60);
+		
+		$cet['endtime'] = date('H:i:s', ($starttime + $duration + $offset + $offset + $offset));
+		
+		return $cet;
+	}
 }
 ?>

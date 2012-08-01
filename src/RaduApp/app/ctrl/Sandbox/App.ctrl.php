@@ -67,6 +67,8 @@ class Controller_Sandbox_App extends ControllerApp {
 		$data['section_id'] = 2;
 		
 		$data['cst'] = $this->Module()->CalculateStartTime();
+		
+		$data['cet'] = $this->Module()->CalculateEndTime();
 	
 		echo $this->GetOutput($data);
 	
