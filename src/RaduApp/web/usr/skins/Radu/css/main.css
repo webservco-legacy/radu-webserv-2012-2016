@@ -99,7 +99,7 @@ textarea {
 }
 
 body {
-	font-size: 90%;
+	font-size: 0.9em;
 	background: #333 url('../img/background.jpg') 0px 0px repeat;
 	color: #eee;
 }
@@ -128,10 +128,12 @@ a:hover {
 	margin-top: 13px;
 	overflow: hidden;
 	padding: 0px 0px 10px 0;
+	/*
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border: 2px solid #444;
+	*/
 }
 
 #layout header #title {
@@ -213,8 +215,8 @@ a:hover {
 
 .menu ul li a {
 	display: inline-block;
-	width: 69px;
-	padding: 8px 0;
+	width: auto;
+	padding: 8px 10px;
 	text-decoration: none;
 }
 
@@ -294,10 +296,14 @@ article h3 {
 	padding: 10px 5px 10px 10px !important;
 	overflow: hidden;
 	padding: 10px 0px;
+	/*
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border: 2px solid #444;
+	*/
+	border-top: 2px solid #444;
+	border-bottom: 2px solid #444;
 }
 
 #layout .back {

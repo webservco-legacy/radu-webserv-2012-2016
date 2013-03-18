@@ -64,7 +64,7 @@ class Controller_Content_App extends ControllerApp {
 		
 		$data['message'] = 'radu at webserv.co';
 		
-		$data['section_id'] = 4;
+		$data['section_id'] = 3;
 	
 		echo $this->GetOutput($data, 'display');
 	
