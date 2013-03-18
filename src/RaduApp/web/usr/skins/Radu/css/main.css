@@ -101,18 +101,22 @@ textarea {
 body {
 	font-size: 0.9em;
 	background: #333 url('../img/background.jpg') 0px 0px repeat;
-	color: #eee;
+	color: #ccc;
+}
+
+ul {
+	font-size: 1em;
 }
 
 a, a:visited {
-	color: #eee;
+	color: #ccc;
 	text-decoration: none;
-	border-bottom: 1px dotted #eee;
+	border-bottom: 1px dotted #ccc;
 }
 
 a:hover {
 	color: #98FB98;
-	border-bottom: 1px dotted #aaa;
+	border-bottom: 1px dotted #ccc;
 }
 
 #layout {
@@ -490,7 +494,7 @@ article h3 {
 }
 
 table.car_log {
-	font-size: 1.1em;
+	
 }
 
 table.car_log th {
@@ -509,7 +513,9 @@ table.car_log td.km {}
 table.car_log td.cost {}
 table.car_log td.notes {}
 
-
+ul.car_stats li {
+	padding: 5px 0;
+}
 
 
 

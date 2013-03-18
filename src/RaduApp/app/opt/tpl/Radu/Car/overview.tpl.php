@@ -8,19 +8,7 @@
 <?php } else { ?>
 
 <article>
-	<nav class="menu car_menu">
-		<ul>
-			<li>
-				<a href="<?php echo $url_app; ?>Car/App/Overview/id/<?php echo $car_id; ?>" title="Overview">Overview</a>
-			</li>
-			<li>
-				<a href="<?php echo $url_app; ?>Car/App/Stats/id/<?php echo $car_id; ?>" title="Stats">Stats</a>
-			</li>
-			<li>
-				<a href="<?php echo $url_app; ?>Car/App/Log/id/<?php echo $car_id; ?>" title="Log">Log</a>
-			</li>
-		</ul>
-	</nav>
+	<?php echo $carmenu; ?>
 </article>
 
 <article>

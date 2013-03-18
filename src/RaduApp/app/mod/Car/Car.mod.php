@@ -39,7 +39,7 @@ class Module_Car extends ModuleApp {
 
 	public function GetCarInfo($carId) {
 
-		$q = "SELECT U.user_nickname AS car_owner, C.car_name, C.car_make, C.car_model, YEAR(C.car_factory_date) AS car_year, C.car_factory_date, C.car_owner_date
+		$q = "SELECT U.user_nickname AS car_owner, C.car_name, C.car_make, C.car_model, YEAR(C.car_factory_date) AS car_year, C.car_factory_date, C.car_owner_date, C.car_fuel_tank
 				FROM r_car_main AS C
 				LEFT JOIN r_acl_users AS U ON (U.user_id = C.user_id)
 				WHERE C.car_id = '{$carId}' LIMIT 1";
@@ -61,11 +61,11 @@ class Module_Car extends ModuleApp {
 
 		$data = array();
 
-		$q = "SELECT L.id, L.day, L.type, T.type_name, L.km, L.cost, L.qty, L.notes
-				FROM r_car_log AS L
-				LEFT JOIN r_car_log_types AS T ON (T.type_id = L.type)
+		$q = "SELECT L.log_id, L.log_date_start, L.log_date_end, L.log_km, L.log_public, D.log_description, D.log_notes
+				FROM r_car_log_main AS L
+				LEFT JOIN r_car_log_details AS D ON (D.log_id = L.log_id AND D.i18n_locale = 'ro_RO.UTF8')
 				WHERE L.car_id = '{$carId}'
-				ORDER BY L.day DESC";
+				ORDER BY L.log_date_start DESC, L.log_id DESC";
 
 		$rs = Core::Database()->Query($q);
 
@@ -75,7 +75,7 @@ class Module_Car extends ModuleApp {
 
 			while ($r = $rs->fetch_assoc()) {
 
-				$data[$r['id']] = $r;
+				$data[$r['log_id']] = $r;
 
 			}
 		}
@@ -87,7 +87,10 @@ class Module_Car extends ModuleApp {
 		
 		$data = array();
 		
-		$q = "SELECT type_id, type_name FROM r_car_log_types ORDER BY type_id ASC";
+		$q = "SELECT M.cost_type_id, D.cost_type_title 
+				FROM r_car_cost_types_main AS M
+				LEFT JOIN r_car_cost_types_details AS D ON (D.cost_type_id = M.cost_type_id AND D.i18n_locale = 'ro_RO.UTF8')
+				ORDER BY M.cost_type_id ASC";
 		
 		$rs = Core::Database()->Query($q);
 		
@@ -97,8 +100,7 @@ class Module_Car extends ModuleApp {
 		
 			while ($r = $rs->fetch_assoc()) {
 		
-				$data[$r['type_id']] = $r['type_name'];
-		
+				$data[$r['cost_type_id']] = $r['cost_type_title'];
 			}
 		}
 		
@@ -107,7 +109,9 @@ class Module_Car extends ModuleApp {
 	
 	public function GetStatsLastUpdate($carId) {
 	
-		$q = "SELECT MAX(day) AS latest FROM r_car_log WHERE car_id = '{$carId}'";
+		$q = "SELECT MAX(log_date_start) AS latest
+				FROM r_car_log_main
+				WHERE car_id = '{$carId}'";
 	
 		$rs = Core::Database()->Query($q);
 	
@@ -141,10 +145,10 @@ class Module_Car extends ModuleApp {
 	public function GetStatsDistance($carId, $startDay, $endDay = NULL) {
 
 		$end_day = !empty($endDay) ? $endDay : date('Y-m-d');
-
-		$q = "SELECT (MAX(km) - MIN(km)) AS distance
-				FROM r_car_log
-				WHERE car_id = '{$carId}' AND km > 0 AND day BETWEEN '{$startDay}' AND '{$end_day}'";
+		
+		$q = "SELECT (MAX(log_km) - MIN(log_km)) AS distance
+				FROM r_car_log_main	
+				WHERE car_id = '{$carId}' AND log_km > 0 AND log_date_start BETWEEN '{$startDay}' AND '{$end_day}'";
 
 		$rs = Core::Database()->Query($q);
 
@@ -160,13 +164,14 @@ class Module_Car extends ModuleApp {
 		return 0;
 	}
 
-	public function GetStatsFuelVolume($carId, $startDay, $endDay = NULL) {
+	public function GetStatsFuelVolume($carId, $startDay, $endDay = NULL, $fuelInTank = 0) {
 
 		$end_day = !empty($endDay) ? $endDay : date('Y-m-d');
-
-		$q = "SELECT SUM(qty)
-				FROM r_car_log
-				WHERE car_id = '{$carId}' AND day BETWEEN '{$startDay}' AND '{$end_day}' AND type = '1'";
+		
+		$q = "SELECT (SUM(D.cost_quantity) - {$fuelInTank})
+				FROM r_car_log_main AS M
+				LEFT JOIN r_car_log_costs_main AS D ON (D.log_id = M.log_id)
+				WHERE M.car_id = '{$carId}' AND M.log_date_start BETWEEN '{$startDay}' AND '{$end_day}' AND D.cost_type_id = '1'";
 
 		$rs = Core::Database()->Query($q);
 
@@ -194,9 +199,14 @@ class Module_Car extends ModuleApp {
 		$distance = $this->GetStatsDistance($carId, $startDay, $end_day);
 
 		$q = "SELECT ROUND(
-				SUM(cost) / ({$distance}), 
-				2) as cost_per_km 
-			FROM r_car_log WHERE car_id = '{$carId}' AND day BETWEEN '{$startDay}' AND '{$end_day}'";
+				SUM(cost_total) / 
+				(
+					{$distance}
+				), 
+				2) as cost_per_km
+			FROM r_car_log_main AS M
+			LEFT JOIN r_car_log_costs_main AS D ON (D.log_id = M.log_id)
+			WHERE M.car_id = '{$carId}' AND M.log_date_start BETWEEN '{$startDay}' AND '{$end_day}'";
 
 		$rs = Core::Database()->Query($q);
 
@@ -217,10 +227,11 @@ class Module_Car extends ModuleApp {
 		$end_day = !empty($endDay) ? $endDay : date('Y-m-d');
 		
 		$q = "SELECT ROUND(
-				SUM(cost) / TIMESTAMPDIFF(MONTH, '{$startDay}', '{$end_day}')
+					SUM(D.cost_total) / TIMESTAMPDIFF(MONTH, '{$startDay}', '{$end_day}')
 				, 2) as cost_per_month 
-				FROM r_car_log
-				WHERE car_id = '{$carId}' AND day BETWEEN '{$startDay}' AND '{$end_day}'";
+				FROM r_car_log_main AS M
+				LEFT JOIN r_car_log_costs_main AS D ON (D.log_id = M.log_id)
+				WHERE M.car_id = '{$carId}' AND M.log_date_start BETWEEN '{$startDay}' AND '{$end_day}'";
 		
 		$rs = Core::Database()->Query($q);
 		
@@ -240,9 +251,10 @@ class Module_Car extends ModuleApp {
 		
 		$end_day = !empty($endDay) ? $endDay : date('Y-m-d');
 		
-		$q = "SELECT SUM(cost) AS total
-				FROM r_car_log
-				WHERE car_id = '{$carId}' AND day BETWEEN '{$startDay}' AND '{$end_day}'";
+		$q = "SELECT SUM(cost_total) AS total
+				FROM r_car_log_main AS M
+				LEFT JOIN r_car_log_costs_main AS D ON (D.log_id = M.log_id)
+				WHERE M.car_id = '{$carId}' AND M.log_date_start BETWEEN '{$startDay}' AND '{$end_day}'";
 		
 		$rs = Core::Database()->Query($q);
 		
@@ -260,9 +272,10 @@ class Module_Car extends ModuleApp {
 
 	public function GetStatsCostPrevious($carId, $startDay) {
 		
-		$q = "SELECT SUM(cost) AS total
-				FROM r_car_log
-				WHERE car_id = '{$carId}' AND day < '{$startDay}'";
+		$q = "SELECT SUM(cost_total) AS total
+				FROM r_car_log_main AS M
+				LEFT JOIN r_car_log_costs_main AS D ON (D.log_id = M.log_id)
+				WHERE M.car_id = '{$carId}' AND log_date_start < '{$startDay}'";
 		
 		$rs = Core::Database()->Query($q);
 		
@@ -282,9 +295,10 @@ class Module_Car extends ModuleApp {
 		
 		$end_day = !empty($endDay) ? $endDay : date('Y-m-d');
 		
-		$q = "SELECT SUM(cost) AS total
-				FROM r_car_log
-				WHERE car_id = '{$carId}' AND day BETWEEN '{$startDay}' AND '{$end_day}' AND type = '{$costType}'";
+		$q = "SELECT SUM(cost_total) AS total
+				FROM r_car_log_main AS M
+				LEFT JOIN r_car_log_costs_main AS D ON (D.log_id = M.log_id)
+				WHERE M.car_id = '{$carId}' AND M.log_date_start BETWEEN '{$startDay}' AND '{$end_day}' AND D.cost_type_id = '{$costType}'";
 		
 		$rs = Core::Database()->Query($q);
 		

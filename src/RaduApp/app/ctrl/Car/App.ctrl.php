@@ -56,6 +56,10 @@ class Controller_Car_App extends ControllerApp {
 				$data['car_id'] = !empty($this->_mRequest['query']['id']) ? $this->_mRequest['query']['id'] : 0;
 
 				$data['car_info'] = $this->Module()->GetCarInfo($data['car_id']);
+				
+				$data['carmenu_id'] = 1;
+				
+				$data['carmenu'] = $this->Output()->Out('Car/carmenu', $data);
 
 			} else {
 
@@ -100,7 +104,7 @@ class Controller_Car_App extends ControllerApp {
 					
 					$data['stats']['distance'] = $this->Module()->GetStatsDistance($data['car_id'], $data['car_info']['car_owner_date'], $data['current_date']);
 					
-					$data['stats']['fuel_volume'] = $this->Module()->GetStatsFuelVolume($data['car_id'], $data['car_info']['car_owner_date'], $data['current_date']);
+					$data['stats']['fuel_volume'] = $this->Module()->GetStatsFuelVolume($data['car_id'], $data['car_info']['car_owner_date'], $data['current_date'], $data['car_info']['car_fuel_tank']);
 					
 					$data['stats']['fuel_consumption'] = $this->Module()->GetStatsFuelConsumption($data['stats']['distance'], $data['stats']['fuel_volume']);
 					
@@ -118,6 +122,10 @@ class Controller_Car_App extends ControllerApp {
 						$data['stats']['cost'][$type_name] = $this->Module()->GetStatsCost($data['car_id'], $data['car_info']['car_owner_date'], $data['current_date'], $type_id);
 					}
 				}
+				
+				$data['carmenu_id'] = 4;
+				
+				$data['carmenu'] = $this->Output()->Out('Car/carmenu', $data);
 
 			} else {
 
@@ -151,6 +159,10 @@ class Controller_Car_App extends ControllerApp {
 				$data['car_id'] = !empty($this->_mRequest['query']['id']) ? $this->_mRequest['query']['id'] : 0;
 
 				$data['log'] = $this->Module()->GetCarLog($data['car_id']);
+				
+				$data['carmenu_id'] = 3;
+				
+				$data['carmenu'] = $this->Output()->Out('Car/carmenu', $data);
 
 			} else {
 
@@ -166,6 +178,44 @@ class Controller_Car_App extends ControllerApp {
 
 		return TRUE;
 
+	}
+	
+	public function LogPublic() {
+	
+		$this->InitController();
+	
+		$data = $this->Module()->GetDefaultData($this->_mRequest);
+	
+		$data['title'] = 'Car log';
+	
+		Core::User()->Init();
+	
+		if (Core::User()->IsLogged())
+		{
+			if (Core::Acl()->Check(Core::User()->mProp['list']['user_id'], $data['resource'])) {
+	
+				$data['car_id'] = !empty($this->_mRequest['query']['id']) ? $this->_mRequest['query']['id'] : 0;
+	
+				$data['log'] = $this->Module()->GetCarLog($data['car_id']);
+				
+				$data['carmenu_id'] = 2;
+				
+				$data['carmenu'] = $this->Output()->Out('Car/carmenu', $data);
+	
+			} else {
+	
+				$data['error_message'] = 'Error: You don\'t have permission to access this resource.';
+			}
+	
+		} else {
+	
+			$data['error_message'] = 'Error: You have to be logged in in order to access this resource.';
+		}
+	
+		echo $this->GetOutput($data);
+	
+		return TRUE;
+	
 	}
 }
 ?>
