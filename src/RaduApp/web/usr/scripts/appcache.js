@@ -61,7 +61,7 @@ function checkNetworkStatus() {
             },
             timeout: 5000,
             type: "GET",
-            url: "./usr/scripts/ping.js"
+            url: url_ping_js
         });
         $.ajax();
     }

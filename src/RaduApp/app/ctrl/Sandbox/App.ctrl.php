@@ -50,7 +50,7 @@ class Controller_Sandbox_App extends ControllerApp {
 		$data['message'] = 'Sandbox';
 		
 		$data['section_id'] = 2;
-	
+		
 		echo $this->GetOutput($data, 'display');
 	
 		return TRUE;

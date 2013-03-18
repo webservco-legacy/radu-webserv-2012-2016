@@ -5,12 +5,12 @@
 	<!-- Development Environment -->
 	<dev>
 		<path>
-			<core>/home/radu/Projects/wsWEb/src/WEb/</core>
-			<app>/home/radu/Projects/wsRadu/src/RaduApp/app/</app>
-			<www>/home/radu/Projects/wsRadu/src/RaduApp/web/</www>
+			<core>/home/radu/Projects/Eclipse/ws_WEb/src/WEb/</core>
+			<app>/home/radu/Projects/Eclipse/ws_Radu/src/RaduApp/app/</app>
+			<www>/home/radu/Projects/Eclipse/ws_Radu/src/RaduApp/web/</www>
 		</path>
 		<url>
-			<app>http://192.168.1.64/radu/</app>
+			<app>http://192.168.1.80/radu/</app>
 		</url>
 	</dev>
 	<!-- Test Environment -->

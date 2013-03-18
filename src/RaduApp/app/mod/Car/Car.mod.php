@@ -39,8 +39,8 @@ class Module_Car extends ModuleApp {
 
 	public function GetCarInfo($carId) {
 
-		$q = "SELECT U.user_nickname AS car_owner, C.car_name, C.car_make, C.car_model, YEAR(C.car_factory_date) AS car_year, C.car_factory_date, C.car_owner_date, C.car_notes
-				FROM r_car_settings AS C
+		$q = "SELECT U.user_nickname AS car_owner, C.car_name, C.car_make, C.car_model, YEAR(C.car_factory_date) AS car_year, C.car_factory_date, C.car_owner_date
+				FROM r_car_main AS C
 				LEFT JOIN r_acl_users AS U ON (U.user_id = C.user_id)
 				WHERE C.car_id = '{$carId}' LIMIT 1";
 

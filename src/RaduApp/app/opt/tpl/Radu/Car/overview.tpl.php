@@ -34,7 +34,6 @@
 
 		<ul>
 			<li><strong>Owner:</strong> <?php echo $car_info['car_owner']; ?></li>
-			<li><strong>Notes:</strong> <?php echo $car_info['car_notes']; ?></li>
 		</ul>
 		
 	<?php } else { ?>

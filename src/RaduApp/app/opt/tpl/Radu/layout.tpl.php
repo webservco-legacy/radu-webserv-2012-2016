@@ -9,64 +9,34 @@
  * @license    http://www.opensource.org/licenses/bsd-license.php
  */
 ?>
-<!doctype html>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<?php echo $lang; ?>"<?php if ($appcache) { echo " manifest=\"{$url_app}cache.appcache\"";} ?>> <!--<![endif]-->
+    <head>
+    
+    	<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title><?php echo !empty($title) ? "{$title} - {$title_app}" : $title_app; ?></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
 
-<html class="no-js" lang="<?php echo $lang; ?>" dir="ltr"<?php if ($appcache) { ?> manifest="<?php echo $url_app; ?>cache.appcache"<?php } ?>>
-
-	<head>
-		
-		<meta charset="utf-8" />
-
-		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-		
-		<title><?php echo !empty($title) ? "{$title} - {$title_app}" : $title_app; ?></title>
-		
-		<meta name="description" content="" />
-		<meta name="author" content="Radu Maier" />
-		<meta name="keywords" content="" />
-		
-		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320">
-		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;">
-		
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $url_skin; ?>img/apple-touch-icon-114x114-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $url_skin; ?>img/apple-touch-icon-72x72-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" href="<?php echo $url_skin; ?>img/apple-touch-icon-precomposed.png">
-		<link rel="shortcut icon" href="<?php echo $url_skin; ?>img/apple-touch-icon-precomposed.png">
-		
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-		<script>
-		//if (window.navigator.standalone != true) {
-			(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")
-		//}
-		</script>
-
-		<link rel="apple-touch-startup-image" href="<?php echo $url_skin; ?>img/splash.png">
-		
-		<meta property="og:title" content="<?php echo $title_app; ?>" />
-		<meta property="og:description" content="" />
-		<meta property="og:image" content="<?php echo $url_skin; ?>img/apple-touch-icon-precomposed.png" />
-		
-		<meta http-equiv="cleartype" content="on">
-		
-		<link rel="stylesheet" media="all" href="<?php echo $url_skin; ?>css/style.css" />
-		
-<?php if (!empty($photoswipe)) { ?>
-		<link rel="stylesheet" media="all" href="<?php echo $url_skin; ?>css/photoswipe.css" />
-<?php } ?>
-
-		<link rel="stylesheet" media="all" href="<?php echo $url_skin; ?>css/prettify.css" />
+        <link rel="stylesheet" href="<?php echo $url_skin; ?>css/normalize.css">
+        <link rel="stylesheet" href="<?php echo $url_skin; ?>css/main.css">
+        
+        <link rel="stylesheet" media="all" href="<?php echo $url_skin; ?>css/prettify.css" />
 		<link rel="stylesheet" media="all" href="<?php echo $url_skin; ?>css/prettify-desert.css" />
 		
-		<script src="<?php echo $url_scripts; ?>lib/modernizr-custom.js"></script>
-		
-		<script>Modernizr.mq('(min-width:0)') || document.write('<script src="<?php echo $url_scripts; ?>lib/respond.min.js">\x3C/script>')</script>
-		
+        <script src="<?php echo $url_scripts; ?>vendor/modernizr-2.6.2.min.js"></script>
+    
 	</head>
 	
-	<body onload="prettyPrint()">
+	<body>
+	
+		<!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
 	
 		<section id="layout">
 		
@@ -122,38 +92,40 @@
 			</footer>
 		
 		</section>
-	
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="<?php echo $url_scripts; ?>lib/jquery-1.7.1.min.js"><\/script>')</script>
-  
-		<script src="<?php echo $url_scripts; ?>lib/helper.js"></script>
 		
-		<script>
-		MBP.scaleFix();
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="<?php echo $url_scripts; ?>vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        
+        <script src="<?php echo $url_scripts; ?>vendor/prettify/prettify.js"></script>
+        
+        <script src="<?php echo $url_scripts; ?>plugins.js"></script>
+        <script src="<?php echo $url_scripts; ?>main.js"></script>
+        
+        <?php if ($appcache) { ?>
+		<script src="<?php echo $url_scripts; ?>appcache.js"></script>
+		<?php } ?>
+		
+		<script type="text/javascript">
+
+		<?php if ($appcache) { ?>
+		var url_ping_js = "<?php echo $url_scripts; ?>ping.js";
+		<?php } ?>
+		
+		prettyPrint();
+		
 		</script>
-		
-		<script src="<?php echo $url_scripts; ?>lib/prettify/prettify.js"></script>
-		
-		<script defer src="<?php echo $url_scripts; ?>script.js"></script>
-		<script defer src="<?php echo $url_scripts; ?>appcache.js"></script>
-		
-<?php if (!empty($photoswipe)) { ?>
-		<script src="<?php echo $url_scripts; ?>lib/klass.min.js"></script>
-		<script src="<?php echo $url_scripts; ?>lib/code.photoswipe.jquery-3.0.4.min.js"></script>
-		<script type="text/javascript"> 
-		//<![CDATA[ 
-		$(document).ready(function() {
-			var myPhotoSwipe = $(".images a").photoSwipe({ enableMouseWheel: false , enableKeyboard: false});
-		});
-		//]]> 
-		</script>
-<?php } ?>
-	
-		<!--[if lt IE 7 ]>
-		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-		<![endif]-->
-		
+       
+        
+        <?php /* ?>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+        <?php */ ?>
+        
 	</body>
 	
 </html>
