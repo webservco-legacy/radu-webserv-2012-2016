@@ -104,14 +104,7 @@
 						<required>1</required>
 						<conditions>IsAlphanumeric|HasLengthMin[6]|HasLengthMax[20]</conditions>
 					</password>
-					<captcha>
-						<type>text</type>
-						<title>Security Code</title>
-						<description>Enter the code you see in the picture</description>
-						<required>1</required>
-						<filters>RemoveBadChars</filters>
-						<conditions>MatchesCaptcha</conditions>
-					</captcha>
+					
 					<remember>
 						<type>checkbox</type>
 						<title>Remember me</title>
