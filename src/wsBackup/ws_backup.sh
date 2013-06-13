@@ -9,10 +9,10 @@ P_PATH="$(dirname $(readlink -f $0))/"
 echo -n "${P_NAME}: "
 date "+%Y-%m-%d %H:%M:%S"
 
-# check if configuration fiel is set
+# check if configuration file is set
 if [ "$1" != "" ]; then
 	
-	# check if configuration fiel exists
+	# check if configuration file exists
 	if [ -f "${P_PATH}config/$1.sh" ]; then
 		
 		# check if backup_type is set
