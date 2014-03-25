@@ -1,0 +1,152 @@
+html,body {
+	text-align: center;
+	font-size: 0.9em;
+	line-height: 1.4;
+	background: #333 url('../img/background.jpg') 0px 0px repeat;
+	color: #ccc;
+}
+
+a, a:visited {
+	color: #ccc;
+	text-decoration: none;
+	border-bottom: 1px dotted #ccc;
+}
+
+a:hover {
+	color: #98FB98;
+	border-bottom: 1px dotted #ccc;
+}
+
+h1 {
+	margin: 0.1em 0;
+}
+
+article {
+	width: 1110px;
+	height: auto;
+	margin: 0 auto;
+}
+
+#main {
+	float: left;
+	display: inline;
+	width: 1104px;
+	height: auto;
+	border: 1px solid #333;
+	position: relative;
+}
+
+#legend {
+	float: right;
+	display: inline;
+	width: 220px;
+	height: 670px;
+	overflow: auto;
+	margin: 0;
+	padding: 0;
+}
+
+#map {
+	float: left;
+	display: inline;
+	width: 880px;
+	height: 500px;
+	margin: 0;
+	padding: 0;
+}
+
+#help_btn {
+	float: right;
+	display: inline;
+	width: auto;
+	margin: 5px 15px 0 0 ;
+	font-size: 1em;
+	font-weight: bold;
+	border-bottom: 1px dotted #ccc;
+	cursor: help;
+}
+
+a#ws_btn {
+	float: right;
+	display: inline;
+	width: auto;
+	margin: 5px 15px 0 0 ;
+	font-size: 1em;
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom: 1px dotted #ccc;
+}
+
+a#ws_btn:hover {
+	border: 0;
+}	
+
+#help {
+	position: absolute;
+	top: 0px;
+	left: 5px;
+	width: 870px;
+	height: 495px;
+	background: #333 url('../img/background.jpg') 0px 0px repeat;
+	border: 2px dashed #ccc;
+	z-index: 2;
+	display: none;
+}
+
+#help h2, #help p {
+	margin: 5px;
+}
+
+#details {
+	float: left;
+	display: inline;
+	width: 870px;
+	height: auto;
+	margin: 5px 0 0 10px;
+	text-align: left;
+}
+
+.cover {
+	float: left;
+	display: inline;
+	width: 160px;
+}
+
+.info {
+	float: left;
+	display: inline;
+	width: auto;
+}
+
+.info p {
+	margin-top: 0px;
+}
+
+#legend table.google-visualization-table-table,
+#legend .google-visualization-table-th,
+#legend .google-visualization-table-tr-head,
+#legend .google-visualization-table-tr-head td,
+#legend .google-visualization-table-tr-over,
+#legend .google-visualization-table-tr,
+#legend .google-visualization-table-tr-odd,
+#legend .google-visualization-table-tr-odd td,
+#legend .google-visualization-table-tr-even,
+#legend .google-visualization-table-tr-even td,
+#legend .google-visualization-table-tr-head td,
+#legend .google-visualization-table-tr-over td,
+#legend .google-visualization-table-tr td {
+    background-color: #333;
+    color: #ccc;
+}
+
+#legend .google-visualization-table-tr-odd td, #legend .google-visualization-table-tr-even td {
+	border: 1px dotted #ccc;
+}
+
+#legend .google-visualization-table-tr-sel td {
+	background: #222;
+}
+
+#legend .google-visualization-table-tr-head {
+	display: none;
+}
