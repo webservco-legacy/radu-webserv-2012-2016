@@ -27,8 +27,8 @@
 	<!-- Production Environment -->
 	<prod>
 		<path>
-			<core>/var/www/radu.webserv.co/opt/WEb/</core>
-			<app>/var/www/radu.webserv.co/opt/RaduApp/app/</app>
+			<core>/var/www/radu.webserv.co/private/WEb/</core>
+			<app>/var/www/radu.webserv.co/private/RaduApp/app/</app>
 			<www>/var/www/radu.webserv.co/web/</www>
 		</path>
 		<url>
