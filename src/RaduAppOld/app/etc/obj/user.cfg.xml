@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Configuration -->
+<config>
+	<!-- Development Environment -->
+	<dev>
+		<!-- User object settings -->
+		<user>
+			<login>
+				<!-- Failed logins timeout (minutes) -->
+				<timeout>5</timeout>
+				<!-- Maximum failed login attempts permitted -->
+				<attempts>10</attempts>
+				<!-- Time after which the user is considered logged out -->
+				<time>3</time>
+				<!-- Time after which the user is considered offline (minutes) -->
+				<offline>3</offline>
+			</login>
+		</user>
+	</dev>
+	<!-- Test Environment -->
+	<test>
+		<!-- User object settings -->
+		<user>
+			<login>
+				<!-- Failed logins timeout (minutes) -->
+				<timeout>5</timeout>
+				<!-- Maximum failed login attempts permitted -->
+				<attempts>10</attempts>
+				<!-- Time after which the user is considered logged out -->
+				<time>3</time>
+				<!-- Time after which the user is considered offline (minutes) -->
+				<offline>3</offline>
+			</login>
+		</user>
+	</test>
+	<!-- Production Environment -->
+	<prod>
+		<!-- User object settings -->
+		<user>
+			<login>
+				<!-- Failed logins timeout (minutes) -->
+				<timeout>5</timeout>
+				<!-- Maximum failed login attempts permitted -->
+				<attempts>10</attempts>
+				<!-- Time after which the user is considered logged out -->
+				<time>3</time>
+				<!-- Time after which the user is considered offline (minutes) -->
+				<offline>3</offline>
+			</login>
+		</user>
+	</prod>
+</config>
+<!-- $Id$ -->

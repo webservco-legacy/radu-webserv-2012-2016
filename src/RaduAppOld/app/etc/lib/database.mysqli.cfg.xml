@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Configuration -->
+<config>
+	<!-- Development Environment -->
+	<dev>
+		<!-- Database configuration -->
+		<database>
+			<host>localhost</host>
+			<port>3306</port>
+			<user>c1_radu_usr</user>
+			<password>REDACTED</password>
+			<database>c1_radu</database>
+			<!-- Fix GROUP_CONCAT limit? -->
+			<fix_gc>1</fix_gc>
+		</database>
+	</dev>
+	<!-- Test Environment -->
+	<test>
+		<!-- Database configuration -->
+		<database>
+			<host>localhost</host>
+			<port>3306</port>
+			<user>c1_radu_usr</user>
+			<password>REDACTED</password>
+			<database>c1_radu</database>
+			<!-- Fix GROUP_CONCAT limit? -->
+			<fix_gc>1</fix_gc>
+		</database>
+	</test>
+	<!-- Production Environment -->
+	<prod>
+		<!-- Database configuration -->
+		<database>
+			<host>localhost</host>
+			<port>3306</port>
+			<user>c1_radu_usr</user>
+			<password>REDACTED</password>
+			<database>c1_radu</database>
+			<!-- Fix GROUP_CONCAT limit? -->
+			<fix_gc>1</fix_gc>
+		</database>
+	</prod>
+</config>
+<!-- $Id$ -->
