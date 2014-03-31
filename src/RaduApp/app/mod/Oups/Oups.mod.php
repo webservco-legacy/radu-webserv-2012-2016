@@ -1,0 +1,40 @@
+<?php
+/**
+ * $Id: Oups.mod.php 130 2013-09-14 18:11:22Z radu $
+ *
+ * Oups module.
+ *
+ * @author     Radu Maier <radu@webserv.co>
+ * @copyright  Copyright (c) 2013, Radu Maier
+ * @license    http://www.opensource.org/licenses/bsd-license.php
+ * @package    DefaultApp
+ * @subpackage OupsModule
+ * @version    $Revision: 130 $
+ * @since      Version 1
+ * @access     public
+ * @filesource
+ */
+
+/**
+ * Security check.
+ */
+if (!defined('_WEB')) {
+	/**
+	 * Stop script execution.
+	 */
+	exit();
+}
+
+/**
+ * Module_Oups
+ *
+ * Model class for Oups module.
+ *
+ * @author     Radu Maier <radu@webserv.co>
+ * @package    DefaultApp
+ * @subpackage OupsModule
+ *
+ */
+class Module_Oups extends ModuleApp {
+}
+?>

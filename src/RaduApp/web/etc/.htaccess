@@ -1,0 +1,6 @@
+# $Id: .htaccess 25 2013-07-05 15:59:40Z radu $
+
+# This directory is not web-accessible.
+Order deny,allow
+Deny from all
+Satisfy All

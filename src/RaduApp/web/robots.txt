@@ -1,0 +1,14 @@
+# $Id: robots.txt 25 2013-07-05 15:59:40Z radu $
+User-Agent: *
+Allow: /
+Disallow: /ctrl/
+Disallow: /etc/
+Disallow: /i18n/
+Disallow: /int/
+Disallow: /lib/
+Disallow: /mod/
+Disallow: /opt/
+Disallow: /sys/
+Disallow: /tmp/
+Disallow: /var/
+Disallow: /usr/
