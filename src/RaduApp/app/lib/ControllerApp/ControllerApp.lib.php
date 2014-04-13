@@ -36,6 +36,13 @@ if (!defined('_WEB')) {
 class ControllerApp extends Controller {
 
 	/**
+	 * Comments library object.
+	 *
+	 * @var mixed
+	 */
+	private $_mComments = NULL;
+
+	/**
 	 * Controller initialization.
 	 *
 	 * @return bool
@@ -235,6 +242,47 @@ class ControllerApp extends Controller {
 		echo $this->GetOutput($data);
 		
 		return TRUE;
+	}
+
+	public function Comments() {
+
+		if (NULL == $this->_mComments) {
+			
+			$this->_mComments = Core::Get('Library_Comments');
+			
+			$app_prefix = Core::Config()->Get('app.prefix');
+			
+			$this->_mComments->Init($app_prefix);
+		}
+		
+		return $this->_mComments;
+	}
+
+	public function GetComments($commentType, $itemId, $data) {
+
+		$comments['show'] = TRUE;
+		
+		$comments['list'] = $this->Comments()->GetList($commentType, $itemId);
+		
+		$comments['next'] = Core::String()->EncodeUrlString("{$data['info']['location']}{$data['info']['path']}");
+		
+		$comments['id'] = NULL;
+		
+		if (!empty($data['user']['Logged'])) {
+			
+			$comments['id'] = !empty($data['query']['comment']) ? $data['query']['comment'] : NULL;
+		}
+		
+		if (!empty($_SESSION['Comments']['added'])) {
+			
+			$comments['message'] = __('Thank you, your comment was received and will be published shortly');
+			
+			unset($_SESSION['Comments']['added']);
+		}
+		
+		$comments['form'] = $this->Comments()->GetForm('user', $commentType, $itemId, $comments['id'], "{$data['url']['current']}#comments"); // XXX
+		
+		return $comments;
 	}
 }
 ?>

@@ -494,11 +494,6 @@ class Module_Users extends ModuleApp {
 		
 		$departments = Core::Geo()->GetDepartments('IT');
 		
-		if (!empty($departments)) {
-			
-			Core::Form()->SetMeta('department', 'options', $departments);
-		}
-		
 		$countries = Core::Geo()->GetCountries();
 		
 		if (!empty($countries)) {

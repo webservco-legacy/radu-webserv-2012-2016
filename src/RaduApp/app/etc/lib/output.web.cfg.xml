@@ -46,6 +46,7 @@
 				<item>right</item>
 				<item>footer</item>
 				<item>scripts</item>
+				<item>comments</item>
 			</templates_extra>
 			<extension>.tpl.php</extension>
 		</output>

@@ -1,4 +1,6 @@
 <article>
+
+	<section class="box_border_round">
 		
 <?php if (!empty($user['Logged'])) { ?>
 
@@ -17,5 +19,7 @@
 		
 		<p><?php echo $strings['no_data']; ?></p>
 <?php } ?>
+
+	</section>
 
 </article>

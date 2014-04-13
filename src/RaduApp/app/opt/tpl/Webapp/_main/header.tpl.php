@@ -10,7 +10,9 @@
 		
 		</article>
 		
-		<h1 id="title"><a href="<?php echo $url['www']; ?>" title="<?php echo $strings['title']; ?>"><span class="tag">&lt;?</span>Radu<span class="tag">_</span>Maier<span class="tag">&gt;</span></a></h1>
+		<h1 id="title"><a href="<?php echo $url['www']; ?>" title="<?php echo $strings['title']; ?>">
+			<span class="tag">&lt;?</span>Radium<span class="tag">_</span>Era<span class="tag">&gt;</span>
+		</a></h1>
 			
 		<nav class="menu">
 		<?php
@@ -24,7 +26,7 @@
 				
 				if (!empty($menu_item['resource'])) {
 					
-					if (0 === strpos($info['location'], $menu_item['resource']) || (empty($info['location']) && '/' == $menu_item['resource'])) {
+					if (Core::String()->StartsWith($menu_item['resource'], $info['location']) || (empty($info['location']) && '/' == $menu_item['resource'])) {
 						$a_class = ' class="active"';	
 					}
 				}
@@ -77,4 +79,12 @@
 		}
 		?>
 		</nav>
+		
+		<?php
+		if (!empty($random_quote)) {
+			echo '<div class="quote">';
+			echo $random_quote;
+			echo '</div>';
+		}
+		?>
 	</header>

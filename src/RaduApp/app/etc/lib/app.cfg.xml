@@ -13,8 +13,10 @@
 	    <!-- Application settings -->
 		<app>
 		    <id></id>
-			<title><![CDATA[ Radu Maier ]]></title>
+			<title><![CDATA[ Radium Era ]]></title>
+			<description>Random thoughts</description>
 			<prefix>r_</prefix>
+			<fb_app_id>289732277851299</fb_app_id>
 		</app>
 		<options>
 		    <multilanguage>1</multilanguage>
@@ -38,17 +40,31 @@
 					<resource>/</resource>
 				</item>
 				<item>
+					<title>Music</title>
+					<link>music</link>
+					<url></url>
+					<resource>music</resource>
+				</item>
+				<item>
+					<title>Sandbox</title>
+					<link>sandbox</link>
+					<url></url>
+					<resource>Sandbox</resource>
+				</item>
+				<item>
 					<title>Account</title>
 					<link>Users/App/Account</link>
 					<url></url>
 					<resource>Users/App/</resource>
 				</item>
+				<!-- 
 				<item>
 					<title>Items</title>
 					<link>Items/App/Items</link>
 					<url></url>
 					<resource>Items/App/</resource>
 				</item>
+				 -->
 				<item>
 					<title>Admin</title>
 					<link>Content/Admin/Home</link>

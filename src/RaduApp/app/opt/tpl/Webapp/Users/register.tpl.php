@@ -1,4 +1,6 @@
 <article>
+
+<section class="box_border_round">
 	
 <?php if (!empty($error_message)) { ?>
 			
@@ -125,5 +127,7 @@
 				
 		
 <?php } ?>
+
+</section>
 	
 </article>

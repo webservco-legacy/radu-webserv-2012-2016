@@ -64,6 +64,25 @@
 			<value>Users/App/Captcha</value>
 		</route>
 		
+		<route>
+			<name>music</name>
+			<value>Music/App/Items</value>
+		</route>
+		
+		<route>
+			<name>music/({num})</name>
+			<value>Music/App/Item/id/$1</value>
+		</route>
+		
+		<route>
+			<name>music/({num})-({any})</name>
+			<value>Music/App/Item/id/$1</value>
+		</route>
+		<route>
+			<name>sandbox</name>
+			<value>Sandbox/App/Sandbox</value>
+		</route>
+		
 	</prod>
 </config>
 <!-- $Id: router.cfg.xml 25 2013-07-05 15:59:40Z radu $ -->

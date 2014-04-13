@@ -4,20 +4,32 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-		<meta charset="utf-8">
+		<meta charset="utf-8" />
 		
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		
-		<title>
-			<?php echo $strings['title']; ?> - <?php echo $strings['title_app']; ?>
-		</title>
+		<title><?php echo $strings['title']; ?> - <?php echo $strings['title_app']; ?></title>
 		
-		<meta name="description" content="">
+		<meta name="description" content="<?php echo $strings['description']; ?>" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
+		<?php
+		if (!empty($fb_meta)) {
+			foreach ($fb_meta as $type => $items) {
+				if (!empty($items)) {
+					foreach ($items as $property => $content) {
+						echo "<meta property=\"{$type}:{$property}\" content=\"{$content}\" />\n\n\t\t";
+					}
+				}
+			}
+		}
+		?>
+		
+		<?php /* USE A SIMPLE RESET INSTEAD ?>
 		<link rel="stylesheet" href="<?php echo $url['skin']; ?>css/normalize.css">
 		<link rel="stylesheet" href="<?php echo $url['skin']; ?>css/main.css">
+		*/ ?>
 
 		<link rel="stylesheet" href="<?php echo $url['skin']; ?>css/layout.css">
 		
@@ -40,10 +52,13 @@
 		
 		<section id="content">
 			<?php echo $tpl_content; ?>
-	
+			
+			<?php echo $tpl_comments; ?>
 		</section>
 		
 		<?php //echo $tpl_right; ?>
+		
+		
 		
 		<?php echo $tpl_footer; ?>
 	

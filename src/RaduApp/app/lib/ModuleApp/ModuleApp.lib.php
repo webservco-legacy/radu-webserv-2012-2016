@@ -40,6 +40,13 @@ class ModuleApp extends Module {
 	public $_mDbExtra = NULL;
 
 	/**
+	 * Comments library object.
+	 *
+	 * @var mixed
+	 */
+	private $_mComments = NULL;
+
+	/**
 	 * Open extra database connection.
 	 *
 	 * Old style MySQL.
@@ -80,6 +87,8 @@ class ModuleApp extends Module {
 		$data = array();
 		
 		$data['title'] = $data['title_app'] = __(Core::Config()->Get('app.title'), 'App');
+		
+		$data['description'] = __(Core::Config()->Get('app.description'), 'App');
 		
 		$data['no_data'] = __('No data to display', 'App');
 		
@@ -147,6 +156,7 @@ class ModuleApp extends Module {
 	 * Values:
 	 * $data['path']['app'] (/full/server/path/to/app/dir/)
 	 * $data['path']['www'] (/full/server/path/to/www/dir/)
+	 * $data['path']['media'] (/full/server/path/to/media/dir/)
 	 *
 	 * Usage:
 	 * Controller: $data['path']['www']
@@ -170,6 +180,7 @@ class ModuleApp extends Module {
 	 *
 	 * Values:
 	 * $data['strings']['title']
+	 * $data['strings']['description']
 	 * $data['strings']['app_title']
 	 * $data['strings']['no_data']
 	 *
@@ -292,7 +303,48 @@ class ModuleApp extends Module {
 		
 		$data['url']['items_admin'] = !empty($data['info']['url_next']) ? "{$data['url']['www']}{$data['info']['url_next']}" : "{$data['url']['www']}Items/Admin/Items";
 		
+		$data['random_quote'] = $this->GetRandomQuote();
+		
+		$data['fb_meta'] = $this->GetFbMeta($data);
+		
 		return $data;
+	}
+
+	public function GetRandomQuote() {
+
+		return 'Is it nice, my precious? Is it juicy? Is it scrumptiously crunchable?';
+	}
+
+	public function GetFbMeta($data) {
+
+		return array(
+				'fb' => array(
+						'app_id' => Core::Config()->Get('app.fb_app_id') 
+				),
+				'og' => array(
+						'type' => 'site', // site, article
+						'title' => $data['strings']['title'],
+						'site_name' => $data['strings']['title_app'],
+						'url' => $data['url']['current'],
+						'description' => Core::Config()->Get('app.description'),
+						'image' => "{$data['url']['www']}apple-touch-icon.png",
+						'locale' => $data['i18n']['langs'][$data['i18n']['lang']] 
+				) 
+		);
+	}
+
+	public function Comments() {
+
+		if (NULL == $this->_mComments) {
+			
+			$this->_mComments = Core::Get('Library_Comments');
+			
+			$app_prefix = Core::Config()->Get('app.prefix');
+			
+			$this->_mComments->Init($app_prefix);
+		}
+		
+		return $this->_mComments;
 	}
 }
 ?>

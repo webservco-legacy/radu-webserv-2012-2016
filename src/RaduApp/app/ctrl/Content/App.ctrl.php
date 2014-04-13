@@ -32,6 +32,9 @@ if (!defined('_WEB')) {
 class Controller_Content_App extends ControllerApp {
 
 	public function Home() {
+		
+		//$this->Init();	$data = $this->Module()->GetData($this->_mRequest);
+		//echo '<pre>'; print_r($data); exit(); //XXX
 
 		/**
 		 * If you need to output static data, just use this:

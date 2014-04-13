@@ -1,4 +1,6 @@
 <article>
+
+	<section class="box_border_round">
 		
 <?php if (!empty($strings['error_message'])) { ?>
 	
@@ -37,11 +39,19 @@
 		
 <?php } ?>
 
+		</section>
+		
+		<section class="box_border_round">
+
 		<p class="clearfix">
 			<?php echo __('Did you forget your password?'); ?>
 			<br />
 			<a href="<?php echo $url['www']; ?>Users/App/ResetPassword" title="<?php echo __('Reset password'); ?>"><?php echo __('Reset password'); ?></a>
 		</p>
+		
+		</section>
+		
+		<section class="box_border_round">
 		
 		<p class="clearfix">
 			<br />
@@ -51,5 +61,7 @@
 			<br />
 			<a href="<?php echo $url['www']; ?>Users/App/Register" title="<?php echo __('Register'); ?>"><?php echo __('Register'); ?></a>
 		</p>
+		
+		</section>
 		
 </article>		

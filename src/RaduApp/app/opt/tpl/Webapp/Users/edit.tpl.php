@@ -1,4 +1,6 @@
 <article>
+
+<section class="box_border_round">
 	
 <?php if (!empty($error_message)) { ?>
 			
@@ -118,5 +120,7 @@
 		<p><?php echo $strings['no_data']; ?></p>		
 		
 <?php } ?>
+
+</section>
 	
 </article>
