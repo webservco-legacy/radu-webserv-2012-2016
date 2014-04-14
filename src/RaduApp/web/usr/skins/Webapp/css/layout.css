@@ -564,8 +564,8 @@ ul.car_stats li {
 .home_box {
 	float: left;
 	display: inline;
-	width: 21%;
-	height: 240px;
+	width: 28%;
+	
 	margin: 10px 10px;
 	padding: 10px 10px 10px 10px !important;
 	overflow: hidden;

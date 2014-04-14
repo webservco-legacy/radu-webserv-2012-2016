@@ -78,6 +78,12 @@
 			<name>music/({num})-({any})</name>
 			<value>Music/App/Item/id/$1</value>
 		</route>
+		
+		<route>
+			<name>trades</name>
+			<value>Trades/App/Tradelist</value>
+		</route>
+		
 		<route>
 			<name>sandbox</name>
 			<value>Sandbox/App/Sandbox</value>

@@ -46,6 +46,12 @@
 					<resource>music</resource>
 				</item>
 				<item>
+					<title>Trades</title>
+					<link>trades</link>
+					<url></url>
+					<resource>trades</resource>
+				</item>
+				<item>
 					<title>Sandbox</title>
 					<link>sandbox</link>
 					<url></url>
