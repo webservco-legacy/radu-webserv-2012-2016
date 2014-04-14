@@ -568,7 +568,7 @@ ul.car_stats li {
 	height: 240px;
 	margin: 10px 10px;
 	padding: 10px 10px 10px 10px !important;
-	oveflow: hidden;
+	overflow: hidden;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -587,5 +587,5 @@ ul.car_stats li {
 	font-size: 1.3em;
 }
 .home_box img {
-	
 	width: 100%;
+}

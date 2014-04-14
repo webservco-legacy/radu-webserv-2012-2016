@@ -47,7 +47,7 @@ echo ${MESSAGE}
 			echo "<a href=\"{$box['url']}\" title=\"{$box['title']}\">";
 				echo "<strong>{$box['title']}</strong>";
 				echo '<br />';
-				echo "<img src=\"{$url['media']}boxes/{$id}.jpg\" />";
+				echo "<img src=\"{$url['media']}boxes/{$id}.jpg\" alt=\"{$box['title']}\" />";
 				echo '<br />';
 				echo $box['description'];
 			echo '</a>';

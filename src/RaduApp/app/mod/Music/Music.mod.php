@@ -77,7 +77,7 @@ class Module_Music extends ModuleApp {
 
 	public function FormatTitle($data) {
 
-		return "{$data['artist']} - {$data['title']} ({$data['year']}, {$data['format']})";
+		return htmlspecialchars("{$data['artist']} - {$data['title']} ({$data['year']}, {$data['format']})");
 	}
 
 	public function FormatSeoTitle($data) {
