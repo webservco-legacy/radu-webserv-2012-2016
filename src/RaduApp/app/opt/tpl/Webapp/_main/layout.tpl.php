@@ -16,8 +16,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<?php
-		if (!empty($fb_meta)) {
-			foreach ($fb_meta as $type => $items) {
+		if (!empty($facebook['meta'])) {
+			foreach ($facebook['meta'] as $type => $items) {
 				if (!empty($items)) {
 					foreach ($items as $property => $content) {
 						echo "<meta property=\"{$type}:{$property}\" content=\"{$content}\" />\n\n\t\t";

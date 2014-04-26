@@ -305,7 +305,7 @@ class ModuleApp extends Module {
 		
 		$data['random_quote'] = $this->GetRandomQuote();
 		
-		$data['fb_meta'] = $this->GetFbMeta($data);
+		$data['facebook']['meta'] = Core::FacebookApi()->GetDefaultMeta($data);
 		
 		return $data;
 	}
@@ -313,24 +313,6 @@ class ModuleApp extends Module {
 	public function GetRandomQuote() {
 
 		return 'Is it nice, my precious? Is it juicy? Is it scrumptiously crunchable?';
-	}
-
-	public function GetFbMeta($data) {
-
-		return array(
-				'fb' => array(
-						'app_id' => Core::Config()->Get('app.fb_app_id') 
-				),
-				'og' => array(
-						'type' => 'site', // site, article
-						'title' => $data['strings']['title'],
-						'site_name' => $data['strings']['title_app'],
-						'url' => $data['url']['current'],
-						'description' => Core::Config()->Get('app.description'),
-						'image' => "{$data['url']['www']}apple-touch-icon.png",
-						'locale' => $data['i18n']['langs'][$data['i18n']['lang']] 
-				) 
-		);
 	}
 
 	public function Comments() {

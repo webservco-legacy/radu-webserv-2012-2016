@@ -3,8 +3,8 @@ echo '<article>';
 
 echo '<section class="box_border_round">';
 echo "<h2>{$strings['title']}</h2>";
-if (!empty($fb_meta['og']['image'])) {
-	echo "<p><img class=\"section_image\" src=\"{$fb_meta['og']['image']}\" title=\"{$strings['title']}\" alt=\"{$strings['title']}\" /></p>";
+if (!empty($facebook['meta']['og']['image'])) {
+	echo "<p><img class=\"section_image\" src=\"{$facebook['meta']['og']['image']}\" title=\"{$strings['title']}\" alt=\"{$strings['title']}\" /></p>";
 }
 echo "<p>{$strings['description']}</p>";
 echo '</section>';

@@ -36,14 +36,12 @@ class Controller_Music_App extends ControllerApp {
 		
 		$data = $this->Module()->GetData($this->_mRequest);
 		
-		$data['strings']['title'] = $data['fb_meta']['og']['title'] = __('Music');
-		$data['strings']['description'] = $data['fb_meta']['og']['description'] = __('Reviews of underground releases.');
+		$data['strings']['title'] = $data['facebook']['meta']['og']['title'] = __('Music');
+		$data['strings']['description'] = $data['facebook']['meta']['og']['description'] = __('Reviews of underground releases.');
 		
-		$data['fb_meta']['og']['image'] = "{$data['url']['media']}music.jpg";
+		$data['facebook']['meta']['og']['image'] = "{$data['url']['media']}music.jpg";
 		
 		$data['items'] = $this->Module()->GetItems($data['url'], $data['path']);
-		
-		// echo '<pre>'; print_r($data); exit(); //XXX
 		
 		echo $this->GetOutput($data);
 		
@@ -60,19 +58,17 @@ class Controller_Music_App extends ControllerApp {
 		
 		$data['item'] = $this->Module()->GetItem($data['item_id'], $data['url'], $data['path']);
 		
-		$data['strings']['title'] = $data['fb_meta']['og']['title'] = $data['item']['review_title'];
-		$data['strings']['description'] = $data['fb_meta']['og']['description'] = $data['item']['review_summary'];
+		$data['strings']['title'] = $data['facebook']['meta']['og']['title'] = $data['item']['review_title'];
+		$data['strings']['description'] = $data['facebook']['meta']['og']['description'] = $data['item']['review_summary'];
 		
 		if (!empty($data['item']['media']['image'])) {
 			
 			$id = key($data['item']['media']['image']);
 			
-			$data['fb_meta']['og']['image'] = $data['item']['media']['image'][$id];
+			$data['facebook']['meta']['og']['image'] = $data['item']['media']['image'][$id];
 		}
 		
 		$data['comments'] = $this->GetComments('music', $data['item_id'], $data);
-		
-		// echo '<pre>'; print_r($data); exit(); //XXX
 		
 		echo $this->GetOutput($data);
 		

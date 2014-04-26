@@ -36,16 +36,14 @@ class Controller_Trades_App extends ControllerApp {
 		
 		$data = $this->Module()->GetData($this->_mRequest);
 		
-		$data['strings']['title'] = $data['fb_meta']['og']['title'] = __('Trades');
-		$data['strings']['description'] = $data['fb_meta']['og']['description'] = __('Looking for vinyl records. Offering records, CDs and fanzines in exchange.');
+		$data['strings']['title'] = $data['facebook']['meta']['og']['title'] = __('Trades');
+		$data['strings']['description'] = $data['facebook']['meta']['og']['description'] = __('Looking for vinyl records. Offering records, CDs and fanzines in exchange.');
 		
-		$data['fb_meta']['og']['image'] = "{$data['url']['media']}trades.jpg";
+		$data['facebook']['meta']['og']['image'] = "{$data['url']['media']}trades.jpg";
 		
 		$data['categories'] = $this->Module()->GetCategories();
 		
 		$data['tradelist'] = $this->Module()->GetTradelist();
-		
-		//echo '<pre>'; print_r($data); exit(); // XXX
 		
 		echo $this->GetOutput($data);
 		
