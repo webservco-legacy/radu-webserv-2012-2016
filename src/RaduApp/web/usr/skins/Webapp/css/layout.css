@@ -60,7 +60,9 @@ table {
 	font-style: normal;
 }
 
-body, button,input,select,textarea {
+/* body instead of html, otherwise bg doesn't cover full page */
+body,button,input,select,textarea {
+	font-size: 1em;
 	background: #333;
 	color: #ccc;
 	font-family: Verdana, Geneva, sans-serif;
@@ -70,7 +72,7 @@ body, button,input,select,textarea {
 
 body {
 	background: #333 url('../img/background.jpg') 0px 0px repeat;
-	font-size: .9em;
+	
 	line-height: 1.7;
 	color: #ccc;
 }
@@ -465,7 +467,7 @@ article h4 {
 	cursor: pointer;
 }
 
-#layout form a.submit {
+#layout form a.submit, #layout a.button {
 	background: transparent;
 	color: #eee;
 	border-radius: 5px;

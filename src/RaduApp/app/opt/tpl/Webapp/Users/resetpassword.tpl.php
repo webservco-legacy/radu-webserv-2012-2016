@@ -1,4 +1,6 @@
 <article>
+
+	<section class="box_border_round">
 	
 		<p><?php echo __('If you forgot your password simply enter the email address you used to register an account and we will send you a new password.'); ?></p>
 		
@@ -50,5 +52,8 @@
 				
 		
 		<?php } ?>
+		
+		
+		</section>
 	
 </article>

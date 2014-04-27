@@ -258,7 +258,6 @@ class ModuleApp extends Module {
 	 * $data['user']['Persistent']
 	 * $data['user']['Prop']['user_id']
 	 * $data['user']['Prop']['user_email']
-	 * $data['user']['Prop']['user_nickname']
 	 * $data['user']['Prop']['user_status']
 	 * + custom user properties
 	 * $data['user']['StatsCurrent']['time']
@@ -312,7 +311,13 @@ class ModuleApp extends Module {
 
 	public function GetRandomQuote() {
 
-		return 'Is it nice, my precious? Is it juicy? Is it scrumptiously crunchable?';
+		$quotes = array(
+				'Is it nice, my precious? Is it juicy? Is it scrumptiously crunchable?',
+				'Eile mit weile.',
+				'Sinistre muze lacustre.' 
+		);
+		
+		return $quotes[array_rand($quotes)];
 	}
 
 	public function Comments() {

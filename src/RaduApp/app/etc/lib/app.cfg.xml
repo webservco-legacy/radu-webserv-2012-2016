@@ -62,21 +62,6 @@
 					<url></url>
 					<resource>Users/App/</resource>
 				</item>
-				<!-- 
-				<item>
-					<title>Items</title>
-					<link>Items/App/Items</link>
-					<url></url>
-					<resource>Items/App/</resource>
-				</item>
-				 -->
-				<item>
-					<title>Admin</title>
-					<link>Content/Admin/Home</link>
-					<url></url>
-					<submenu></submenu>
-					<resource>Admin</resource>
-				</item>
 			</web>
 			<web_admin>
 				<item>

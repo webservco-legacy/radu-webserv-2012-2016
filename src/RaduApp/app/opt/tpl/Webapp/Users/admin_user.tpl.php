@@ -2,7 +2,7 @@
 	<?php
 	if (!empty($item)) {
 		
-		echo "<strong>{$item['user_nickname']}</strong><br />{$item['user_email']}<br />";
+		echo "<strong>{$item['user_name_first']} {$item['user_name_last']}</strong><br />{$item['user_email']}<br />";
 		
 	} else {
 		

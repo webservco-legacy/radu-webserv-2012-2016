@@ -1,12 +1,24 @@
 <article>
 
-	<section class="box_border_round">
+<section class="box_border_round">
 		
 <?php if (!empty($strings['error_message'])) { ?>
 	
 		<p class="strong ko"><?php echo $strings['error_message']; ?></p>
 		
-<?php } else if (!empty($form)) { ?>
+		<?php if (!empty($_SESSION['FacebookApi']['logout_url'])) { ?>
+		<p>
+		<a class="button" href="<?php echo $_SESSION['FacebookApi']['logout_url']; ?>" title="<?php echo __('Facebook logout'); ?>"><?php echo __('Facebook Logout'); ?></a>
+		</p>
+		<?php } ?>
+		
+<?php } ?>
+
+</section>
+
+<section class="box_border_round">
+
+<?php if (!empty($form)) { ?>
 		
 		<form class="login" enctype="multipart/form-data" method="post" action="" autocomplete="off">
 		
@@ -39,9 +51,15 @@
 		
 <?php } ?>
 
-		</section>
+		<p class="clearfix">
+			<?php echo __('or'); ?>
+			<br />
+			<a class="button" href="<?php echo $url['www']; ?>Users/App/FacebookLogin" title="<?php echo __('Facebook login'); ?>"><?php echo __('Facebook Login'); ?></a>
+		</p>
 		
-		<section class="box_border_round">
+</section>
+
+<section class="box_border_round">
 
 		<p class="clearfix">
 			<?php echo __('Did you forget your password?'); ?>
@@ -49,12 +67,7 @@
 			<a href="<?php echo $url['www']; ?>Users/App/ResetPassword" title="<?php echo __('Reset password'); ?>"><?php echo __('Reset password'); ?></a>
 		</p>
 		
-		</section>
-		
-		<section class="box_border_round">
-		
 		<p class="clearfix">
-			<br />
 			<?php echo __('Other options'); ?>:
 			<br />
 			<a href="<?php echo $url['www']; ?>Users/App/Account" title="<?php echo __('Login'); ?>"><?php echo __('Login'); ?></a>
@@ -62,6 +75,6 @@
 			<a href="<?php echo $url['www']; ?>Users/App/Register" title="<?php echo __('Register'); ?>"><?php echo __('Register'); ?></a>
 		</p>
 		
-		</section>
+</section>		
 		
 </article>		

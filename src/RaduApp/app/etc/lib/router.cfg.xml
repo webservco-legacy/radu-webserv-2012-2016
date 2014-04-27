@@ -4,30 +4,6 @@
 <config>
 	<!-- Development Environment -->
 	<dev>
-		<!-- Default configuration -->
-		<router>
-			<default>
-				<module>Content</module>
-				<controller>App</controller>
-				<action>Home</action>
-			</default>
-		</router>
-		
-		<!-- SEO settings -->
-		<seo>
-			<full>1</full>
-			<extension>.html</extension>
-			<extension>.htm</extension>
-			<extension>.appcache</extension>
-		</seo>
-		
-		<!-- Custom routes configuration -->
-		<route>
-			<!-- "index" is the default route. It doesn't have to be the fist one. -->
-			<name>index</name>
-			<value>Content/App/Home</value>
-		</route>
-		
 	</dev>
 	<!-- Test Environment -->
 	<test>
@@ -37,6 +13,9 @@
 	<prod>
 	    <!-- Default configuration -->
 		<router>
+		    <!-- set to 1 to prevent clearing _GET and _REQUEST arrays -->
+			<!-- needed for Facebook API -->
+			<keep_getrequest>1</keep_getrequest>
 			<default>
 				<module>Content</module>
 				<controller>App</controller>

@@ -1,5 +1,7 @@
 <article>
 	
+	<section class="box_border_round">
+	
 		<?php if (!empty($error_message)) { ?>
 			
 			<p class="strong ko"><?php echo $error_message; ?></p>
@@ -84,5 +86,7 @@
 				?>
 		
 		<?php } ?>
+		
+		</section>
 	
 </article>

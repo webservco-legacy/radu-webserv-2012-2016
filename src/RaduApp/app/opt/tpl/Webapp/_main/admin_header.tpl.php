@@ -4,7 +4,7 @@
 	<article>
 
 		<?php if (!empty($user['Logged'])) { ?>
-			<strong><?php echo $user['Prop']['user_nickname']; ?> </strong>
+			<strong><?php echo $user['Prop']['user_name_first']; ?> </strong>
 			&#160;<a href="<?php echo $url['www']; ?>Users/App/Logout" title="<?php echo __('Logout'); ?>"><?php echo __('Logout'); ?> </a>
 			<br /> <i><?php echo __('Administration area'); ?> </i>
 		<?php } else { ?>

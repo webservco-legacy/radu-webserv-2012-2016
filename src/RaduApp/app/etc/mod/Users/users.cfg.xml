@@ -45,7 +45,7 @@
 						<required>1</required>
 						<filters></filters>
 						<conditions></conditions>
-						<content>RO</content>
+						<content></content>
 					</country>
 					<email>
 						<type>text</type>
@@ -75,6 +75,22 @@
 						<content>Register</content>
 					</send>
 				</register>
+				<register_facebook>
+					<country>
+						<type>select</type>
+						<title>Country</title>
+						<description></description>
+						<required>1</required>
+						<filters></filters>
+						<conditions></conditions>
+						<content></content>
+					</country>
+					<send>
+						<type>submit</type>
+						<title></title>
+						<content>Complete registration</content>
+					</send>
+				</register_facebook>
 				<resetpassword>
 					<email>
 						<type>text</type>
