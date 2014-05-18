@@ -2,20 +2,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+	{
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,24 +12,28 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section
+	{
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,blockquote:after,q:before,q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -65,41 +57,51 @@ body,button,input,select,textarea {
 	font-size: 1em;
 	background: #333;
 	color: #ccc;
-	font-family: Verdana, Geneva, sans-serif;
 	font-family: my_underwoodregular, Verdana, Geneva, sans-serif;
 }
 
-
 body {
 	background: #333 url('../img/background.jpg') 0px 0px repeat;
-	
 	line-height: 1.7;
 	color: #ccc;
 }
 
 hr {
-    border: 0;
-    height: 2px;
-    background-image: -webkit-linear-gradient(left, rgba(51,51,51,0), rgba(68,68,68,0.75), rgba(51,51,51,0)); 
-    background-image:    -moz-linear-gradient(left, rgba(51,51,51,0), rgba(68,68,68,0.75), rgba(51,51,51,0)); 
-    background-image:     -ms-linear-gradient(left, rgba(51,51,51,0), rgba(68,68,68,0.75), rgba(51,51,51,0)); 
-    background-image:      -o-linear-gradient(left, rgba(51,51,51,0), rgba(68,68,68,0.75), rgba(51,51,51,0)); 
+	border: 0;
+	height: 2px;
+	background-image: -webkit-linear-gradient(left, rgba(51, 51, 51, 0),
+		rgba(68, 68, 68, 0.75), rgba(51, 51, 51, 0));
+	background-image: -moz-linear-gradient(left, rgba(51, 51, 51, 0),
+		rgba(68, 68, 68, 0.75), rgba(51, 51, 51, 0));
+	background-image: -ms-linear-gradient(left, rgba(51, 51, 51, 0),
+		rgba(68, 68, 68, 0.75), rgba(51, 51, 51, 0));
+	background-image: -o-linear-gradient(left, rgba(51, 51, 51, 0),
+		rgba(68, 68, 68, 0.75), rgba(51, 51, 51, 0));
 }
-
 
 ul {
 	font-size: 1em;
 }
 
-a, a:visited {
+a,a:visited {
 	color: #ccc;
 	text-decoration: none;
-	border-bottom: 1px dotted #ccc;
+	border-bottom: 1px dashed #ccc;
+}
+
+.box_light a, .box_light a:visited {
+	color: #333;
+	text-decoration: none;
+	border-bottom: 1px dashed #333;
 }
 
 a:hover {
-	color: #98FB98;
 	border-bottom: 1px dotted #ccc;
+}
+
+.box_light a:hover {
+	
+	border-bottom: 1px dotted #333;
 }
 
 #layout {
@@ -242,7 +244,7 @@ a:hover {
 }
 
 #layout article { /*text-align: justify;*/
-	clear: both;	
+	clear: both;
 }
 
 #layout article.nopadding {
@@ -251,7 +253,6 @@ a:hover {
 
 #layout article section {
 	clear: both;
-	
 }
 
 #layout .padding-h {
@@ -317,6 +318,12 @@ article h4 {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border: 2px solid #444;
+}
+
+#layout .box_light {
+	/* XXX */
+	background: #ccc url('../img/background_light.jpg') 0px 0px repeat;
+	color: #333;
 }
 
 #layout .back {
@@ -385,10 +392,10 @@ article h4 {
 
 #layout form {
 	
-
 }
 
 #layout form legend {
+	
 }
 
 #layout form label {
@@ -421,7 +428,7 @@ article h4 {
 	padding-left: 10px;
 }
 
-#layout form input, #layout form select, #layout form textarea {
+#layout form input,#layout form select,#layout form textarea {
 	background: transparent;
 	color: #ccc;
 	padding: 5px 3px;
@@ -433,12 +440,11 @@ article h4 {
 
 #layout form select {
 	/*background: #333;*/
-		
+	
 }
 
 #layout form select option {
 	background: #333;
-	
 }
 
 #layout form input[type="text"],#layout form input[type="password"] {
@@ -447,7 +453,7 @@ article h4 {
 	display: inline;
 }
 
-#layout form input.input_small, #layout form select.input_small {
+#layout form input.input_small,#layout form select.input_small {
 	float: left;
 	width: 30px;
 	display: inline;
@@ -461,13 +467,13 @@ article h4 {
 	padding: 0;
 }
 
-#layout form input[type="submit"], #layout form input[type="reset"] {
+#layout form input[type="submit"],#layout form input[type="reset"] {
 	padding: 5px 15px;
 	border: 1px solid #ccc;
 	cursor: pointer;
 }
 
-#layout form a.submit, #layout a.button {
+#layout form a.submit,#layout a.button {
 	background: transparent;
 	color: #eee;
 	border-radius: 5px;
@@ -482,7 +488,8 @@ article h4 {
 }
 
 #layout form input#captcha {
-	background: transparent url('./../../../../captcha.png') no-repeat scroll 2px 4px;
+	background: transparent url('./../../../../captcha.png') no-repeat
+		scroll 2px 4px;
 	text-align: right;
 }
 
@@ -531,11 +538,25 @@ table.car_log td {
 	border-top: 1px dashed #444;
 }
 
-table.car_log td.day {}
-table.car_log td.type {}
-table.car_log td.km {}
-table.car_log td.cost {}
-table.car_log td.notes {}
+table.car_log td.day {
+	
+}
+
+table.car_log td.type {
+	
+}
+
+table.car_log td.km {
+	
+}
+
+table.car_log td.cost {
+	
+}
+
+table.car_log td.notes {
+	
+}
 
 ul.car_stats li {
 	padding: 5px 0;
@@ -567,7 +588,6 @@ ul.car_stats li {
 	float: left;
 	display: inline;
 	width: 28%;
-	
 	margin: 10px 10px;
 	padding: 10px 10px 10px 10px !important;
 	overflow: hidden;
@@ -585,9 +605,9 @@ ul.car_stats li {
 }
 
 .home_box strong {
-	
 	font-size: 1.3em;
 }
+
 .home_box img {
 	width: 100%;
 }

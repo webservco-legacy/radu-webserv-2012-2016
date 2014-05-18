@@ -3,7 +3,7 @@ echo '<article>';
 
 if (!empty($item)) {
 	
-	echo '<section class="box_border_round">';
+	echo '<section class="box_border_round box_light">';
 	
 	echo "<h3>{$item['review_title']}</h3>";
 	

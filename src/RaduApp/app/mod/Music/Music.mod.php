@@ -32,7 +32,10 @@ class Module_Music extends ModuleApp {
 
 		$data = array();
 		
-		$q = "SELECT _id, artist, title, year, format, review, notes, review_date FROM r_music_main ORDER BY review_date DESC";
+		$q = "SELECT _id, artist, title, year, format, review, notes, review_date 
+				FROM r_music_main 
+				WHERE review_status = '1'
+				ORDER BY review_date DESC";
 		
 		$rs = Core::Database()->Query($q);
 		

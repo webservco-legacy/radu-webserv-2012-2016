@@ -13,7 +13,7 @@ if (!empty($tradelist)) {
 	
 	foreach ($tradelist as $category => $items) {
 		
-		echo '<section class="box_border_round">';
+		echo '<section class="box_border_round box_light">';
 		
 		echo "<h3>{$categories[$category]}</h3>";
 		

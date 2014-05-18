@@ -15,7 +15,7 @@ if (!empty($items)) {
 	
 	foreach ($items as $item) {
 		
-		echo '<section class="box_border_round">';
+		echo '<section class="box_border_round box_light">';
 		
 		echo "<h3><a href=\"{$url['www']}music/{$item['_id']}-{$item['review_title_seo']}\" title=\"{$item['review_title']}\">{$item['review_title']}</a></h3>";
 		
