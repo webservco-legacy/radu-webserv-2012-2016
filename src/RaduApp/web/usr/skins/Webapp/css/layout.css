@@ -562,6 +562,10 @@ ul.car_stats li {
 	padding: 5px 0;
 }
 
+.review_link {
+	border: none;
+}
+
 .review_thumb {
 	float: left;
 	display: inline;

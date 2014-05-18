@@ -28,9 +28,13 @@ if (!empty($items)) {
 			echo "</a>";
 		}
 		
+		echo "<a class=\"review_link\" href=\"{$url['www']}music/{$item['_id']}-{$item['review_title_seo']}\" title=\"{$item['review_title']}\">";
 		echo '<div class="review_summary">';
+		
 		echo nl2br($item['review_summary']);
+		
 		echo '</div>';
+		echo '</a>';
 		
 		echo "<a href=\"{$url['www']}music/{$item['_id']}-{$item['review_title_seo']}\" title=\"{$item['review_title']}\">Read on</a>";
 		
