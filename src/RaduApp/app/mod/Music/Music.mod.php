@@ -95,7 +95,7 @@ class Module_Music extends ModuleApp {
 		$title .= '-' . str_replace(' ', '_', trim(str_replace($remove, NULL, Core::String()->RemoveBadChars(str_replace('"', 'inch', $data['format'])))));
 		$title .= '-' . $data['year'];
 		
-		return strtolower(str_replace('__', '_', $title));
+		return mb_strtolower(str_replace('__', '_', $title), 'UTF-8');
 	}
 
 	public function GetMedia($itemId, $url, $path) {
