@@ -30,7 +30,7 @@ if (!empty($item)) {
 	echo '<hr />';
 	
 	echo '<div>';
-	echo '<strong>Review date:</strong> ';
+	echo '<strong>Date:</strong> ';
 	echo ucwords(strftime("%A %e %B '%y", strtotime($item['review_date'])));
 	echo '</div>';
 	
