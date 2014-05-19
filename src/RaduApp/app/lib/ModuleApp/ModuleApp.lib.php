@@ -314,7 +314,8 @@ class ModuleApp extends Module {
 		$quotes = array(
 				'Is it nice, my precious? Is it juicy? Is it scrumptiously crunchable?',
 				'Eile mit weile.',
-				'Sinistre muze lacustre.' 
+				'Sinistre muze lacustre.',
+				'Gimme likkle bass, make me wine up me waist.' 
 		);
 		
 		return $quotes[array_rand($quotes)];
