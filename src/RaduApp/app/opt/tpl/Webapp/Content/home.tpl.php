@@ -8,7 +8,7 @@
 $boxes = array(
 		'music' => array(
 				'title' => 'Music',
-				'description' => 'Thoughts about underground releases.',
+				'description' => 'Underground releases (thoughts).',
 				'url' => 'http://radu.webserv.co/music' 
 		),
 		'trades' => array(

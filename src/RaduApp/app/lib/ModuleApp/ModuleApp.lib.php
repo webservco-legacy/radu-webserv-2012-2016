@@ -316,7 +316,8 @@ class ModuleApp extends Module {
 				'Eile mit weile.',
 				'Sinistre muze lacustre.',
 				'Gimme likkle bass, make me wine up me waist.',
-				'If it\'s done in entertainment, take it as entertainment.' 
+				'If it\'s done in entertainment, take it as entertainment.',
+				'Who says rhyme doesn\'t pay?' 
 		);
 		
 		return $quotes[array_rand($quotes)];
