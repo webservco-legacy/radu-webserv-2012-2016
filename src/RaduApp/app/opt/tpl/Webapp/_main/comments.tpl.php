@@ -3,7 +3,7 @@ if (!empty($comments['show'])) {
 	
 	echo '<article class="comments clearfix">';
 	
-	echo '<section class="box_border_round"><a id="comments"></a>';
+	echo '<section class="box_border_round box_light"><a id="comments"></a>';
 	
 	echo '<h3>' . __('Comments', 'App') . '</h3>';
 	
@@ -26,6 +26,9 @@ if (!empty($comments['show'])) {
 		
 		echo '<hr />';
 	}
+	
+	echo '</section>';
+	echo '<section class="box_border_round">';
 	
 	if (!empty($comments['message'])) {
 		

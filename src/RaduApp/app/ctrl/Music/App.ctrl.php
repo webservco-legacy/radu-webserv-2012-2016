@@ -37,7 +37,7 @@ class Controller_Music_App extends ControllerApp {
 		$data = $this->Module()->GetData($this->_mRequest);
 		
 		$data['strings']['title'] = $data['facebook']['meta']['og']['title'] = __('Music');
-		$data['strings']['description'] = $data['facebook']['meta']['og']['description'] = __('Thoughts about underground releases.');
+		$data['strings']['description'] = $data['facebook']['meta']['og']['description'] = __('Opinions about underground releases.');
 		
 		$data['facebook']['meta']['og']['image'] = "{$data['url']['media']}music.jpg";
 		
