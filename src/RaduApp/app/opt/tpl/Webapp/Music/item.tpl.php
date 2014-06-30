@@ -18,6 +18,15 @@ if (!empty($item)) {
 	echo nl2br($item['review']);
 	echo '</div>';
 	
+	if (!empty($item['label'])) {
+		
+		echo '<hr />';
+		
+		echo '<div>';
+		echo "<strong>Label(s)</strong>: {$item['label']}";
+		echo '</div>';
+	}
+	
 	if (!empty($item['notes'])) {
 		
 		echo '<hr />';
