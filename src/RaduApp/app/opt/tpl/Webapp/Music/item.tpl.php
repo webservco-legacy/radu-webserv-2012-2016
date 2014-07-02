@@ -61,7 +61,7 @@ if (!empty($item)) {
 }
 
 echo '<section class="box_border_round">';
-echo "<a href=\"{$url['www']}music\" title=\"Reviews\">Back to reviews</a>";
+echo "<a href=\"{$url['www']}music\" title=\"Music\">Back to music</a>";
 echo '</section>';
 
 echo '</article>';

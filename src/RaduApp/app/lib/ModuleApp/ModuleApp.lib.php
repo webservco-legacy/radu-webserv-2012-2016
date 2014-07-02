@@ -317,7 +317,10 @@ class ModuleApp extends Module {
 				'Sinistre muze lacustre.',
 				'Gimme likkle bass, make me wine up me waist.',
 				'If it\'s done in entertainment, take it as entertainment.',
-				'Who says rhyme doesn\'t pay?' 
+				'Who says rhyme doesn\'t pay?' ,
+				'Killer wolf out there. As big as a pony but a lot more bloodthirsty.',
+				'Save the creature, kill the girl.',
+				'We will not tolerate intolerance!',
 		);
 		
 		return $quotes[array_rand($quotes)];
