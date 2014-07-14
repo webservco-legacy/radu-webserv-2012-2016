@@ -32,7 +32,7 @@ class Module_Music extends ModuleApp {
 
 		$data = array();
 		
-		$q = "SELECT _id, artist, title, year, format, review, notes, review_date 
+		$q = "SELECT _id, artist, title, year, format, review, notes, review_date, review_type 
 				FROM r_music_main 
 				WHERE review_status = '1'
 				ORDER BY review_date DESC";

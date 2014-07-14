@@ -17,7 +17,18 @@ if (!empty($items)) {
 		
 		echo '<section class="box_border_round box_light">';
 		
-		echo "<h3><a href=\"{$url['www']}music/{$item['_id']}-{$item['review_title_seo']}\" title=\"{$item['review_title']}\">{$item['review_title']}</a></h3>";
+		echo "<h3><a href=\"{$url['www']}music/{$item['_id']}-{$item['review_title_seo']}\" title=\"{$item['review_title']}\">{$item['review_title']}</a>";
+		
+		if (2 == $item['review_type']) {
+				
+			echo '<span class="one_liner">[one-liner]</span>';
+				
+		} else {
+				
+			echo '<span class="snooze_fest">[snooze-fest]</span>';
+		}
+		
+		echo '</h3>';
 		
 		echo '<hr />';
 		
@@ -31,12 +42,16 @@ if (!empty($items)) {
 		echo "<a class=\"review_link\" href=\"{$url['www']}music/{$item['_id']}-{$item['review_title_seo']}\" title=\"{$item['review_title']}\">";
 		echo '<div class="review_summary">';
 		
+		
+		
 		echo nl2br($item['review_summary']);
 		
 		echo '</div>';
 		echo '</a>';
 		
-		echo "<a href=\"{$url['www']}music/{$item['_id']}-{$item['review_title_seo']}\" title=\"{$item['review_title']}\">Read on</a>";
+		echo "<a href=\"{$url['www']}music/{$item['_id']}-{$item['review_title_seo']}\" title=\"{$item['review_title']}\">";
+		echo (1 == $item['review_type']) ? 'Read full article' : 'Details';
+		echo "</a>";
 		
 		echo '</section>';
 	}

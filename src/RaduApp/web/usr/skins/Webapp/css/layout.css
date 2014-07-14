@@ -636,3 +636,23 @@ ul.car_stats li {
 .home_box img {
 	width: 100%;
 }
+
+.one_liner, .snooze_fest {
+	width: auto;
+	
+	padding-left: 10px;
+	
+	font-size: .6em;
+	
+	
+}
+
+.one_liner {
+	
+	color: #900;
+}
+
+.snooze_fest {
+	
+	color: #090;
+}
