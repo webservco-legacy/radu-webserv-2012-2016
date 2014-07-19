@@ -36,7 +36,7 @@ class Module_Trades extends ModuleApp {
 		);
 	}
 
-	public function GetTradelist() {
+	public function GetTradelist($url, $path) {
 
 		$data = array();
 		
@@ -50,10 +50,16 @@ class Module_Trades extends ModuleApp {
 			while ($r = $rs->fetch_assoc()) {
 				
 				$data[$r['category']][$r['_id']] = $r;
+				$data[$r['category']][$r['_id']]['thumb_url'] = $this->GetThumbnail($r['_id'], $url, $path);
 			}
 		}
 		
 		return $data;
+	}
+
+	public function GetThumbnail($itemId, $url, $path) {
+
+		return is_readable("{$path['media']}trades/thumbs/{$itemId}.jpg") ? "{$url['media']}trades/thumbs/{$itemId}.jpg" : "{$url['media']}trades/thumbs/noimage.jpg";
 	}
 }
 ?>

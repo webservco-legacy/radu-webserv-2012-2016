@@ -639,12 +639,8 @@ ul.car_stats li {
 
 .one_liner, .snooze_fest {
 	width: auto;
-	
 	padding-left: 10px;
-	
 	font-size: .6em;
-	
-	
 }
 
 .one_liner {
@@ -655,4 +651,47 @@ ul.car_stats li {
 .snooze_fest {
 	
 	color: #090;
+}
+
+.trade_item_box {
+	float: left;
+	display: inline;
+	width: 28%;
+	min-width: 330px;
+	
+	height: 80px;
+	margin: 10px 10px;
+	padding: 10px 10px 10px 10px !important;
+	overflow: hidden;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 2px solid #444;
+	text-align: left;
+	font-size: .8em;
+	
+	
+}
+
+.trade_item_box a {
+	text-decoration: none;
+	border: 0;
+}
+
+.trade_item_box strong {
+	font-size: 1.1em;
+}
+
+.trade_item_thumb {
+	float: left;
+	display: inline;
+	width: 80px;
+	height: 80px;
+	margin: 0 10px 0 0;
+	text-align: center;
+}
+
+
+.trade_item_thumb img {
+	height: 80px;
 }

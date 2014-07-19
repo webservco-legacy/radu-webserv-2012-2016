@@ -43,7 +43,7 @@ class Controller_Trades_App extends ControllerApp {
 		
 		$data['categories'] = $this->Module()->GetCategories();
 		
-		$data['tradelist'] = $this->Module()->GetTradelist();
+		$data['tradelist'] = $this->Module()->GetTradelist($data['url'], $data['path']);
 		
 		echo $this->GetOutput($data);
 		

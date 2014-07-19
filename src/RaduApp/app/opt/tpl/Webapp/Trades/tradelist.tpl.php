@@ -19,9 +19,15 @@ if (!empty($tradelist)) {
 		
 		foreach ($items as $item) {
 			
-			echo '<p>';
+			echo '<div class="trade_item_box">';
 			
-			echo "<strong>{$item['title']}</strong>";
+				echo '<div class="trade_item_thumb">';
+			
+				echo "<img src=\"{$item['thumb_url']}\" title=\"{$item['title']}\" alt=\"{$item['title']}\" />";
+				
+				echo '</div>';
+			
+			echo "<strong>{$item['title']}</strong><br />";
 			
 			if (!empty($item['year'])) {
 				
@@ -35,7 +41,7 @@ if (!empty($tradelist)) {
 				echo " [{$item['notes']}]";
 			}
 			
-			echo '</p>';
+			echo '</div>';
 		}
 		
 		echo '</section>';
