@@ -41,6 +41,7 @@ class Module_Trades extends ModuleApp {
 		$data = array();
 		
 		$q = "SELECT _id, category, type, title, year, notes FROM r_tradelist
+				WHERE active = '1'
 				ORDER BY category, title";
 		
 		$rs = Core::Database()->Query($q);
