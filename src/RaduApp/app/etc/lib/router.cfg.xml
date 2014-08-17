@@ -68,6 +68,11 @@
 			<value>Sandbox/App/Sandbox</value>
 		</route>
 		
+		<route>
+			<name>catalogue</name>
+			<value>Catalogue/Archives/Items</value>
+		</route>
+		
 	</prod>
 </config>
 <!-- $Id: router.cfg.xml 25 2013-07-05 15:59:40Z radu $ -->

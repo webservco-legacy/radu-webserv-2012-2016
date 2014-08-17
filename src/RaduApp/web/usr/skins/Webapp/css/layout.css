@@ -211,6 +211,10 @@ a:hover {
 	margin: 7px 0 7px 0;
 }
 
+.pb_menu {
+	margin: 7px 0 7px 0;
+}
+
 .menu ul {
 	float: left;
 	/*width: 240px*/;
@@ -260,7 +264,7 @@ a:hover {
 }
 
 #content {
-	
+	overflow: auto;
 }
 
 #layout article { /*text-align: justify;*/
@@ -694,4 +698,221 @@ ul.car_stats li {
 
 .trade_item_thumb img {
 	height: 80px;
+}
+
+#layout form#catalogue_archive_add {
+	
+}
+
+#layout form#catalogue_archive_add p.line_type {
+	margin: 5px 3px 0 0;
+}
+
+#layout form#catalogue_archive_add input {
+	
+	border: 1px dashed #444;
+	color: #333;
+}
+
+#layout form#catalogue_archive_add label {
+	
+	width: auto;
+	margin: 0;
+	padding: 0;
+	font-size: 0.8em;
+	text-align: right;
+}
+
+#layout form#catalogue_archive_add label.line_type {
+	
+	width: 125px;
+	
+}
+
+#layout form#catalogue_archive_add label.line_type input {
+	
+	float: left;
+	display: inline;
+	width: auto;
+	
+}
+
+#layout form#catalogue_archive_add label.discogs_type {
+	
+	width: 155px;
+	
+}
+
+#layout form#catalogue_archive_add label.discogs_type input {
+	
+	float: left;
+	display: inline;
+	width: auto;
+	
+}
+
+#layout form#catalogue_archive_add input#line_data {
+	
+	width: 700px;
+	
+	margin-right: 20px;
+	
+	font-size: 0.7em;
+	
+	padding: 10px 0 10px 0;
+}
+
+#layout form#catalogue_archive_add input#discogs_id {
+	
+	width: 90px;
+	margin-right: 20px;
+	
+	
+}
+
+
+#layout form#catalogue_archive_add input[type="submit"], #layout form#catalogue_archive_add a.submit, #layout form.pb_form input[type="submit"] {
+	
+	background: #333;
+	color: #ccc;
+	border: 1px solid #ccc;
+}
+
+.underline {
+	text-decoration:underline !important;
+}
+
+.italic {
+	font-style: italic;
+}
+
+div.pb_items {
+	font-size: 0.9em;
+}
+
+table.pb_list {
+	
+	width: 100%;
+	border-collapse:separate;
+	font-size: 0.8em;
+}
+
+table.pb_list th {
+	
+	font-size: 0.9em;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+table.pb_list td {
+	
+	border-left: 1px solid #333;
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
+	padding: 5px 3px 3px 3px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+table.pb_list tr td:first-child {
+	border-top-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	
+	border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+}
+
+table.pb_list tr td:last-child {
+	
+	border-right: 1px solid #333;
+	
+	border-top-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	
+	border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+}
+
+table.pb_list td.spacer {
+	
+	border: none !important;
+	font-size: 0.1em;
+	
+}
+
+table.pb_list td.id {
+	width: 30px;
+	text-align: center;
+}
+table.pb_list td.type {
+	width: 70px;
+	font-size: 0.7em;
+}
+table.pb_list td.artist {
+	width: 300px;
+}
+table.pb_list td.title {}
+table.pb_list td.format {
+	width: 30px;
+}
+table.pb_list td.countries {}
+
+table.pb_list td.years {
+	
+	text-align: right;
+}
+table.pb_list td.tracks {
+	
+	width: 30px;
+	text-align: right;
+}
+
+
+
+
+table.pb_list td.notes {
+	
+	width: 200px;
+	
+}
+
+table.pb_list td.thumb {
+	width: 80px;
+	height: 80px;
+	text-align: center;
+}
+
+table.pb_list td.thumb a {
+	
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+table.pb_list td.thumb img {
+	
+	height: 80px;
+}
+
+.pb_items .icons {
+	
+	float: left;
+	display: inline;
+	width: 170px;
+	text-align: right;
+}
+
+img.discogs_thumb {
+	
+	height: 30px;
+	vertical-align: middle;
+}
+
+#layout form.pb_form {
+	
+	font-size: 0.8em;
 }
