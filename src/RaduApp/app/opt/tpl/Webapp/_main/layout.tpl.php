@@ -52,7 +52,20 @@
 		<?php //echo $tpl_left; ?>
 		
 		<section id="content">
+		
+			<?php
+			if ('catalogue' == $info['module']) {
+				echo $pbmenu;
+			}
+			?>
+		
 			<?php echo $tpl_content; ?>
+			
+			<?php
+			if ('catalogue' == $info['module']) {
+				echo $pbmenu;
+			}
+			?>
 			
 			<?php echo $tpl_comments; ?>
 		</section>
