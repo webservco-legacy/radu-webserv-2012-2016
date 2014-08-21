@@ -898,11 +898,19 @@ table.pb_list td.thumb img {
 	height: 80px;
 }
 
-.pb_items .icons {
+.pb_items .icons1 {
 	
 	float: left;
 	display: inline;
-	width: 170px;
+	width: 20px;
+	text-align: right;
+}
+
+.pb_items .icons2 {
+	
+	float: left;
+	display: inline;
+	width: auro;
 	text-align: right;
 }
 
