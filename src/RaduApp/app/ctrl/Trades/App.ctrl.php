@@ -39,7 +39,8 @@ class Controller_Trades_App extends ControllerApp {
 		$data['strings']['title'] = $data['facebook']['meta']['og']['title'] = __('Trades');
 		$data['strings']['description'] = $data['facebook']['meta']['og']['description'] = __('Looking for vinyl records. Any genre, any period. Offering records, CDs and fanzines in exchange.');
 		
-		$data['facebook']['meta']['og']['image'] = "{$data['url']['media']}trades.jpg";
+		$data['facebook']['meta']['og']['image'] = "{$data['url']['media']}records1.jpg";
+		$data['header_image'] = "{$data['url']['media']}trades.jpg";
 		
 		$data['categories'] = $this->Module()->GetCategories();
 		
