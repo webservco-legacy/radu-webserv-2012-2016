@@ -173,6 +173,7 @@ class ControllerApp extends Controller
          */
         $main_template = ! empty($mainTemplate) ? $this->_mTemplatePrefix . $mainTemplate : $this->Output()->GetTemplate();
         
+        /* XXX dsabled 140903
         if (Core::Useragent()->IsDevice()) {
             
             $main_template .= '_mobile';
@@ -184,6 +185,7 @@ class ControllerApp extends Controller
                 $main_template .= '_phone';
             }
         }
+        */
         
         return $this->Output()->Out($template_dir_main . $main_template, $data);
     }
