@@ -59,6 +59,27 @@ class Module_Trades extends ModuleApp
         return $data;
     }
 
+    public function GetTradelistBadges()
+    {
+        $data = array();
+        
+        $q = "SELECT _id, title FROM r_tradelist_badges
+				WHERE active = '1'
+				ORDER BY _id";
+        
+        $rs = Core::Database()->Query($q);
+        
+        if (0 < $rs->num_rows) {
+            
+            while ($r = $rs->fetch_assoc()) {
+                
+                $data[$r['_id']] = $r['title'];
+            }
+        }
+        
+        return $data;
+    }
+
     public function GetThumbnail($itemId, $url, $path)
     {
         return is_readable("{$path['media']}trades/thumbs/{$itemId}.jpg") ? "{$url['media']}trades/thumbs/{$itemId}.jpg" : "{$url['media']}trades/thumbs/noimage.jpg";

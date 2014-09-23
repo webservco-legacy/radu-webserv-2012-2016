@@ -49,6 +49,46 @@ if (! empty($tradelist)) {
             echo '</section>';
         }
     }
+    
+    if (!empty($tradelist_badges)) {
+        
+        echo '<section class="box_border_round box_light"><a name="badges"></a>';
+        
+        echo "<h3>Badges</h3>";
+        
+        echo '<div class="trade_badges_left">';
+        
+        echo "<img class=\"trades_image\" src=\"{$url['media']}trades/badges.jpg\" title=\"Badges for trade\" alt=\"Badges for trade\" />";
+        
+        echo '</div>';
+        
+        echo '<div class="trade_badges_right">';
+        
+        foreach ($tradelist_badges as $id => $title) {
+            echo sprintf('%02d', $id);
+            echo " - {$title}<br />";   
+        }
+        
+        echo '</div>';
+        
+        echo '</section>';
+    }
+    
+    echo '<section class="box_border_round box_light trade_patches"><a name="patches"></a>';
+    
+    echo "<h3>Patches</h3>";
+    
+    echo '<div class="trade_patches_left">';
+    
+    echo "<img class=\"trades_image\" src=\"{$url['media']}trades/patches.jpg\" title=\"Patches for trade\" alt=\"Patches for trade\" /><br />";
+    
+    echo '</div>';
+    
+    echo '<div class="trade_patches_left">';
+    echo '&#160;';
+    echo '</div>';
+    
+    echo '</section>';
 }
 
 echo '</article>';

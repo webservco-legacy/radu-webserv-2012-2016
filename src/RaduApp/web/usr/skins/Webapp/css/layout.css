@@ -924,3 +924,20 @@ img.discogs_thumb {
 	
 	font-size: 0.8em;
 }
+
+.trade_badges_left, .trade_badges_right, .trade_patches_left, .trade_patches_right {
+	
+	float: left;
+	display: inline;
+	width: 48%;
+	padding: 10px 0 10px 0;
+}
+
+.trade_badges_right, .trade_patches_right {
+	padding-left: 10px;
+}
+
+.trade_badges_left img, .trade_patches_left img {
+	
+	width: 100%;
+}

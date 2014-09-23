@@ -13,7 +13,7 @@ $boxes = array(
 		),
 		'trades' => array(
 				'title' => 'Trades',
-				'description' => 'Fanzines, CDs.',
+				'description' => 'Records, CDs, Fanzines and more.',
 				'url' => 'http://radu.webserv.co/trades' 
 		),
 		'updb' => array(
