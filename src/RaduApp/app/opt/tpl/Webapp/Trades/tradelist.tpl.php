@@ -17,7 +17,7 @@ if (! empty($tradelist)) {
             
             echo '<section class="box_border_round box_light">';
             
-            echo "<h3>{$categories[$category]} - {$subcategory}</h3>";
+            echo "<h3>{$category} - {$subcategory}</h3>";
             
             foreach ($items as $item) {
                 
