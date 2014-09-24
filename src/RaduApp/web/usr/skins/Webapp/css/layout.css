@@ -941,3 +941,7 @@ img.discogs_thumb {
 	
 	width: 100%;
 }
+
+del {
+	color: #900;
+}

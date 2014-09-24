@@ -63,8 +63,8 @@ class Module_Trades extends ModuleApp
     {
         $data = array();
         
-        $q = "SELECT _id, title FROM r_tradelist_badges
-				WHERE active = '1'
+        $q = "SELECT _id, title, active FROM r_tradelist_badges
+				WHERE 1
 				ORDER BY _id";
         
         $rs = Core::Database()->Query($q);
@@ -73,7 +73,7 @@ class Module_Trades extends ModuleApp
             
             while ($r = $rs->fetch_assoc()) {
                 
-                $data[$r['_id']] = $r['title'];
+                $data[$r['_id']] = $r;
             }
         }
         

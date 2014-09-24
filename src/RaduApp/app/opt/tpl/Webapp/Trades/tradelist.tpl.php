@@ -64,9 +64,16 @@ if (! empty($tradelist)) {
         
         echo '<div class="trade_badges_right">';
         
-        foreach ($tradelist_badges as $id => $title) {
+        foreach ($tradelist_badges as $id => $badge) {
+            
+            echo 1 == $badge['active'] ? NULL : '<del>';
+            
             echo sprintf('%02d', $id);
-            echo " - {$title}<br />";   
+            echo " - {$badge['title']}";
+
+            echo 1 == $badge['active'] ? NULL : '</del>';
+            
+            echo '<br />';
         }
         
         echo '</div>';
