@@ -16,6 +16,8 @@
 	<section class="box_border">
 		<h2><?php echo $strings['title']; ?></h2>
 		
+		<p>[custom date - /day/CUSTOM_DATE]</p>
+		
 		<ul class="car_stats">
 			<li><strong>Ultima actualizare:</strong> <?php echo !empty($stats['last_update']) ? date('d.m.Y', strtotime($stats['last_update'])) : 'n/a'; ?></li>
 			<li><strong>Dată statistici:</strong> <?php echo date('d.m.Y', strtotime($current_date)); ?></li>

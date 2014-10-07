@@ -70,7 +70,7 @@ class Controller_Car_App extends ControllerApp {
 			
 			$data['stats']['last_update'] = $this->Module()->GetStatsLastUpdate($data['car_id']);
 			
-			$data['current_date'] = !empty($data['query']['day']) ? date('Y-m-d', strtotime($data['query']['day'])) : date('Y-m-d');
+			$data['current_date'] = !empty($data['query']['day']) ? date('Y-m-d', strtotime($data['query']['day'])) : $data['stats']['last_update'];
 			
 			if (!empty($data['car_info']['car_owner_date'])) {
 				
