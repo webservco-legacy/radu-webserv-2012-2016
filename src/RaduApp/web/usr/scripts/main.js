@@ -40,7 +40,7 @@ function catalogue_restore(item_id) {
 			
 			if (response != 'error') {
 				
-				$("#item_" + item_id).html("<a target=\"_blank\" onclick=\"JavaScript:catalogue_delete('" + item_id + "'); return false;\" href=\"\" title=\"Delete\">⚠</a>&nbsp;" + response + " [" + item_id + "]");
+				$("#item_" + item_id).html("<a target=\"_blank\" onclick=\"JavaScript:catalogue_delete('" + item_id + "'); return false;\" href=\"\" title=\"Delete\">⚠</a>&nbsp;" + response + " [" + "<a target=\"_blank\" href=\"" + url_www + "Catalogue/Catalogue/Item/id/" + item_id + "\" title=\"Details\">" + item_id + "</a>" + "]");
 			} else {
 				$("#item_" + item_id).html("<span class=\"ko\">" + response + "</span>");
 			}
