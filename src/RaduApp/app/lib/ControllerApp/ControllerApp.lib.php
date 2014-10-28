@@ -244,7 +244,9 @@ class ControllerApp extends Controller
             exit();
         } else {
             
-            if (! Core::Acl()->Check($data['user']['Id'], $data['info']['location'])) {
+            $resource = str_replace($data['info']['path'], NULL, $data['info']['location']);
+            
+            if (! Core::Acl()->Check($data['user']['Id'], $resource)) {
                 
                 Core::Router()->Redirect("Catalogue/Catalogue/Restricted");
                 
