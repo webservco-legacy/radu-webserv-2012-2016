@@ -945,3 +945,7 @@ img.discogs_thumb {
 del {
 	color: #900;
 }
+
+strong {
+	font-weight: 600;
+}
