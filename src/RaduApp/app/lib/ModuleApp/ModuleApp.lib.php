@@ -323,7 +323,8 @@ class ModuleApp extends Module
             'Killer wolf out there. As big as a pony but a lot more bloodthirsty.',
             'Save the creature, kill the girl!',
             'We will not tolerate intolerance!',
-            'You can take a punk out of punk, but you can\'t take the punk out of a punk.'
+            'You can take a punk out of punk, but you can\'t take the punk out of a punk.',
+            'I jus\' t\'rowing words at the moon, sah.',
         );
         
         return $quotes[array_rand($quotes)];
