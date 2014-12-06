@@ -80,22 +80,6 @@ if (! empty($tradelist)) {
         
         echo '</section>';
     }
-    
-    echo '<section class="box_border_round box_light trade_patches"><a name="patches"></a>';
-    
-    echo "<h3>Patches</h3>";
-    
-    echo '<div class="trade_patches_left">';
-    
-    echo "<img class=\"trades_image\" src=\"{$url['media']}trades/patches.jpg\" title=\"Patches for trade\" alt=\"Patches for trade\" /><br />";
-    
-    echo '</div>';
-    
-    echo '<div class="trade_patches_left">';
-    echo '&#160;';
-    echo '</div>';
-    
-    echo '</section>';
 }
 
 echo '</article>';
