@@ -325,6 +325,7 @@ class ModuleApp extends Module
             'We will not tolerate intolerance!',
             'You can take a punk out of punk, but you can\'t take the punk out of a punk.',
             'I jus\' t\'rowing words at the moon, sah.',
+        	'But since they had these weird looking modified wolves to protect them she risked her life every single time.',
         );
         
         return $quotes[array_rand($quotes)];
