@@ -17,6 +17,10 @@ if (! empty($tradelist)) {
             
             echo '<section class="box_border_round box_light">';
             
+            echo '<a name="';
+            echo strtolower(str_replace(array(' ', '"'), NULL, $subcategory));
+            echo '"></a>';
+            
             echo "<h3>{$category} - {$subcategory}</h3>";
             
             foreach ($items as $item) {
