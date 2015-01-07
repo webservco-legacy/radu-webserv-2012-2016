@@ -56,12 +56,14 @@
 					<url></url>
 					<resource>Sandbox</resource>
 				</item>
+				<!-- 
 				<item>
 					<title>Account</title>
 					<link>Users/App/Account</link>
 					<url></url>
 					<resource>Users/App/</resource>
 				</item>
+				 -->
 			</web>
 			<web_admin>
 				<item>
