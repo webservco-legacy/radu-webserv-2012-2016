@@ -123,6 +123,11 @@ class ControllerApp extends Controller
          */
         $this->Output()->Init($this->_mTemplatePrefix);
         
+        if ('bct.webserv.co' == $_SERVER['HTTP_HOST']) {
+
+               $this->Output()->SetSkin('BCT');
+        }
+        
         /**
          *
          * @var _string

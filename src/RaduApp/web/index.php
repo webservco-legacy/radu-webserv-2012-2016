@@ -30,6 +30,7 @@ if (!is_readable('./etc/settings.cfg.xml') || !is_readable('./etc/.env')) {
  */
 $settings = simplexml_load_file('./etc/settings.cfg.xml');
 
+
 /**
  * @var string
 */
@@ -71,6 +72,11 @@ Core::Config()->SetEnv($cfg['env']);
  * Set paths.
 */
 Core::Config()->Set($settings);
+
+if ('bct.webserv.co' == $_SERVER['HTTP_HOST']) {
+
+	Core::Config()->Set(array('www' => 'http://bct.webserv.co/'), 'url');
+}
 
 /**
  * Register class autoload method.
