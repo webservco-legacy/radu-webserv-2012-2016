@@ -14,7 +14,7 @@
  * @access     public
  * @filesource
  */
-if (!defined('_WEB')) {
+if (! defined('_WEB')) {
 	exit();
 }
 
@@ -27,6 +27,67 @@ if (!defined('_WEB')) {
  * @subpackage MusicModule
  */
 class Module_Music extends ModuleApp {
+
+	public function DiscogsUpdateField($listingId, $field, $value) {
+		
+		$value = Core::Database()->EscapeString($value);
+
+		$q = "UPDATE r_music_discogs SET {$field} = '{$value}' WHERE listing_id = '{$listingId}' LIMIT 1";
+		
+		$rs = Core::Database()->Query($q);
+		
+		return TRUE;
+	}
+
+	public function DiscogsGetField($listingId, $field) {
+
+		$q = "SELECT {$field} FROM r_music_discogs WHERE listing_id = '{$listingId}' LIMIT 1";
+		
+		$rs = Core::Database()->Query($q);
+		
+		if (1 == $rs->num_rows) {
+			
+			$r = $rs->fetch_assoc();
+			
+			return $r[$field];
+		}
+		
+		return NULL;
+	}
+
+	public function DiscogsGetStock() {
+
+		$data = array();
+		
+		$q = "SELECT * FROM r_music_discogs ORDER BY location, artist, title";
+		
+		$rs = Core::Database()->Query($q);
+		
+		if (0 < $rs->num_rows) {
+			
+			while ($r = $rs->fetch_assoc()) {
+				
+				$data[$r['location']][$r['listing_id']] = $r;
+				
+				if (! empty($r['media_condition'])) {
+					
+					$data[$r['location']][$r['listing_id']]['media_condition_code'] = $this->Discogs()->GetGradingCode($r['media_condition']);
+				}
+				
+				if (! empty($r['sleeve_condition'])) {
+					
+					$data[$r['location']][$r['listing_id']]['sleeve_condition_code'] = $this->Discogs()->GetGradingCode($r['sleeve_condition']);
+				}
+				
+				$data[$r['location']][$r['listing_id']]['market_url'] = 'http://www.discogs.com/buy/radum/' . $this->FormatSeoTitle(array(
+					'artist' => $r['artist'],
+					'title' => $r['title'] 
+				)) . "/{$r['listing_id']}";
+			}
+		}
+		
+		return $data;
+	}
 
 	public function GetItems($url, $path) {
 
@@ -86,14 +147,31 @@ class Module_Music extends ModuleApp {
 	public function FormatSeoTitle($data) {
 
 		$remove = array(
-				'/',
-				'.' 
+			'/',
+			'.' 
 		);
 		
-		$title = str_replace(' ', '_', trim(str_replace($remove, NULL, Core::String()->RemoveBadChars($data['artist']))));
-		$title .= '-' . str_replace(' ', '_', trim(str_replace($remove, NULL, Core::String()->RemoveBadChars($data['title']))));
-		$title .= '-' . str_replace(' ', '_', trim(str_replace($remove, NULL, Core::String()->RemoveBadChars(str_replace('"', 'inch', $data['format'])))));
-		$title .= '-' . $data['year'];
+		$title = NULL;
+		
+		if (! empty($data['artist'])) {
+			
+			$title .= str_replace(' ', '_', trim(str_replace($remove, NULL, Core::String()->RemoveBadChars($data['artist']))));
+		}
+		
+		if (! empty($data['title'])) {
+			
+			$title .= '-' . str_replace(' ', '_', trim(str_replace($remove, NULL, Core::String()->RemoveBadChars($data['title']))));
+		}
+		
+		if (! empty($data['format'])) {
+			
+			$title .= '-' . str_replace(' ', '_', trim(str_replace($remove, NULL, Core::String()->RemoveBadChars(str_replace('"', 'inch', $data['format'])))));
+		}
+		
+		if (! empty($data['year'])) {
+			
+			$title .= '-' . $data['year'];
+		}
 		
 		return mb_strtolower(str_replace('__', '_', $title), 'UTF-8');
 	}

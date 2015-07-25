@@ -9,7 +9,7 @@
 		<?php /*w3c validator error
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />*/?>
 		
-		<title>/\v/\</title>
+		<title>/\v/\  <?php echo $strings['title']; ?></title>
 		
 		<meta name="description" content="<?php echo $strings['description']; ?>" />
 
@@ -33,6 +33,8 @@
 		*/ ?>
 
 		<link rel="stylesheet" href="<?php echo $url['skin']; ?>css/layout.css">
+		
+		<link rel="stylesheet" media="all" href="<?php echo $url['skin']; ?>css/magnific-popup.css" />
 		
 		<link rel="stylesheet" media="all" href="<?php echo $url['skin']; ?>css/prettify.css" />
 <?php /*?>

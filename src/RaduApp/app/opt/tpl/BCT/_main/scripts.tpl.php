@@ -1,7 +1,8 @@
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         
-        <script src="<?php echo $url['scripts']; ?>vendor/prettify/prettify.js"></script>
+        <script src="<?php echo $url['scripts']; ?>vendor/jquery.magnific-popup.min.js"></script>
+        
         
 <script>
 //<![CDATA[ 
@@ -10,7 +11,6 @@ var url_www = '<?php echo $url['www']; ?>';
 
 var url_skin = '<?php echo $url['skin']; ?>';
 
-prettyPrint();
 //]]> 
 </script>
         

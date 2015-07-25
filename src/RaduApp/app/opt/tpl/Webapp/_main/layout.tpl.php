@@ -34,6 +34,8 @@
 
 		<link rel="stylesheet" href="<?php echo $url['skin']; ?>css/layout.css">
 		
+		<link rel="stylesheet" media="all" href="<?php echo $url['skin']; ?>css/magnific-popup.css" />
+		
 		<link rel="stylesheet" media="all" href="<?php echo $url['skin']; ?>css/prettify.css" />
 		<link rel="stylesheet" media="all" href="<?php echo $url['skin']; ?>css/prettify-desert.css" />
 		

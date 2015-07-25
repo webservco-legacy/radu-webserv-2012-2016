@@ -1,6 +1,121 @@
 $(document).ready(function() {
-
+	
+	$(".discogs_price").one('click', function(e) {
+		
+		$(this).select();
+	});
+	
+	/*
+	if ($(".image-popup-vertical-fit").length > 0) {
+		
+		$('.image-popup-vertical-fit').magnificPopup({
+	          type: 'image',
+	          closeOnContentClick: true,
+	          mainClass: 'mfp-img-mobile',
+	          image: {
+	            verticalFit: true
+	          }
+	          
+	        });
+	}
+	*/
+	
+	//if ($(".image-popup-vertical-fit").length > 0) {
+	if ($(".popup-gallery").length > 0) {
+		
+		$('.popup-gallery').magnificPopup({
+	          delegate: 'a',
+	          type: 'image',
+	          tLoading: 'Loading image #%curr%...',
+	          mainClass: 'mfp-img-mobile',
+	          gallery: {
+	            enabled: true,
+	            navigateByImgClick: true,
+	            preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+	          },
+	          image: {
+	            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+	            titleSrc: function(item) {
+	              return item.el.attr('title') + '';
+	            }
+	          }
+	        });
+	}
+	
 });
+
+function discogs_update_price(listing_id) {
+	
+	var field = $("#discogs_price_" + listing_id);
+	
+	var price = field.val();
+	
+	$.post(url_www + "Music/Ajax/Post", {
+		cmd : 'discogs_update_field',
+		listing_id : listing_id,
+		field : 'price',
+		value : price,
+	}, function(response) {
+		//console.log(response);
+		field.val(response);
+		field.attr('class', 'noborder');
+		//alert("'Tis Done, M'Lord!");
+		
+	}).fail(function(object) {
+		//console.log('error');
+		// console.log(object.responseText);
+		// console.log(object.status);
+		// console.log(object.statusText);
+	});
+}
+
+function discogs_update_comments(listing_id) {
+	
+	var field = $("#discogs_comments_" + listing_id);
+	
+	var comments = field.val();
+	
+	$.post(url_www + "Music/Ajax/Post", {
+		cmd : 'discogs_update_field',
+		listing_id : listing_id,
+		field : 'comments',
+		value : comments,
+	}, function(response) {
+		//console.log(response);
+		field.val(response);
+		alert("'Tis Done, M'Lord!");
+		
+	}).fail(function(object) {
+		//console.log('error');
+		// console.log(object.responseText);
+		// console.log(object.status);
+		// console.log(object.statusText);
+	});
+}
+
+function discogs_update_location(listing_id) {
+	
+	var field = $("#discogs_location_" + listing_id);
+	
+	var location = field.val();
+	
+	$.post(url_www + "Music/Ajax/Post", {
+		cmd : 'discogs_update_field',
+		listing_id : listing_id,
+		field : 'location',
+		value : location,
+	}, function(response) {
+		//console.log(response);
+		field.val(response);
+		alert("'Tis Done, M'Lord!");
+		
+	}).fail(function(object) {
+		//console.log('error');
+		// console.log(object.responseText);
+		// console.log(object.status);
+		// console.log(object.statusText);
+	});
+}
 
 function catalogue_delete(item_id) {
 	

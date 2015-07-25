@@ -33,14 +33,35 @@ class Controller_Content_App extends ControllerApp {
 
 	public function Home() {
 		
-		//$this->Init();	$data = $this->Module()->GetData($this->_mRequest);
-		//echo '<pre>'; print_r($data); exit(); //XXX
-
 		/**
 		 * If you need to output static data, just use this:
 		 * (alternatively you could set the title (see Info())
+		 * return $this->GetDefaultOutput();
 		 */
-		return $this->GetDefaultOutput();
+	
+		$this->Init();
+	
+		$data = $this->Module()->GetData($this->_mRequest);
+		
+		if ('bct.webserv.co' == $_SERVER['HTTP_HOST']) {
+			
+
+			$data['strings']['title'] = $data['facebook']['meta']['og']['title'] = 'Black Chicken Tapes';
+			$data['strings']['description'] = $data['facebook']['meta']['og']['description'] = __('Otherground label from Eastern Europe.');
+			$data['facebook']['meta']['og']['image'] = "{$data['url']['media']}bct/bct_logo.gif";
+			
+			$bctModule = Core::Get('Module_Bct');
+			$bctModule->GetData($this->_mRequest);
+			
+
+			$data['tradelist'] = $bctModule->TradelistGet();
+			$data['tradelist_last_update'] = $bctModule->TradelistGetLastUpdate();
+			$data['tradelist_total'] = $bctModule->TradelistGetTotal();
+		}
+	
+		echo $this->GetOutput($data);
+	
+		return TRUE;
 	}
 
 	public function Info() {
@@ -57,9 +78,11 @@ class Controller_Content_App extends ControllerApp {
 		/**
 		 * Debug using the log instead of output in browser (useful for live apps).
 		 */
-		Core::Log()->Debug('Debugging $data', $data, 'info');
+		//Core::Log()->Debug('Debugging $data', $data, 'info');
 		
-		echo $this->GetOutput($data);
+		//echo $this->GetOutput($data);
+
+		echo '<pre>'; print_r($_SERVER);
 		
 		return TRUE;
 	}

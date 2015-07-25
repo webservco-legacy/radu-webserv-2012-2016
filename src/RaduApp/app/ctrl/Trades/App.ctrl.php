@@ -1,6 +1,6 @@
 <?php
 /**
- * $Id$
+ * $Id: App.ctrl.php 117 2014-08-31 05:42:18Z radu $
  *
  * App controller.
  *
@@ -11,7 +11,7 @@
  * @license    http://www.opensource.org/licenses/bsd-license.php
  * @package    RaduApp
  * @subpackage TradesModule
- * @version    $Revision$
+ * @version    $Revision: 117 $
  * @since      Version 7
  * @access     public
  * @filesource
@@ -42,11 +42,11 @@ class Controller_Trades_App extends ControllerApp {
 		$data['facebook']['meta']['og']['image'] = "{$data['url']['media']}records1.jpg";
 		$data['header_image'] = "{$data['url']['media']}trades.jpg";
 		
-		$data['categories'] = $this->Module()->GetCategories();
+		//$data['categories'] = $this->Module()->GetCategories();
 		
-		$data['tradelist'] = $this->Module()->GetTradelist($data['url'], $data['path']);
+		//$data['tradelist'] = $this->Module()->GetTradelist($data['url'], $data['path']);
 		
-		$data['tradelist_badges'] = $this->Module()->GetTradelistBadges();
+		//$data['tradelist_badges'] = $this->Module()->GetTradelistBadges();
 		
 		echo $this->GetOutput($data);
 		

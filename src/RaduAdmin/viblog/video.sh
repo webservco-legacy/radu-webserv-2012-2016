@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# $Id$
+# $Id: video.sh 155 2015-04-19 10:57:12Z radu $
 
 # viblog_video_get_width FILE_PATH 
 function viblog_video_get_width
@@ -102,7 +102,7 @@ function viblog_viblog_video_fade_func
 	
 	ffmpeg < /dev/null -y -i "${WORKPATH}${DIR_IN}/${FILE_NAME}" \
 	-vf "fade=in:0:${FADE_DURATION}, fade=out:${FADE_OUT_FRAME}:${FADE_DURATION}" \
-	-s ${VIDEO_RESIZE_WIDTH}x${VIDEO_RESIZE_HEIGHT} -aspect 3:2 \
+-s ${VIDEO_RESIZE_WIDTH}x${VIDEO_RESIZE_HEIGHT} -aspect 16:9 \
 	-vcodec mpeg4 -vb ${VID_ENCODE_BR} -r 30 \
 	-acodec aac -strict experimental -ac 2 -ar 44100 -ab 128k \
 	"${WORKPATH}${DIR_IN}/${FILE_NAME%.*}.${VID_EXT_OUT}" >> "${WORKPATH}${DIR_TMP}/${LOG_FILE}" 2>&1
@@ -201,7 +201,7 @@ function viblog_viblog_video_encode_func
 	echo -e "Encoding video \"${FILE_NAME}\"" >> "${WORKPATH}${DIR_TMP}/${LOG_FILE}" 2>&1
 	
 	ffmpeg < /dev/null -y -i "${WORKPATH}${DIR_IN}/${FILE_NAME}" \
-	-s ${VIDEO_RESIZE_WIDTH}x${VIDEO_RESIZE_HEIGHT} -aspect 3:2 \
+	-s ${VIDEO_RESIZE_WIDTH}x${VIDEO_RESIZE_HEIGHT} -aspect 16:9 \
 	-vcodec mpeg4 -vb ${VID_ENCODE_BR} -r 30 \
 	-acodec aac -strict experimental -ac 2 -ar 44100 -ab 128k \
 	"${WORKPATH}${DIR_IN}/${FILE_NAME%.*}.${VID_EXT_OUT}" >> "${WORKPATH}${DIR_TMP}/${LOG_FILE}" 2>&1

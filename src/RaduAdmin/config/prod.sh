@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# $Id$
+# $Id: prod.sh 155 2015-04-19 10:57:12Z radu $
 
 #path
-WORKPATH='/home/radu/Documents/workspace/wsRadu/tmp/'
+WORKPATH='/home/radu/workspace/ws_Radu/tmp/'
 DIR_IN='viblog_in'
 DIR_OUT='viblog_out'
 DIR_TMP='viblog_tmp'
@@ -18,15 +18,15 @@ IMG_EXT_IN='jpg'
 IMG_EXT_OUT='jpg'
 IMG_THUMB_W='96'
 IMG_THUMB_H='96'
-IMG_FULL_W='800'
-IMG_FULL_H='800'
+IMG_FULL_W='1280'
+IMG_FULL_H='1280'
 
 # video
 VID_EXT_IN='avi'
 VID_EXT_PROCESS='mp4'
 VID_EXT_OUT='mp4'
 VID_FADE_DURATION='60'
-VID_RESIZE_W='480'
+VID_RESIZE_W='853'
 VID_THUMB_TIME='00:00:07'
 VID_ENCODE_BR='5000k'
 VID_OUT_BR='900k'

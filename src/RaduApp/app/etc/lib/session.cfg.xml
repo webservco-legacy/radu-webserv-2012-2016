@@ -57,7 +57,7 @@
 			<!-- Path where the session cookies will work. Use slash for all -->
 			<path>/</path>
 			<!-- Session cookies domain -->
-			<domain>.webserv.co</domain>
+			<domain></domain><!-- .webserv.co -->
 			<!-- Use SSL for session cookies  -->
 			<secure>0</secure>
 			<!-- Set httponly flag? -->

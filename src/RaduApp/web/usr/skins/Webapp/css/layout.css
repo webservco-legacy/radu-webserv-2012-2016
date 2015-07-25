@@ -944,6 +944,12 @@ img.discogs_thumb {
 	width: 100%;
 }
 
+.viblog_summary_desc {}
+
+.viblog_summary_stats {
+	font-size: 0.8em;
+}
+
 del {
 	color: #900;
 }

@@ -45,6 +45,13 @@ class ModuleApp extends Module {
 	 * @var mixed
 	 */
 	private $_mComments = NULL;
+	
+	/**
+	 * Discogs library object.
+	 *
+	 * @var mixed
+	 */
+	private $_mDiscogs = NULL;
 
 	/**
 	 * Open extra database connection.
@@ -332,8 +339,21 @@ class ModuleApp extends Module {
 			'No garlis. No frinds. No manny. No broblam!',
 			'Your scientists were so preoccupied with whether or not they could that they didn\'t stop to think if they should.',
 			'Man will never be free until the last king is strangled with the entrails of the last priest.',
-			'It\'s gr8 m8 I r8 8/8!',
-			'I preferred to visit the mall long before it was built.' 
+			'It\'s gr8 m8, no d-b8, I r8 it 8/8!',
+			'You can\'t touch music, but music can touch you',
+			'I preferred to visit the mall long before it was built.',
+			'Eisbär\'n müssen nie weinen.',
+			'And if life is just a highway - then the soul is just a car.',
+			'Art is how we decorate space; Music is how we decoarate time.',
+			'Those who mind don\'t matter; those who matter don\'t mind.',
+			'Is de dog talking and de mon barking.',
+			'If the pen is mightier than the sword why do actions speak louder than words?',
+			'Si Aretha Franklin et Sean Connery étaient mariés, ça ferait Aretha Connery!',
+			'It\'s not how old I am, it\'s how old I feel', 
+			'Lose some sleep and say you tried',
+			'Stand in the ashes of a trillion dead souls, and ask the ghosts if honor matters.',
+			'D\'disch werdäd umdräyt',
+			'Appetite for distractions',
 		);
 		
 		return $quotes[array_rand($quotes)];
@@ -351,6 +371,20 @@ class ModuleApp extends Module {
 		}
 		
 		return $this->_mComments;
+	}
+	
+	public function Discogs() {
+
+		if (NULL == $this->_mDiscogs) {
+			
+			$this->_mDiscogs = Core::Get('Library_Discogs');
+			
+			$app_prefix = Core::Config()->Get('app.prefix');
+			
+			$this->_mDiscogs->Init($app_prefix);
+		}
+		
+		return $this->_mDiscogs;
 	}
 }
 ?>

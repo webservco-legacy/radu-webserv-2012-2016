@@ -17,6 +17,14 @@ echo '<a href="http://www.discogs.com/seller/radum/profile">www.discogs.com/sell
 echo '</p>';
 echo '</section>';
 
+echo '<section class="box_border_round box_light">';
+echo '<p>';
+echo 'Updated trade list:<br />';
+echo '<a href="http://bct.webserv.co">bct.webserv.co</a>';
+echo '</p>';
+echo '</section>';
+
+
 if (! empty($tradelist)) {
     
     foreach ($tradelist as $category => $data) {

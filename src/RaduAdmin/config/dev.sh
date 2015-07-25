@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# $Id$
+# $Id: dev.sh 154 2015-04-19 05:29:21Z radu $
 
 #path
-WORKPATH='/home/radu/Documents/workspace/wsRadu/tmp/'
+WORKPATH='/home/radu/workspace/ws_Radu/tmp/'
 DIR_IN='viblog_in'
 DIR_OUT='viblog_out'
 DIR_TMP='viblog_tmp'

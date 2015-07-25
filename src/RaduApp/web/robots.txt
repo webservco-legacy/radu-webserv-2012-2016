@@ -11,4 +11,3 @@ Disallow: /opt/
 Disallow: /sys/
 Disallow: /tmp/
 Disallow: /var/
-Disallow: /usr/

@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# $Id$
+# $Id: RaduAdmin.sh 154 2015-04-19 05:29:21Z radu $
 
-P_PATH='/home/radu/Documents/workspace/wsRadu/src/RaduAdmin/'
+P_PATH='/home/radu/workspace/ws_Radu/src/RaduAdmin/'
 P_ENV=`cat "${P_PATH}config/.env"`
 P_NAME="$(basename $0) [${P_ENV}]"
-P_VERSION='$Revision$'
+P_VERSION='$Revision: 154 $'
 P_USER=$USER
 
 
