@@ -1,6 +1,6 @@
 <?php
 /**
- * $Id: App.ctrl.php 117 2014-08-31 05:42:18Z radu $
+ * $Id: App.ctrl.php 159 2015-08-22 19:12:06Z radu $
  *
  * App controller.
  *
@@ -11,7 +11,7 @@
  * @license    http://www.opensource.org/licenses/bsd-license.php
  * @package    RaduApp
  * @subpackage TradesModule
- * @version    $Revision: 117 $
+ * @version    $Revision: 159 $
  * @since      Version 7
  * @access     public
  * @filesource

@@ -5,7 +5,16 @@ if (!empty($item)) {
 	
 	echo '<section class="box_border_round box_light">';
 	
-	echo "<h3>{$item['review_title']}</h3>";
+	echo "<h3>{$item['review_title']}"; 
+	if (2 == $item['review_type']) {
+	
+		echo '<span class="one_liner">[one-liner]</span>';
+	
+	} else {
+	
+		echo '<span class="snooze_fest">[snooze-fest]</span>';
+	}
+	echo "</h3>";
 	
 	echo '<hr />';
 	

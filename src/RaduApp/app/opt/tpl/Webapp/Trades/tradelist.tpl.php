@@ -9,6 +9,7 @@ if (! empty($facebook['meta']['og']['image'])) {
 echo "<p>{$strings['description']}</p>";
 echo '</section>';
 
+/*
 echo '<section class="box_border_round box_light">';
 echo '<h3>Audio - CDs, Vinyl, Cassettes</h3>';
 echo '<p>';
@@ -16,6 +17,7 @@ echo 'For the complete and up to date list of records, tapes and CDs, please vis
 echo '<a href="http://www.discogs.com/seller/radum/profile">www.discogs.com/seller/radum/profile</a>';
 echo '</p>';
 echo '</section>';
+*/
 
 echo '<section class="box_border_round box_light">';
 echo '<p>';

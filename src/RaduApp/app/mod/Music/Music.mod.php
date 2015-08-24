@@ -117,7 +117,7 @@ class Module_Music extends ModuleApp {
 
 	public function GetItem($itemId, $url, $path) {
 
-		$q = "SELECT _id, artist, title, year, format, label, review, notes, review_date FROM r_music_main WHERE _id = '{$itemId}' LIMIT 1";
+		$q = "SELECT _id, artist, title, year, format, label, review, notes, review_date, review_type FROM r_music_main WHERE _id = '{$itemId}' LIMIT 1";
 		
 		$rs = Core::Database()->Query($q);
 		

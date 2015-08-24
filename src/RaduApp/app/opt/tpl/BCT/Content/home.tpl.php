@@ -136,7 +136,9 @@ if (! empty($tradelist)) {
 	echo '</section>';
 	
 	echo '<section class="box_border_round bct_box">';
-	echo "<strong>Pick It Up!</strong> fanzine: <a href=\"{$url['www']}usr/media/fanzines/pick_it_up_1.pdf\" title=\"\">Issue 1 (2001)</a>";
+	echo "<strong>Pick It Up!</strong> fanzine: <a href=\"{$url['www']}usr/media/fanzines/pick_it_up_1.pdf\" title=\"Pick It Up!\">Issue 1 (2001)</a>";
+	echo '<br />';
+	echo "<strong>Bollocks - Read All About It</strong> fanzine: <a href=\"{$url['www']}usr/media/fanzines/bollocks-read_all_about_it_0.pdf\" title=\"Bollocks - Read All About It\">Issue 0 (1998)</a>";
 	echo '</section>';
 }
 

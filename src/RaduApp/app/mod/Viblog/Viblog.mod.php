@@ -1,6 +1,6 @@
 <?php
 /**
- * $Id: Viblog.mod.php 3 2012-03-20 18:55:48Z radu $
+ * $Id: Viblog.mod.php 156 2015-04-19 11:11:01Z radu $
  *
  * Viblog module.
  *
@@ -9,7 +9,7 @@
  * @license    http://www.opensource.org/licenses/bsd-license.php
  * @package    RaduApp
  * @subpackage ViblogModule
- * @version    $Revision: 3 $
+ * @version    $Revision: 156 $
  * @since      Version 1
  * @access     public
  * @filesource
