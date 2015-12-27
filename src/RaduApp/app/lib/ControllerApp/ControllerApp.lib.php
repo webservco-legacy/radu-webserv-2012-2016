@@ -19,10 +19,10 @@
  * Security check.
  */
 if (! defined('_WEB')) {
-	/**
-	 * Stop script execution.
-	 */
-	exit();
+    /**
+     * Stop script execution.
+     */
+    exit();
 }
 
 /**
@@ -33,299 +33,307 @@ if (! defined('_WEB')) {
  * @package DefaultApp
  * @subpackage ControllerApp
  */
-class ControllerApp extends Controller {
+class ControllerApp extends Controller
+{
 
-	/**
-	 * Comments library object.
-	 *
-	 * @var mixed
-	 */
-	private $_mComments = NULL;
+    /**
+     * Comments library object.
+     *
+     * @var mixed
+     */
+    private $_mComments = NULL;
 
-	/**
-	 * Custom skin
-	 *
-	 * @var string
-	 */
-	private $_mSkin = NULL;
+    /**
+     * Custom skin
+     *
+     * @var string
+     */
+    private $_mSkin = NULL;
 
-	/**
-	 * Controller initialization.
-	 *
-	 * @return bool
-	 */
-	public function Init() {
+    /**
+     * Controller initialization.
+     *
+     * @return bool
+     */
+    public function Init()
+    {
+        $this->_mUseSessions = (bool) Core::Config()->Get('options.sessions');
+        
+        /**
+         * Initialize output.
+         * This is actually not required,
+         * but we need it here so we can use the
+         * Output library configuration data.
+         */
+        $this->Output()->Init($this->_mTemplatePrefix);
+        
+        /**
+         * Use only in multi-language apps.
+         */
+        $this->InitLocale();
+        
+        return TRUE;
+    }
 
-		$this->_mUseSessions = (bool) Core::Config()->Get('options.sessions');
-		
-		/**
-		 * Initialize output.
-		 * This is actually not required,
-		 * but we need it here so we can use the
-		 * Output library configuration data.
-		 */
-		$this->Output()->Init($this->_mTemplatePrefix);
-		
-		/**
-		 * Use only in multi-language apps.
-		 */
-		$this->InitLocale();
-		
-		return TRUE;
-	}
+    public function InitLocale()
+    {
+        $opt_multilanguage = Core::Config()->Get('options.multilanguage');
+        
+        if (! $opt_multilanguage) {
+            
+            return FALSE;
+        }
+        
+        if ($this->_mUseSessions && ! empty($_SESSION['I18n']['Chosen'])) {
+            
+            return FALSE;
+        }
+        
+        $app_langs = Core::I18n()->GetAvailableLangs();
+        
+        $user_lang = ! empty($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : NULL;
+        
+        if (! empty($user_lang) && array_key_exists($user_lang, $app_langs)) {
+            
+            Core::I18n()->SetLocale($app_langs[$user_lang]);
+            
+            return TRUE;
+        }
+        
+        return FALSE;
+    }
 
-	public function InitLocale() {
+    /**
+     * Get output.
+     *
+     * @param array $contentData            
+     * @param string $customTemplate            
+     * @param boolean $globalTemplate
+     *            true if output is to search the custom
+     *            template in root tpl dir instead of module tpl dir
+     * @param string $mainTemplate
+     *            override default main template (layout.tpl)
+     * @return string
+     */
+    public function GetOutput($contentData = array(), $customTemplate = NULL, $globalTemplate = FALSE, $mainTemplate = NULL)
+    {
+        
+        /**
+         * Local data.
+         *
+         * @var array
+         */
+        $local_data = array();
+        
+        /**
+         * The method has a redundancy check, so it's no trouble if it's already called in $this->Init();
+         */
+        $this->Output()->Init($this->_mTemplatePrefix);
+        
+        if ('viblog.webserv.co' == $_SERVER['HTTP_HOST']) {
+            
+            $this->Output()->SetSkin('Graphic');
+            
+        } else {
+            
+            if ('bct.webserv.co' == $_SERVER['HTTP_HOST']) {
+                
+                $this->Output()->SetSkin('BCT');
+            }
+        }
+        
+        /**
+         *
+         * @var _string
+         */
+        $template_dir_main = '_main/';
+        
+        $templates_extra = $this->Output()->GetTemplatesExtra();
+        
+        foreach ($templates_extra as $template_extra) {
+            
+            /**
+             * Set the extra tpl var to the parsed content template.
+             *
+             * @var array
+             */
+            
+            $local_data["tpl_{$template_extra}"] = $this->Output()->Out($template_dir_main . $template_extra, $contentData);
+        }
+        
+        /**
+         * Get secondary template name.
+         *
+         * @var string
+         */
+        $template_name = (FALSE !== $globalTemplate) ? $template_dir_main . $this->_mTemplatePrefix . $customTemplate : $this->Output()->GetSubTemplate($this->_mRequest, $customTemplate);
+        
+        /**
+         * Set the content tpl var to the parsed content template.
+         *
+         * @var array
+         */
+        $local_data['tpl_content'] = $this->Output()->Out($template_name, $contentData);
+        
+        /**
+         * Get all data.
+         *
+         * @var array
+         */
+        $data = array_merge($local_data, $contentData);
+        
+        /**
+         * Set charset
+         */
+        header("Content-type: text/html; charset=utf-8");
+        
+        /**
+         * Get main template name.
+         */
+        $main_template = ! empty($mainTemplate) ? $this->_mTemplatePrefix . $mainTemplate : $this->Output()->GetTemplate();
+        
+        /*
+         * XXX dsabled 140903
+         * if (Core::Useragent()->IsDevice()) {
+         *
+         * $main_template .= '_mobile';
+         *
+         * $is_phone = Core::Useragent()->IsDevicePhone();
+         *
+         * if ($is_phone) {
+         *
+         * $main_template .= '_phone';
+         * }
+         * }
+         */
+        
+        return $this->Output()->Out($template_dir_main . $main_template, $data);
+    }
 
-		$opt_multilanguage = Core::Config()->Get('options.multilanguage');
-		
-		if (! $opt_multilanguage) {
-			
-			return FALSE;
-		}
-		
-		if ($this->_mUseSessions && ! empty($_SESSION['I18n']['Chosen'])) {
-			
-			return FALSE;
-		}
-		
-		$app_langs = Core::I18n()->GetAvailableLangs();
-		
-		$user_lang = ! empty($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : NULL;
-		
-		if (! empty($user_lang) && array_key_exists($user_lang, $app_langs)) {
-			
-			Core::I18n()->SetLocale($app_langs[$user_lang]);
-			
-			return TRUE;
-		}
-		
-		return FALSE;
-	}
+    public function CheckAdminAccess($data)
+    {
+        if (! empty($data['user']['Logged']) && ! empty($data['info']['location'])) {
+            
+            if (Core::Acl()->Check($data['user']['Id'], $data['info']['location'])) {
+                
+                return TRUE;
+            } else {
+                
+                $data['strings']['message'] = __('Error') . ': ' . __('You don\'t have permission to access this resource.');
+                
+                echo $this->GetOutput($data, 'error', TRUE);
+                
+                return FALSE;
+            }
+        } else {
+            
+            $next = Core::String()->EncodeUrlString($data['info']['location']);
+            
+            Core::Router()->Redirect("Users/App/Account/next/{$next}");
+            
+            exit();
+        }
+        
+        return FALSE;
+    }
 
-	/**
-	 * Get output.
-	 *
-	 * @param array $contentData        	
-	 * @param string $customTemplate        	
-	 * @param boolean $globalTemplate
-	 *        	true if output is to search the custom
-	 *        	template in root tpl dir instead of module tpl dir
-	 * @param string $mainTemplate
-	 *        	override default main template (layout.tpl)
-	 * @return string
-	 */
-	public function GetOutput($contentData = array(), $customTemplate = NULL, $globalTemplate = FALSE, $mainTemplate = NULL) {
+    public function CheckUserCarAccess($data)
+    {
+        if (empty($data['user']['Logged'])) {
+            
+            return __('Error: You have to be logged in in order to access this resource.');
+        }
+        
+        if (! Core::Acl()->Check($data['user']['Id'], $data['info']['location'])) {
+            
+            return _('Error: You don\'t have permission to access this resource.');
+        }
+        
+        return NULL;
+    }
 
-		/**
-		 * Local data.
-		 *
-		 * @var array
-		 */
-		$local_data = array();
-		
-		/**
-		 * The method has a redundancy check, so it's no trouble if it's already called in $this->Init();
-		 */
-		$this->Output()->Init($this->_mTemplatePrefix);
-		
-		if ('bct.webserv.co' == $_SERVER['HTTP_HOST']) {
-			
-			$this->Output()->SetSkin('BCT');
-		}
-		
-		/**
-		 *
-		 * @var _string
-		 */
-		$template_dir_main = '_main/';
-		
-		$templates_extra = $this->Output()->GetTemplatesExtra();
-		
-		foreach ($templates_extra as $template_extra) {
-			
-			/**
-			 * Set the extra tpl var to the parsed content template.
-			 *
-			 * @var array
-			 */
-			
-			$local_data["tpl_{$template_extra}"] = $this->Output()->Out($template_dir_main . $template_extra, $contentData);
-		}
-		
-		/**
-		 * Get secondary template name.
-		 *
-		 * @var string
-		 */
-		$template_name = (FALSE !== $globalTemplate) ? $template_dir_main . $this->_mTemplatePrefix . $customTemplate : $this->Output()->GetSubTemplate($this->_mRequest, $customTemplate);
-		
-		/**
-		 * Set the content tpl var to the parsed content template.
-		 *
-		 * @var array
-		 */
-		$local_data['tpl_content'] = $this->Output()->Out($template_name, $contentData);
-		
-		/**
-		 * Get all data.
-		 *
-		 * @var array
-		 */
-		$data = array_merge($local_data, $contentData);
-		
-		/**
-		 * Set charset
-		 */
-		header("Content-type: text/html; charset=utf-8");
-		
-		/**
-		 * Get main template name.
-		 */
-		$main_template = ! empty($mainTemplate) ? $this->_mTemplatePrefix . $mainTemplate : $this->Output()->GetTemplate();
-		
-		/*
-		 * XXX dsabled 140903
-		 * if (Core::Useragent()->IsDevice()) {
-		 *
-		 * $main_template .= '_mobile';
-		 *
-		 * $is_phone = Core::Useragent()->IsDevicePhone();
-		 *
-		 * if ($is_phone) {
-		 *
-		 * $main_template .= '_phone';
-		 * }
-		 * }
-		 */
-		
-		return $this->Output()->Out($template_dir_main . $main_template, $data);
-	}
+    public function CheckUserPabloAccess($data)
+    {
+        $restricted = FALSE;
+        
+        if (empty($data['user']['Logged'])) {
+            
+            $next = Core::String()->EncodeUrlString($data['info']['location']);
+            Core::Router()->Redirect("Users/App/Account/next/{$next}");
+            
+            exit();
+        } else {
+            
+            $resource = str_replace($data['info']['path'], NULL, $data['info']['location']);
+            
+            if (! Core::Acl()->Check($data['user']['Id'], $resource)) {
+                
+                Core::Router()->Redirect("Catalogue/Catalogue/Restricted");
+                
+                exit();
+            }
+        }
+        
+        if ($restricted) {}
+        
+        return TRUE;
+    }
 
-	public function CheckAdminAccess($data) {
+    public function GetDefaultOutput($title = NULL)
+    {
+        $this->Init();
+        
+        $data = $this->Module()->GetData($this->_mRequest);
+        
+        if (! empty($title)) {
+            
+            $data['strings']['title'] = $title;
+        }
+        
+        echo $this->GetOutput($data);
+        
+        return TRUE;
+    }
 
-		if (! empty($data['user']['Logged']) && ! empty($data['info']['location'])) {
-			
-			if (Core::Acl()->Check($data['user']['Id'], $data['info']['location'])) {
-				
-				return TRUE;
-			} else {
-				
-				$data['strings']['message'] = __('Error') . ': ' . __('You don\'t have permission to access this resource.');
-				
-				echo $this->GetOutput($data, 'error', TRUE);
-				
-				return FALSE;
-			}
-		} else {
-			
-			$next = Core::String()->EncodeUrlString($data['info']['location']);
-			
-			Core::Router()->Redirect("Users/App/Account/next/{$next}");
-			
-			exit();
-		}
-		
-		return FALSE;
-	}
+    public function Comments()
+    {
+        if (NULL == $this->_mComments) {
+            
+            $this->_mComments = Core::Get('Library_Comments');
+            
+            $app_prefix = Core::Config()->Get('app.prefix');
+            
+            $this->_mComments->Init($app_prefix);
+        }
+        
+        return $this->_mComments;
+    }
 
-	public function CheckUserCarAccess($data) {
-
-		if (empty($data['user']['Logged'])) {
-			
-			return __('Error: You have to be logged in in order to access this resource.');
-		}
-		
-		if (! Core::Acl()->Check($data['user']['Id'], $data['info']['location'])) {
-			
-			return _('Error: You don\'t have permission to access this resource.');
-		}
-		
-		return NULL;
-	}
-
-	public function CheckUserPabloAccess($data) {
-
-		$restricted = FALSE;
-		
-		if (empty($data['user']['Logged'])) {
-			
-			$next = Core::String()->EncodeUrlString($data['info']['location']);
-			Core::Router()->Redirect("Users/App/Account/next/{$next}");
-			
-			exit();
-		} else {
-			
-			$resource = str_replace($data['info']['path'], NULL, $data['info']['location']);
-			
-			if (! Core::Acl()->Check($data['user']['Id'], $resource)) {
-				
-				Core::Router()->Redirect("Catalogue/Catalogue/Restricted");
-				
-				exit();
-			}
-		}
-		
-		if ($restricted) {
-		}
-		
-		return TRUE;
-	}
-
-	public function GetDefaultOutput($title = NULL) {
-
-		$this->Init();
-		
-		$data = $this->Module()->GetData($this->_mRequest);
-		
-		if (! empty($title)) {
-			
-			$data['strings']['title'] = $title;
-		}
-		
-		echo $this->GetOutput($data);
-		
-		return TRUE;
-	}
-
-	public function Comments() {
-
-		if (NULL == $this->_mComments) {
-			
-			$this->_mComments = Core::Get('Library_Comments');
-			
-			$app_prefix = Core::Config()->Get('app.prefix');
-			
-			$this->_mComments->Init($app_prefix);
-		}
-		
-		return $this->_mComments;
-	}
-
-	public function GetComments($commentType, $itemId, $data) {
-
-		$comments['show'] = TRUE;
-		
-		$comments['list'] = $this->Comments()->GetList($commentType, $itemId);
-		
-		$comments['next'] = Core::String()->EncodeUrlString("{$data['info']['location']}{$data['info']['path']}");
-		
-		$comments['id'] = NULL;
-		
-		if (! empty($data['user']['Logged'])) {
-			
-			$comments['id'] = ! empty($data['query']['comment']) ? $data['query']['comment'] : NULL;
-		}
-		
-		if (! empty($_SESSION['Comments']['added'])) {
-			
-			$comments['message'] = __('Thank you, your comment was received and will be published shortly');
-			
-			unset($_SESSION['Comments']['added']);
-		}
-		
-		$comments['form'] = $this->Comments()->GetForm('user', $commentType, $itemId, $comments['id'], "{$data['url']['current']}#comments"); // XXX
-		
-		return $comments;
-	}
+    public function GetComments($commentType, $itemId, $data)
+    {
+        $comments['show'] = TRUE;
+        
+        $comments['list'] = $this->Comments()->GetList($commentType, $itemId);
+        
+        $comments['next'] = Core::String()->EncodeUrlString("{$data['info']['location']}{$data['info']['path']}");
+        
+        $comments['id'] = NULL;
+        
+        if (! empty($data['user']['Logged'])) {
+            
+            $comments['id'] = ! empty($data['query']['comment']) ? $data['query']['comment'] : NULL;
+        }
+        
+        if (! empty($_SESSION['Comments']['added'])) {
+            
+            $comments['message'] = __('Thank you, your comment was received and will be published shortly');
+            
+            unset($_SESSION['Comments']['added']);
+        }
+        
+        $comments['form'] = $this->Comments()->GetForm('user', $commentType, $itemId, $comments['id'], "{$data['url']['current']}#comments"); // XXX
+        
+        return $comments;
+    }
 }
 ?>

@@ -5,7 +5,6 @@ if (!defined('_WEB')) {
 
 class Controller_Bct_App extends ControllerApp {
 
-
 	public function Home() {
 
 		$this->Init();
@@ -35,6 +34,28 @@ class Controller_Bct_App extends ControllerApp {
 		$data = $this->Module()->GetData($this->_mRequest);
 		
 		$this->Module()->Devel();
+		
+		return;
+	}
+	
+	public function DiscogsPriceInfoProcedure() {
+
+		$this->Init();
+		
+		$data = $this->Module()->GetData($this->_mRequest);
+		
+		$this->Module()->DiscogsPriceInfoProcedure();
+		
+		return;
+	}
+	
+	public function DiscogsPriceInfoProcedureUpdatePrices() {
+
+		$this->Init();
+		
+		$data = $this->Module()->GetData($this->_mRequest);
+		
+		$this->Module()->DiscogsPriceInfoProcedureUpdatePrices();
 		
 		return;
 	}

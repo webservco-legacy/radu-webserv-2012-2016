@@ -220,6 +220,11 @@ strong {
 	text-align: right;
 }
 
+.discogs_stock td.info {
+	text-align: left;
+	font-size: 0.6em;
+}
+
 .discogs_stock td.price {
 	text-align: right;
 }

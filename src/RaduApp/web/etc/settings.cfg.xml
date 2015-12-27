@@ -25,6 +25,10 @@
 		</path>
 		<url>
 			<www>http://radu.webserv.co/</www>
+			<aliases>
+			    <item>http://bct.webserv.co/</item>
+			    <item>http://viblog.webserv.co/</item>
+			</aliases>
 		</url>
 	</prod>
 </config>

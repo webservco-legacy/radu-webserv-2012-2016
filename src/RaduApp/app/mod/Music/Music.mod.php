@@ -59,7 +59,9 @@ class Module_Music extends ModuleApp {
 
 		$data = array();
 		
-		$q = "SELECT * FROM r_music_discogs ORDER BY location, artist, title";
+		$q = "SELECT D.*, I.price_info FROM r_music_discogs D
+		    LEFT JOIN r_music_discogs_work I ON (I.listing_id = D.listing_id)
+		    ORDER BY D.location, D.artist, D.title";
 		
 		$rs = Core::Database()->Query($q);
 		

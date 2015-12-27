@@ -38,6 +38,11 @@ class Controller_Content_App extends ControllerApp {
 		 * (alternatively you could set the title (see Info())
 		 * return $this->GetDefaultOutput();
 		 */
+	    if ('viblog.webserv.co' == $_SERVER['HTTP_HOST']) {
+	    
+	        Core::Router()->Redirect('Viblog/App/Items');
+	    
+	    }
 	
 		$this->Init();
 	

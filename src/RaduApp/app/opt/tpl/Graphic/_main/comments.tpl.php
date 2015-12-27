@@ -5,9 +5,9 @@ if (!empty($comments['show'])) {
 	
 	echo '<section class="box_border_round box_light"><a id="comments"></a>';
 	
-	echo '<h3>' . __('Comments', 'App') . '</h3>';
-	
 	echo '<hr />';
+	
+	echo '<h3>' . __('Comments', 'App') . '</h3>';
 	
 	if (!empty($comments['list'])) {
 		
@@ -24,7 +24,6 @@ if (!empty($comments['show'])) {
 		
 		echo '<p>' . __('No comments yet', 'App') . '</p>';
 		
-		echo '<hr />';
 	}
 	
 	echo '</section>';
@@ -34,7 +33,7 @@ if (!empty($comments['show'])) {
 		
 		echo "<p class=\"strong ok\">{$comments['message']}</p>";
 		
-		echo '<hr />';
+		
 	}
 	
 	if (!empty($comments['form'])) {

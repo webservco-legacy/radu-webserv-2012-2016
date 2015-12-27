@@ -1,6 +1,6 @@
 <?php
 /**
- * $Id: Viblog.mod.php 156 2015-04-19 11:11:01Z radu $
+ * $Id: Viblog.mod.php 162 2015-12-27 21:14:15Z radu $
  *
  * Viblog module.
  *
@@ -9,7 +9,7 @@
  * @license    http://www.opensource.org/licenses/bsd-license.php
  * @package    RaduApp
  * @subpackage ViblogModule
- * @version    $Revision: 156 $
+ * @version    $Revision: 162 $
  * @since      Version 1
  * @access     public
  * @filesource
@@ -43,13 +43,14 @@ class Module_Viblog extends ModuleApp {
 			'post_id',
 			'post_title',
 			'post_description',
+			'post_tpl_extra',
 			'post_date_start',
 			'post_date_end',
 		);
 
 		$db_options['conditions'][] = array('post_id', $postId);
 
-		$db_options['conditions'][] = array('post_active', 1);
+		//$db_options['conditions'][] = array('post_active', 1);
 
 		return Core::Database()->RetrieveOne($db_fields, 'r_viblog', $db_options);
 	}

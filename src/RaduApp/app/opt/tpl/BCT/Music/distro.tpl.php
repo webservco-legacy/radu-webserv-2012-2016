@@ -49,7 +49,7 @@ if (! empty($stock)) {
 			echo "<tr class=\"{$class}\">";
 			echo '<td class="noborder">&#160;</td>';
 			echo '<td colspan="5" class="comments noborder">';
-			echo str_replace(array('Open to offers and some trades. More items available, please visit my profile for full list.', 'All cassettes fully tested.'), '', $item['comments']);
+			echo str_replace(array('More items available, please visit profile.'), '', $item['comments']);
 			echo '</td>';
 			echo '<td class="noborder">&#160;</td>';
 			echo '</tr>';

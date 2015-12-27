@@ -10,6 +10,7 @@ if (! empty($stock)) {
 	echo '	<th>&#160;</th>';
 	echo '	<th>format</th>';
 	echo '	<th>condition</th>';
+	echo '	<th>info</th>';
 	echo '	<th>price</th>';
 	echo '	<th>&#160;</th>';
 	echo '	<th>market</th>';
@@ -45,6 +46,37 @@ if (! empty($stock)) {
 			echo '/'; 
 			echo !empty($item['sleeve_condition_code']) ? $item['sleeve_condition_code'] : '-'; 
 			'</td>';
+			echo '	<td class="info">';
+			if (!empty($item['price_info'])) {
+			    
+			    $price_info = unserialize($item['price_info']);
+			    
+			    $i = 0;
+			    foreach ($price_info as $info) {
+			        
+			        if ($i < 3) {
+			            
+			            echo "{$info['price']}";
+			            if (!empty($info['converted_price'])) {
+			                echo "({$info['converted_price']})";
+			            }
+			            echo ' ';
+			            echo "{$info['country']} ";
+			            echo " ({$info['cond_media']}";
+			            if (!empty($info['cond_sleeve'])) {
+			                echo "/ {$info['cond_sleeve']}";
+			            }
+			            echo ')';
+			            echo '<br />';
+			            
+			        }
+			        
+			        $i++;
+			        
+			        
+			    }
+			}
+			echo '</td>';
 			echo '	<td class="price">';
 			echo "<input tabindex=\"{$i}\" class=\"discogs_price\" id=\"discogs_price_{$item['listing_id']}\" value=\"{$item['price']}\" />";
 			echo '</td>';
@@ -64,7 +96,7 @@ if (! empty($stock)) {
 			echo '<td class="noborder">';
 			echo "<a href=\"\" onclick=\"JavaScript:discogs_update_location('{$item['listing_id']}'); return false;\">[l]<a/>";
 			echo '</td>';
-			echo '<td colspan="5" class="comments noborder">';
+			echo '<td colspan="6" class="comments noborder">';
 			echo "<input class=\"discogs_comments\" id=\"discogs_comments_{$item['listing_id']}\" value=\"";
 			echo htmlentities($item['comments'], ENT_QUOTES);
 			echo "\" />";
