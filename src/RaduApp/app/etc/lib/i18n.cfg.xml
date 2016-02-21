@@ -19,10 +19,12 @@
 				<item>
 					<lang>en</lang>
 					<locale>en_US</locale>
+					<title>English</title>
 				</item>
 				<item>
 					<lang>ro</lang>
 					<locale>ro_RO.UTF8</locale>
+					<title>Română</title>
 				</item>
 			</langs>
 		</i18n>

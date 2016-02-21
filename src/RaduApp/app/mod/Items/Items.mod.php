@@ -1,6 +1,6 @@
 <?php
 /**
- * $Id: Items.mod.php 156 2015-04-19 11:11:01Z radu $
+ * $Id: Items.mod.php 116 2013-08-02 07:47:01Z radu $
  *
  * Items module.
  *
@@ -9,7 +9,7 @@
  * @license    http://www.opensource.org/licenses/bsd-license.php
  * @package    DefaultApp
  * @subpackage ItemsModule
- * @version    $Revision: 156 $
+ * @version    $Revision: 116 $
  * @since      Version 7
  * @access     public
  * @filesource

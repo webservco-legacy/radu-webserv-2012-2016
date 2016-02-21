@@ -98,7 +98,7 @@ if (! empty($tradelist)) {
 				echo "<strong>{$item['title']}</strong>";
 				
 				if (! empty($item['release_id'])) {
-					echo " <a class=\"discogs\" href=\"http://www.discogs.com/release/{$item['release_id']}\" target=\"_blank\" title=\"View info on Discogs\">◎</a>";
+					echo " <a class=\"discogs\" href=\"https://www.discogs.com/release/{$item['release_id']}\" target=\"_blank\" title=\"View info on Discogs\">◎</a>";
 				}
 				
 				if (! empty($item['condition'])) {

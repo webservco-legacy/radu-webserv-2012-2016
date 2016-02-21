@@ -81,7 +81,7 @@ class Module_Music extends ModuleApp {
 					$data[$r['location']][$r['listing_id']]['sleeve_condition_code'] = $this->Discogs()->GetGradingCode($r['sleeve_condition']);
 				}
 				
-				$data[$r['location']][$r['listing_id']]['market_url'] = 'http://www.discogs.com/buy/radum/' . $this->FormatSeoTitle(array(
+				$data[$r['location']][$r['listing_id']]['market_url'] = 'https://www.discogs.com/buy/radum/' . $this->FormatSeoTitle(array(
 					'artist' => $r['artist'],
 					'title' => $r['title'] 
 				)) . "/{$r['listing_id']}";

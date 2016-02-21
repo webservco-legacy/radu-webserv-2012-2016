@@ -14,7 +14,7 @@ echo '<section class="box_border_round box_light">';
 echo '<h3>Audio - CDs, Vinyl, Cassettes</h3>';
 echo '<p>';
 echo 'For the complete and up to date list of records, tapes and CDs, please visit:<br />';
-echo '<a href="http://www.discogs.com/seller/radum/profile">www.discogs.com/seller/radum/profile</a>';
+echo '<a href="https://www.discogs.com/seller/radum/profile">www.discogs.com/seller/radum/profile</a>';
 echo '</p>';
 echo '</section>';
 */

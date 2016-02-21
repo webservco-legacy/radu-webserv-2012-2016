@@ -5,6 +5,7 @@ if (!defined('_WEB')) {
 
 class Controller_Bct_App extends ControllerApp {
 
+
 	public function Home() {
 
 		$this->Init();

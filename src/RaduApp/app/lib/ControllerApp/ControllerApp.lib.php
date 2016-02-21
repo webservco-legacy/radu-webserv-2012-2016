@@ -95,7 +95,7 @@ class ControllerApp extends Controller
         
         if (! empty($user_lang) && array_key_exists($user_lang, $app_langs)) {
             
-            Core::I18n()->SetLocale($app_langs[$user_lang]);
+            Core::I18n()->SetLocale($app_langs[$user_lang]['locale']);
             
             return TRUE;
         }

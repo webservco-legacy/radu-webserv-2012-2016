@@ -471,6 +471,7 @@ class Module_Bct extends ModuleApp
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $data = curl_exec($ch);
         curl_close($ch);
         return $data;
@@ -609,12 +610,12 @@ class Module_Bct extends ModuleApp
         /**
          * Step 2 - get rest of data from Discogs (run multiple times?)
          */
-       // $log = $this->DiscogsCollectionLocalUpdate();
+       //$log = $this->DiscogsCollectionLocalUpdate();
         
         /**
          * Step 3 - process local data.
          */
-       // $log = $this->DiscogsCollectionLocalProcessTrades();
+       //$log = $this->DiscogsCollectionLocalProcessTrades();
         
         echo '<pre>';
         print_r($log);

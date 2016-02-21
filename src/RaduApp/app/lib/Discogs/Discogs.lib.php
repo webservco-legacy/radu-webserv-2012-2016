@@ -45,7 +45,8 @@ class Discogs extends Library {
 			CURLOPT_RETURNTRANSFER => 1,
 			CURLOPT_URL => $url,
 			CURLOPT_USERAGENT => 'PabloApp/1.0',
-			CURLOPT_HEADER => 1 
+			CURLOPT_HEADER => 1,
+			CURLOPT_SSL_VERIFYPEER => false,
 		));
 		
 		if ($isPost) {
@@ -90,7 +91,7 @@ class Discogs extends Library {
 		
 		// XXX
 		
-		// $url = "http://api.discogs.com/database/search?q={$query}";
+		// $url = "https://api.discogs.com/database/search?q={$query}";
 		
 		$path_app = Core::Config()->Get('path.app');
 		
@@ -103,7 +104,7 @@ class Discogs extends Library {
 		 */
 		$oauth_params = array(
 			
-			'path' => 'http://api.discogs.com/database/search',
+			'path' => 'https://api.discogs.com/database/search',
 			'signatures' => array(
 				'consumer_key' => 'REDACTED',
 				'shared_secret' => 'REDACTED',
@@ -151,7 +152,7 @@ class Discogs extends Library {
 				'thumb' => $thumb,
 				'year' => ! empty($result['year']) ? $result['year'] : NULL,
 				'format' => ! empty($result['format']) ? implode(', ', $result['format']) : NULL,
-				'uri' => ! empty($result['uri']) ? "http://www.discogs.com{$result['uri']}" : NULL 
+				'uri' => ! empty($result['uri']) ? "https://www.discogs.com{$result['uri']}" : NULL 
 			);
 		}
 		
@@ -165,17 +166,17 @@ class Discogs extends Library {
 		switch ($type) {
 			
 			case 'master' :
-				$url = "http://api.discogs.com/masters/{$id}";
+				$url = "https://api.discogs.com/masters/{$id}";
 				break;
 			case 'release' :
 			default :
-				$url = "http://api.discogs.com/releases/{$id}";
+				$url = "https://api.discogs.com/releases/{$id}";
 				break;
 		}
 		
 		// XXX
 		
-		// $url = "http://api.discogs.com/database/search?q={$query}";
+		// $url = "https://api.discogs.com/database/search?q={$query}";
 		
 		$path_app = Core::Config()->Get('path.app');
 		
@@ -293,11 +294,11 @@ class Discogs extends Library {
 
 		$collection = array();
 		
-		// $url = "http://api.discogs.com/users/{$userName}/collection/folders/{$folderId}";
-		$url = "http://api.discogs.com/users/{$userName}/collection/folders/{$folderId}/releases";
-		// $url = "http://api.discogs.com/users/{$userName}/collection/folders/{$folderId}/releases/6438424/instances/121334708";
-		// $url = "http://api.discogs.com/users/{$userName}/collection/folders/{$folderId}/releases";
-		// $url = "http://api.discogs.com/users/{$userName}/collection/fields";
+		// $url = "https://api.discogs.com/users/{$userName}/collection/folders/{$folderId}";
+		$url = "https://api.discogs.com/users/{$userName}/collection/folders/{$folderId}/releases";
+		// $url = "https://api.discogs.com/users/{$userName}/collection/folders/{$folderId}/releases/6438424/instances/121334708";
+		// $url = "https://api.discogs.com/users/{$userName}/collection/folders/{$folderId}/releases";
+		// $url = "https://api.discogs.com/users/{$userName}/collection/fields";
 		// XXX
 		
 		$path_app = Core::Config()->Get('path.app');
@@ -349,7 +350,7 @@ class Discogs extends Library {
 
 		$collection = array();
 		
-		$url = "http://api.discogs.com/users/{$userName}/collection/folders/{$folderId}/releases/{$releaseId}/instances/{$instanceId}";
+		$url = "https://api.discogs.com/users/{$userName}/collection/folders/{$folderId}/releases/{$releaseId}/instances/{$instanceId}";
 		
 		$path_app = Core::Config()->Get('path.app');
 		
