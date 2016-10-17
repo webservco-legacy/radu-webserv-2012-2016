@@ -1,6 +1,6 @@
 <?php
 /**
- * $Id: App.ctrl.php 42 2012-07-22 14:41:11Z radu $
+ * $Id: App.ctrl.php 162 2015-12-27 21:14:15Z radu $
  *
  * App controlller.
  *
@@ -11,7 +11,7 @@
  * @license    http://www.opensource.org/licenses/bsd-license.php
  * @package    RaduApp
  * @subpackage ViblogModule
- * @version    $Revision: 42 $
+ * @version    $Revision: 162 $
  * @since      Version 1
  * @access     public
  * @filesource

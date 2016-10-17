@@ -31,9 +31,9 @@ echo 'One-off international old school anarcho punk project with members from Gr
 echo '<br />';
 echo 'Fold-out cover containing all the lyrics.';
 echo '<br />';
-echo 'No youtube, no bandcamp, no mp3. You will have to discover this cassette the old fashioned way..';
-echo '<br />';
-echo 'Third edition still available.';
+echo 'No youtube, no bandcamp, no mp3. You\'ll have to discover this cassette the old fashioned way..';
+//echo '<br />';
+//echo 'Third edition still available.';
 echo '<br />';
 echo '<br />';
 

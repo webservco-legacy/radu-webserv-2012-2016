@@ -6,7 +6,23 @@ if (! defined('_WEB')) {
 class Module_Bct extends ModuleApp
 {
 
-    public function DiscogsCollectionLocalInsert()
+    public function GetDiscogsCollectionFolders() {
+    	
+    	$data = array();
+    	
+    	$folders = $this->Discogs()->GetDiscogsCollectionFolders('radum');
+    	
+    	if (!empty($folders['folders'])) {
+    		
+    		foreach ($folders['folders'] as $item) {
+    			$data[$item['id']] = $item['name'];
+    		}
+    	}
+    	
+    	return $data;
+    }
+	
+	public function DiscogsCollectionLocalInsert()
     {
         $log = 'DiscogsCollectionLocalInsert' . PHP_EOL;
         
@@ -19,10 +35,12 @@ class Module_Bct extends ModuleApp
             1,
             2,
             3,
-            4
-        );
+            4,
+        ); //XXX hard coded?
         
         set_time_limit(0);
+        
+        $folders = $this->GetDiscogsCollectionFolders();
         
         foreach ($pages as $page) {
             
@@ -33,9 +51,11 @@ class Module_Bct extends ModuleApp
                 $log .= 'got ' . count($items['releases']) . " items for page {$page}" . PHP_EOL;
                 
                 foreach ($items['releases'] as $release) {
+                	
+                	$folder = array_key_exists($release['folder_id'], $folders) ? $folders[$release['folder_id']] : NULL;
                     
-                    $q = "INSERT INTO r_music_discogs_collection (instance_id, release_id, instance_data, processed)
-					VALUES ('{$release['instance_id']}', '{$release['id']}', '', '0000-00-00 00:00:00')";
+                    $q = "INSERT INTO r_music_discogs_collection (instance_id, release_id, folder, instance_data, processed)
+					VALUES ('{$release['instance_id']}', '{$release['id']}', '{$folder}', '', '0000-00-00 00:00:00')";
                     Core::Database()->Query($q);
                     
                     $log .= "processed item {$release['instance_id']}" . PHP_EOL;
@@ -444,6 +464,21 @@ class Module_Bct extends ModuleApp
         return $data;
     }
     
+    public function DiscogsPriceInfoGetSingle($listingId)
+    {
+        $q = "SELECT listing_id, url, url_data, price_info FROM r_music_discogs_work
+            WHERE listing_id = '{$listingId}' LIMIT 1";
+    
+        $rs = Core::Database()->Query($q);
+    
+        if (0 < $rs->num_rows) {
+    
+            return $rs->fetch_assoc();
+        }
+    
+        return FALSE;
+    }
+    
     public function DiscogsPriceInfoSetData($listingId, $field, $data) {
         
         $data = Core::Database()->EscapeString($data);
@@ -489,6 +524,8 @@ class Module_Bct extends ModuleApp
         
         $i = 0;
         
+        
+        
         foreach($html->find('table.mpitems') as $table) {
         
             foreach ($table->find('tr.shortcut_navigable') as $tr) {
@@ -517,13 +554,21 @@ class Module_Bct extends ModuleApp
                     $data[$i]['converted_price'] = trim($converted_price[0]->plaintext);
                 }
         
-                $cond_media = $tr->find('.item_media_condition');
-        
+                /*
+                 * 
+                 $cond_media = $tr->find('.item_media_condition');
                 if (!empty($cond_media[0])) {
-        
-                    $data[$i]['cond_media'] = trim($cond_media[0]->plaintext);
+                	$data[$i]['cond_media'] = trim($cond_media[0]->plaintext);
                 }
-        
+                
+                $cond_media = $tr->find('.media-condition-tooltip');
+                $data[$i]['cond_media'] = !empty($cond_media[0]->attr['data-condition']) ? $cond_media[0]->attr['data-condition'] : NULL; 
+
+                */
+                $cond_media = $tr->find('.item_condition span');
+                $data[$i]['cond_media'] = !empty($cond_media[2]) ? trim($cond_media[2]->plaintext) : NULL;
+                
+                        
                 $cond_sleeve = $tr->find('.item_sleeve_condition');
         
                 if (!empty($cond_sleeve[0])) {
@@ -575,7 +620,13 @@ class Module_Bct extends ModuleApp
         
         echo "DiscogsPriceInfoProcedure: " . count($data) . '<br />';
         
+        $i = 0;
         foreach ($data as $item) {
+        	
+        	$x = $i%25;
+        	if (empty($x)) {
+        		sleep(1);
+        	}
             
             echo "processing: {$item['listing_id']}<br />";
             
@@ -593,6 +644,8 @@ class Module_Bct extends ModuleApp
             }
             
             $this->DiscogsPriceInfoSetDone($item['listing_id']);
+            
+            $i++;
         }
         
         echo 'done.<br />';
@@ -605,17 +658,17 @@ class Module_Bct extends ModuleApp
         /**
          * Step 1 - get initial data from Discogs
          */
-        //$log = $this->DiscogsCollectionLocalInsert();
+       //$log = $this->DiscogsCollectionLocalInsert();
         
         /**
          * Step 2 - get rest of data from Discogs (run multiple times?)
          */
-       //$log = $this->DiscogsCollectionLocalUpdate();
+	//$log = $this->DiscogsCollectionLocalUpdate();
         
         /**
          * Step 3 - process local data.
          */
-       //$log = $this->DiscogsCollectionLocalProcessTrades();
+     //$log = $this->DiscogsCollectionLocalProcessTrades();
         
         echo '<pre>';
         print_r($log);

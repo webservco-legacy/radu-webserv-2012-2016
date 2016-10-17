@@ -255,7 +255,7 @@ table {
 	width: auto;
 	
 	font-weight: bold;
-	padding: .5em;
+	padding: .3em;
 }
 
 .cal_month_container .nav {
@@ -299,7 +299,7 @@ table {
 }
 
 .cal_day {
-	padding: .5em .7em;
+	padding: .4em .7em;
 	margin: 0;
 	border: 1px solid #000;
 	text-align: right;
@@ -307,11 +307,11 @@ table {
 }
 
 .calendar_big h3 {
-	font-size: 1.7em;
+	font-size: 1.6em;
 }
 
 .calendar_big .cal_day {
-	padding: 1em 2.9em;
+	padding: 0.7em 2.9em;
 	margin: 0;
 	border: 1px solid #000;
 	text-align: right;
@@ -323,7 +323,7 @@ table {
 }
 
 .calendar_big .cal_day span {
-	font-size: 2.7em;
+	font-size: 2.5em;
 }
 
 .cal_week .previous span {
@@ -352,13 +352,12 @@ table {
 </head>
 <body>
 <?php
-$m = 06;
+$m = '12';
 
 $current = "2015-{$m}-01";
 $previous = date('Y-m-d', strtotime("{$current} - 1 month"));
 $next = date('Y-m-d', strtotime("{$current} + 1 month"));
 $more = date('Y-m-d', strtotime("{$current} + 2 month"));
-
 
 echo '<section class="calendar_big">';
 echo get_calendar_html($current, date('Y-m-t', strtotime($current)));

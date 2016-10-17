@@ -71,6 +71,10 @@
 			<name>catalogue</name>
 			<value>Catalogue/Catalogue/Items/latest/1</value>
 		</route>
+		<route>
+			<name>reply</name>
+			<value>Content/App/Pakken</value>
+		</route>
 	</prod>
 </config>
 <!-- $Id: router.cfg.xml 25 2013-07-05 15:59:40Z radu $ -->

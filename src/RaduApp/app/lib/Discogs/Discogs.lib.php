@@ -72,12 +72,8 @@ class Discogs extends Library {
 				die("Error: empty body. header: {$header}");
 			}
 			
-			// echo '<pre>'; print_r($resp); exit(); //XXX
-			
 			return $body;
 		} else {
-			
-			// XXX
 			
 			die('Error: "' . curl_error($curl) . '" - Code: ' . curl_errno($curl));
 		}
@@ -88,8 +84,6 @@ class Discogs extends Library {
 		$results = array();
 		
 		$query = urlencode($query);
-		
-		// XXX
 		
 		// $url = "https://api.discogs.com/database/search?q={$query}";
 		
@@ -122,8 +116,6 @@ class Discogs extends Library {
 		}
 		
 		$url = $oauth_result['signed_url'];
-		
-		// XXX
 		
 		$json = $this->GetCurlData($url);
 		
@@ -173,8 +165,6 @@ class Discogs extends Library {
 				$url = "https://api.discogs.com/releases/{$id}";
 				break;
 		}
-		
-		// XXX
 		
 		// $url = "https://api.discogs.com/database/search?q={$query}";
 		
@@ -289,10 +279,61 @@ class Discogs extends Library {
 		
 		return $release;
 	}
+	
+	public function GetDiscogsCollectionFolders($userName) {
+		
+		$url = "https://api.discogs.com/users/{$userName}/collection/folders";
+		
+		$path_app = Core::Config()->Get('path.app');
+		
+		require_once "{$path_app}opt/oauthsimple/php/OAuthSimple.php";
+		
+		$oauth = new OAuthSimple();
+		
+		/**
+		 * XXX Hard-coded for now
+		 */
+		$oauth_params = array(
+			
+			'path' => $url,
+			'signatures' => array(
+				'consumer_key' => 'REDACTED',
+				'shared_secret' => 'REDACTED',
+				'oauth_token' => 'REDACTED',
+				'oauth_secret' => 'REDACTED' 
+			),
+			
+			// 'parameters' => 'sort=year&sort_order=desc'
+			'parameters' => NULL
+			//'parameters' => "per_page=100&page=1" 
+		);
+		
+		$oauth_result = $oauth->sign($oauth_params);
+		
+		if (empty($oauth_result['signed_url'])) {
+			
+			return FALSE;
+		}
+		
+		$url = $oauth_result['signed_url'];
+		
+		$json = $this->GetCurlData($url);
+		
+		$data = json_decode($json, TRUE);
+		
+		if (empty($data)) {
+			
+			return FALSE;
+		}
+		
+		return $data;
+		
+		
+	}
 
 	public function GetDiscogsCollection($userName, $folderId = 0, $page = 1) {
 
-		$collection = array();
+		$data = array();
 		
 		// $url = "https://api.discogs.com/users/{$userName}/collection/folders/{$folderId}";
 		$url = "https://api.discogs.com/users/{$userName}/collection/folders/{$folderId}/releases";
@@ -348,7 +389,7 @@ class Discogs extends Library {
 
 	public function GetDiscogsCollectionInstance($userName, $folderId = 0, $releaseId, $instanceId) {
 
-		$collection = array();
+		$data = array();
 		
 		$url = "https://api.discogs.com/users/{$userName}/collection/folders/{$folderId}/releases/{$releaseId}/instances/{$instanceId}";
 		
