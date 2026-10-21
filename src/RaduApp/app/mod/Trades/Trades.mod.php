@@ -15,7 +15,7 @@
  * @filesource
  */
 if (!defined('_WEB')) {
-	exit();
+    exit();
 }
 
 /**
@@ -28,39 +28,39 @@ if (!defined('_WEB')) {
  */
 class Module_Trades extends ModuleApp {
 
-	public function GetCategories() {
+    public function GetCategories() {
 
-		return array(
-				'pub' => 'Publications',
-				'audio' => 'Audio' 
-		);
-	}
+        return array(
+                'pub' => 'Publications',
+                'audio' => 'Audio' 
+        );
+    }
 
-	public function GetTradelist($url, $path) {
+    public function GetTradelist($url, $path) {
 
-		$data = array();
-		
-		$q = "SELECT _id, category, type, title, year, notes FROM r_tradelist
-				WHERE active = '1'
-				ORDER BY category, title";
-		
-		$rs = Core::Database()->Query($q);
-		
-		if (0 < $rs->num_rows) {
-			
-			while ($r = $rs->fetch_assoc()) {
-				
-				$data[$r['category']][$r['_id']] = $r;
-				$data[$r['category']][$r['_id']]['thumb_url'] = $this->GetThumbnail($r['_id'], $url, $path);
-			}
-		}
-		
-		return $data;
-	}
+        $data = array();
+        
+        $q = "SELECT _id, category, type, title, year, notes FROM r_tradelist
+                WHERE active = '1'
+                ORDER BY category, title";
+        
+        $rs = Core::Database()->Query($q);
+        
+        if (0 < $rs->num_rows) {
+            
+            while ($r = $rs->fetch_assoc()) {
+                
+                $data[$r['category']][$r['_id']] = $r;
+                $data[$r['category']][$r['_id']]['thumb_url'] = $this->GetThumbnail($r['_id'], $url, $path);
+            }
+        }
+        
+        return $data;
+    }
 
-	public function GetThumbnail($itemId, $url, $path) {
+    public function GetThumbnail($itemId, $url, $path) {
 
-		return is_readable("{$path['media']}trades/thumbs/{$itemId}.jpg") ? "{$url['media']}trades/thumbs/{$itemId}.jpg" : "{$url['media']}trades/thumbs/noimage.jpg";
-	}
+        return is_readable("{$path['media']}trades/thumbs/{$itemId}.jpg") ? "{$url['media']}trades/thumbs/{$itemId}.jpg" : "{$url['media']}trades/thumbs/noimage.jpg";
+    }
 }
 ?>

@@ -15,7 +15,7 @@
  * @filesource
  */
 if (!defined('_WEB')) {
-	exit();
+    exit();
 }
 
 /**

@@ -2,135 +2,135 @@
 
 <!-- Configuration -->
 <config>
-	<!-- Development Environment -->
-	<dev>
-		
-	</dev>
-	<!-- Test Environment -->
-	<test>
-	</test>
-	<!-- Production Environment -->
-	<prod>
-	    <!-- Users module settings -->
-		<users>
-			<form>
-				<login>
-					<email>
-						<type>text</type>
-						<title>Email</title>
-						<description>Email address asociated with your account</description>
-						<required>1</required>
-						<filters>StripTags</filters>
-						<conditions>IsValidEmail|HasLengthMin[4]|HasLengthMax[90]
-						</conditions>
-					</email>
-					<password>
-						<type>password</type>
-						<title>Password</title>
-						<description>Your password</description>
-						<required>1</required>
-						<conditions>HasLengthMin[4]|HasLengthMax[20]</conditions>
-					</password>
-					<send>
-						<type>submit</type>
-						<title></title>
-						<content>Login</content>
-					</send>
-				</login>
-				<register>
-					<country>
-						<type>select</type>
-						<title>Country</title>
-						<description></description>
-						<required>1</required>
-						<filters></filters>
-						<conditions></conditions>
-						<content></content>
-					</country>
-					<email>
-						<type>text</type>
-						<title>Email</title>
-						<description></description>
-						<required>1</required>
-						<filters>StripTags</filters>
-						<conditions>IsValidEmail|HasLengthMin[4]|HasLengthMax[90]</conditions>
-					</email>
-					<password>
-						<type>password</type>
-						<title>Password</title>
-						<description></description>
-						<required>1</required>
-						<conditions>HasLengthMin[4]|HasLengthMax[20]</conditions>
-					</password>
-					<password_confirm>
-						<type>password</type>
-						<title>Confirm password</title>
-						<description></description>
-						<required>1</required>
-						<conditions>HasLengthMin[4]|HasLengthMax[20]</conditions>
-					</password_confirm>
-					<send>
-						<type>submit</type>
-						<title></title>
-						<content>Register</content>
-					</send>
-				</register>
-				<register_facebook>
-					<country>
-						<type>select</type>
-						<title>Country</title>
-						<description></description>
-						<required>1</required>
-						<filters></filters>
-						<conditions></conditions>
-						<content></content>
-					</country>
-					<send>
-						<type>submit</type>
-						<title></title>
-						<content>Complete registration</content>
-					</send>
-				</register_facebook>
-				<resetpassword>
-					<email>
-						<type>text</type>
-						<title>Email</title>
-						<description>Email address asociated with your account</description>
-						<required>1</required>
-						<filters>StripTags</filters>
-						<conditions>IsValidEmail|HasLengthMin[4]|HasLengthMax[90]
-						</conditions>
-					</email>
-					<send>
-						<type>submit</type>
-						<title></title>
-						<content>Reset password</content>
-					</send>
-				</resetpassword>
-				<changepassword>
-					<password_old>
-						<type>password</type>
-						<title>Old Password</title>
-						<description></description>
-						<required>1</required>
-						<conditions>HasLengthMin[4]|HasLengthMax[20]</conditions>
-					</password_old>
-					<password_new>
-						<type>password</type>
-						<title>New Password</title>
-						<description></description>
-						<required>1</required>
-						<conditions>HasLengthMin[4]|HasLengthMax[20]</conditions>
-					</password_new>
-					<send>
-						<type>submit</type>
-						<title></title>
-						<content>Change password</content>
-					</send>
-				</changepassword>
-			</form>
-		</users>
-	</prod>
+    <!-- Development Environment -->
+    <dev>
+        
+    </dev>
+    <!-- Test Environment -->
+    <test>
+    </test>
+    <!-- Production Environment -->
+    <prod>
+        <!-- Users module settings -->
+        <users>
+            <form>
+                <login>
+                    <email>
+                        <type>text</type>
+                        <title>Email</title>
+                        <description>Email address asociated with your account</description>
+                        <required>1</required>
+                        <filters>StripTags</filters>
+                        <conditions>IsValidEmail|HasLengthMin[4]|HasLengthMax[90]
+                        </conditions>
+                    </email>
+                    <password>
+                        <type>password</type>
+                        <title>Password</title>
+                        <description>Your password</description>
+                        <required>1</required>
+                        <conditions>HasLengthMin[4]|HasLengthMax[20]</conditions>
+                    </password>
+                    <send>
+                        <type>submit</type>
+                        <title></title>
+                        <content>Login</content>
+                    </send>
+                </login>
+                <register>
+                    <country>
+                        <type>select</type>
+                        <title>Country</title>
+                        <description></description>
+                        <required>1</required>
+                        <filters></filters>
+                        <conditions></conditions>
+                        <content></content>
+                    </country>
+                    <email>
+                        <type>text</type>
+                        <title>Email</title>
+                        <description></description>
+                        <required>1</required>
+                        <filters>StripTags</filters>
+                        <conditions>IsValidEmail|HasLengthMin[4]|HasLengthMax[90]</conditions>
+                    </email>
+                    <password>
+                        <type>password</type>
+                        <title>Password</title>
+                        <description></description>
+                        <required>1</required>
+                        <conditions>HasLengthMin[4]|HasLengthMax[20]</conditions>
+                    </password>
+                    <password_confirm>
+                        <type>password</type>
+                        <title>Confirm password</title>
+                        <description></description>
+                        <required>1</required>
+                        <conditions>HasLengthMin[4]|HasLengthMax[20]</conditions>
+                    </password_confirm>
+                    <send>
+                        <type>submit</type>
+                        <title></title>
+                        <content>Register</content>
+                    </send>
+                </register>
+                <register_facebook>
+                    <country>
+                        <type>select</type>
+                        <title>Country</title>
+                        <description></description>
+                        <required>1</required>
+                        <filters></filters>
+                        <conditions></conditions>
+                        <content></content>
+                    </country>
+                    <send>
+                        <type>submit</type>
+                        <title></title>
+                        <content>Complete registration</content>
+                    </send>
+                </register_facebook>
+                <resetpassword>
+                    <email>
+                        <type>text</type>
+                        <title>Email</title>
+                        <description>Email address asociated with your account</description>
+                        <required>1</required>
+                        <filters>StripTags</filters>
+                        <conditions>IsValidEmail|HasLengthMin[4]|HasLengthMax[90]
+                        </conditions>
+                    </email>
+                    <send>
+                        <type>submit</type>
+                        <title></title>
+                        <content>Reset password</content>
+                    </send>
+                </resetpassword>
+                <changepassword>
+                    <password_old>
+                        <type>password</type>
+                        <title>Old Password</title>
+                        <description></description>
+                        <required>1</required>
+                        <conditions>HasLengthMin[4]|HasLengthMax[20]</conditions>
+                    </password_old>
+                    <password_new>
+                        <type>password</type>
+                        <title>New Password</title>
+                        <description></description>
+                        <required>1</required>
+                        <conditions>HasLengthMin[4]|HasLengthMax[20]</conditions>
+                    </password_new>
+                    <send>
+                        <type>submit</type>
+                        <title></title>
+                        <content>Change password</content>
+                    </send>
+                </changepassword>
+            </form>
+        </users>
+    </prod>
 
 </config>
 <!-- $Id: users.cfg.xml 95 2013-07-26 13:23:30Z radu $ -->

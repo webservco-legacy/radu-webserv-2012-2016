@@ -2,77 +2,77 @@
 
 <!-- Configuration -->
 <config>
-	<!-- Development Environment -->
-	<dev>
-	</dev>
-	<!-- Test Environment -->
-	<test>
-		
-	</test>
-	<!-- Production Environment -->
-	<prod>
-	    <!-- Default configuration -->
-		<router>
-		    <!-- set to 1 to prevent clearing _GET and _REQUEST arrays -->
-			<!-- needed for Facebook API -->
-			<keep_getrequest>1</keep_getrequest>
-			<default>
-				<module>Content</module>
-				<controller>App</controller>
-				<action>Home</action>
-			</default>
-		</router>
-		
-		<!-- SEO settings -->
-		<seo>
-			<full>1</full>
-			<extension>.html</extension>
-			<extension>.htm</extension>
-			<extension>.appcache</extension>
-		</seo>
-		
-		<!-- Custom routes configuration -->
-		<route>
-			<!-- "index" is the default route. It doesn't have to be the fist one. -->
-			<name>index</name>
-			<value>Content/App/Home</value>
-		</route>
-		
-		<route>
-			<name>captcha.png</name>
-			<value>Users/App/Captcha</value>
-		</route>
-		
-		<route>
-			<name>music</name>
-			<value>Music/App/Items</value>
-		</route>
-		
-		<route>
-			<name>music/({num})</name>
-			<value>Music/App/Item/id/$1</value>
-		</route>
-		
-		<route>
-			<name>music/({num})-({any})</name>
-			<value>Music/App/Item/id/$1</value>
-		</route>
-		
-		<route>
-			<name>trades</name>
-			<value>Trades/App/Tradelist</value>
-		</route>
-		
-		<route>
-			<name>sandbox</name>
-			<value>Sandbox/App/Sandbox</value>
-		</route>
-		
-		<route>
-			<name>catalogue</name>
-			<value>Catalogue/Archives/Items</value>
-		</route>
-		
-	</prod>
+    <!-- Development Environment -->
+    <dev>
+    </dev>
+    <!-- Test Environment -->
+    <test>
+        
+    </test>
+    <!-- Production Environment -->
+    <prod>
+        <!-- Default configuration -->
+        <router>
+            <!-- set to 1 to prevent clearing _GET and _REQUEST arrays -->
+            <!-- needed for Facebook API -->
+            <keep_getrequest>1</keep_getrequest>
+            <default>
+                <module>Content</module>
+                <controller>App</controller>
+                <action>Home</action>
+            </default>
+        </router>
+        
+        <!-- SEO settings -->
+        <seo>
+            <full>1</full>
+            <extension>.html</extension>
+            <extension>.htm</extension>
+            <extension>.appcache</extension>
+        </seo>
+        
+        <!-- Custom routes configuration -->
+        <route>
+            <!-- "index" is the default route. It doesn't have to be the fist one. -->
+            <name>index</name>
+            <value>Content/App/Home</value>
+        </route>
+        
+        <route>
+            <name>captcha.png</name>
+            <value>Users/App/Captcha</value>
+        </route>
+        
+        <route>
+            <name>music</name>
+            <value>Music/App/Items</value>
+        </route>
+        
+        <route>
+            <name>music/({num})</name>
+            <value>Music/App/Item/id/$1</value>
+        </route>
+        
+        <route>
+            <name>music/({num})-({any})</name>
+            <value>Music/App/Item/id/$1</value>
+        </route>
+        
+        <route>
+            <name>trades</name>
+            <value>Trades/App/Tradelist</value>
+        </route>
+        
+        <route>
+            <name>sandbox</name>
+            <value>Sandbox/App/Sandbox</value>
+        </route>
+        
+        <route>
+            <name>catalogue</name>
+            <value>Catalogue/Archives/Items</value>
+        </route>
+        
+    </prod>
 </config>
 <!-- $Id: router.cfg.xml 25 2013-07-05 15:59:40Z radu $ -->

@@ -2,30 +2,30 @@
 
 <!-- Configuration -->
 <config>
-	<!-- Development Environment -->
-	<dev>
-		<path>
-			<core>/home/radu/Documents/Projects/Eclipse/ws_WEb/src/WEb/</core>
-			<app>/home/radu/Documents/Projects/Eclipse/ws_WEb/src/apps/DefaultApp/app/</app>
-			<www>/home/radu/Documents/Projects/Eclipse/ws_WEb/src/apps/DefaultApp/web/</www>
-		</path>
-		<url>
-			<www>http://192.168.1.80/~radu/default_app/</www>
-		</url>
-	</dev>
-	<!-- Test Environment -->
-	<test>
-	</test>
-	<!-- Production Environment -->
-	<prod>
-		<path>
-			<core>/usr/share/php/WEb7/</core>
-			<app>/var/www/radu.webserv.co/private/app/</app>
-			<www>/var/www/radu.webserv.co/web/</www>
-		</path>
-		<url>
-			<www>http://radu.webserv.co/</www>
-		</url>
-	</prod>
+    <!-- Development Environment -->
+    <dev>
+        <path>
+            <core>/home/radu/Documents/Projects/Eclipse/ws_WEb/src/WEb/</core>
+            <app>/home/radu/Documents/Projects/Eclipse/ws_WEb/src/apps/DefaultApp/app/</app>
+            <www>/home/radu/Documents/Projects/Eclipse/ws_WEb/src/apps/DefaultApp/web/</www>
+        </path>
+        <url>
+            <www>http://192.168.1.80/~radu/default_app/</www>
+        </url>
+    </dev>
+    <!-- Test Environment -->
+    <test>
+    </test>
+    <!-- Production Environment -->
+    <prod>
+        <path>
+            <core>/usr/share/php/WEb7/</core>
+            <app>/var/www/radu.webserv.co/private/app/</app>
+            <www>/var/www/radu.webserv.co/web/</www>
+        </path>
+        <url>
+            <www>http://radu.webserv.co/</www>
+        </url>
+    </prod>
 </config>
 <!-- $Id: settings.cfg.xml 75 2013-07-18 13:46:15Z radu $ -->

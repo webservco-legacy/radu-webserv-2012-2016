@@ -17,7 +17,7 @@
  * @filesource
  */
 if (!defined('_WEB')) {
-	exit();
+    exit();
 }
 
 /**
@@ -30,9 +30,9 @@ if (!defined('_WEB')) {
  */
 class Controller_Sandbox_App extends ControllerApp {
 
-	public function Sandbox() {
+    public function Sandbox() {
 
-		return $this->GetDefaultOutput();
-	}
+        return $this->GetDefaultOutput();
+    }
 }
 ?>

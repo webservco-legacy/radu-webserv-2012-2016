@@ -21,10 +21,10 @@
  * Security check.
  */
 if (!defined('_WEB')) {
-	/**
-	 * Stop script execution.
-	 */
-	exit ();
+    /**
+     * Stop script execution.
+     */
+    exit ();
 }
 
 /**
@@ -39,36 +39,36 @@ if (!defined('_WEB')) {
  */
 class Controller_Content_App extends ControllerApp {
 
-	public function Home() {
+    public function Home() {
 
-		$this->InitController();
+        $this->InitController();
 
-		$data = $this->Module()->GetDefaultData($this->_mRequest);
+        $data = $this->Module()->GetDefaultData($this->_mRequest);
 
-		$data['message'] = 'Hello World!';
-		
-		$data['section_id'] = 1;
+        $data['message'] = 'Hello World!';
+        
+        $data['section_id'] = 1;
 
-		echo $this->GetOutput($data, 'home');
+        echo $this->GetOutput($data, 'home');
 
-		return TRUE;
-	}
-	
-	public function Contact() {
-	
-		$this->InitController();
-	
-		$data = $this->Module()->GetDefaultData($this->_mRequest);
-	
-		$data['title'] = 'Contact';
-		
-		$data['message'] = 'radu at webserv.co';
-		
-		$data['section_id'] = 3;
-	
-		echo $this->GetOutput($data, 'display');
-	
-		return TRUE;
-	}
+        return TRUE;
+    }
+    
+    public function Contact() {
+    
+        $this->InitController();
+    
+        $data = $this->Module()->GetDefaultData($this->_mRequest);
+    
+        $data['title'] = 'Contact';
+        
+        $data['message'] = 'radu at webserv.co';
+        
+        $data['section_id'] = 3;
+    
+        echo $this->GetOutput($data, 'display');
+    
+        return TRUE;
+    }
 }
 ?>

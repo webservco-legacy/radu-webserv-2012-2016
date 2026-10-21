@@ -20,10 +20,10 @@
  */
 if (!defined('_WEB'))
 {
-	/**
-	 * Stop script execution.
-	 */
-	exit();
+    /**
+     * Stop script execution.
+     */
+    exit();
 }
 
 /**
@@ -38,85 +38,85 @@ if (!defined('_WEB'))
  */
 class Module_Users extends ModuleApp
 {
-	/**
-	 * Handles login functionality.
-	 *
-	 * @return mixed
-	 */
-	public function GetLoginForm()
-	{
-		Core::Form()->SetMethod('post');
+    /**
+     * Handles login functionality.
+     *
+     * @return mixed
+     */
+    public function GetLoginForm()
+    {
+        Core::Form()->SetMethod('post');
 
-		Core::Form()->SetData(Core::Config()->Get('users.form.login'));
+        Core::Form()->SetData(Core::Config()->Get('users.form.login'));
 
-		/**
-		 * @var array
-		 */
-		$form['meta'] = Core::Form()->GetMeta();
+        /**
+         * @var array
+         */
+        $form['meta'] = Core::Form()->GetMeta();
 
-		/**
-		 * @var array
-		 */
-		$form['errors'] = array();
-		
-		if (!empty($_POST))
-		{
-			/**
-			 * @var bool
-			 */
-			$result_validation = Core::Form()->Validate();
+        /**
+         * @var array
+         */
+        $form['errors'] = array();
+        
+        if (!empty($_POST))
+        {
+            /**
+             * @var bool
+             */
+            $result_validation = Core::Form()->Validate();
 
-			if (FALSE !== $result_validation)
-			{
-				/**
-				 * @var array
-				 */
-				$form['data'] = Core::Form()->GetFilteredData();
+            if (FALSE !== $result_validation)
+            {
+                /**
+                 * @var array
+                 */
+                $form['data'] = Core::Form()->GetFilteredData();
 
-				/**
-				 * @var bool
-				 */
-				$result_login = Core::User()->Login($form['data']['email'], $form['data']['password'], $form['data']['remember']);
+                /**
+                 * @var bool
+                 */
+                $result_login = Core::User()->Login($form['data']['email'], $form['data']['password'], $form['data']['remember']);
 
-				if (TRUE !== $result_login)
-				{
-					Core::Captcha()->GetNewToken();
+                if (TRUE !== $result_login)
+                {
+                    Core::Captcha()->GetNewToken();
 
-					Core::Router()->Redirect('Users/App/LoginError');
+                    Core::Router()->Redirect('Users/App/LoginError');
 
-					exit();
-				}
-				else
-				{
-					Core::Router()->Redirect();
+                    exit();
+                }
+                else
+                {
+                    Core::Router()->Redirect();
 
-					exit();
-				}
-			}
-			else
-			{
-				Core::Captcha()->GetNewToken();
+                    exit();
+                }
+            }
+            else
+            {
+                Core::Captcha()->GetNewToken();
 
-				/**
-				 * @var array
-				 */
-				$form['data'] = Core::Form()->GetData();
+                /**
+                 * @var array
+                 */
+                $form['data'] = Core::Form()->GetData();
 
-				/**
-				 * @var array
-				 */
-				$form['errors'] = Core::Form()->GetErrors();
-			}
-		}
-		else
-		{
-			/**
-			 * @var array
-			 */
-			$form['data'] = Core::Form()->GetData();
-		}
+                /**
+                 * @var array
+                 */
+                $form['errors'] = Core::Form()->GetErrors();
+            }
+        }
+        else
+        {
+            /**
+             * @var array
+             */
+            $form['data'] = Core::Form()->GetData();
+        }
 
-		return $form;
-	}
+        return $form;
+    }
 }
 ?>
