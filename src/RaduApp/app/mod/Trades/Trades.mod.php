@@ -42,8 +42,8 @@ class Module_Trades extends ModuleApp
         $data = array();
         
         $q = "SELECT _id, category, subcategory, type, title, year, notes FROM r_tradelist
-				WHERE active = '1'
-				ORDER BY category, subcategory, title";
+                WHERE active = '1'
+                ORDER BY category, subcategory, title";
         
         $rs = Core::Database()->Query($q);
         
@@ -64,8 +64,8 @@ class Module_Trades extends ModuleApp
         $data = array();
         
         $q = "SELECT _id, title, active FROM r_tradelist_badges
-				WHERE 1
-				ORDER BY _id";
+                WHERE 1
+                ORDER BY _id";
         
         $rs = Core::Database()->Query($q);
         

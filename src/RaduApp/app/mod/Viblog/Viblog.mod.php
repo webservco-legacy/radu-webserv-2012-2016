@@ -19,10 +19,10 @@
  * Security check.
  */
 if (!defined('_WEB')) {
-	/**
-	 * Stop script execution.
-	 */
-	exit ();
+    /**
+     * Stop script execution.
+     */
+    exit ();
 }
 
 /**
@@ -37,77 +37,77 @@ if (!defined('_WEB')) {
  */
 class Module_Viblog extends ModuleApp {
 
-	public function GetPostDetails($postId) {
+    public function GetPostDetails($postId) {
 
-		$db_fields = array(
-			'post_id',
-			'post_title',
-			'post_description',
-			'post_tpl_extra',
-			'post_date_start',
-			'post_date_end',
-		);
+        $db_fields = array(
+            'post_id',
+            'post_title',
+            'post_description',
+            'post_tpl_extra',
+            'post_date_start',
+            'post_date_end',
+        );
 
-		$db_options['conditions'][] = array('post_id', $postId);
+        $db_options['conditions'][] = array('post_id', $postId);
 
-		//$db_options['conditions'][] = array('post_active', 1);
+        //$db_options['conditions'][] = array('post_active', 1);
 
-		return Core::Database()->RetrieveOne($db_fields, 'r_viblog', $db_options);
-	}
+        return Core::Database()->RetrieveOne($db_fields, 'r_viblog', $db_options);
+    }
 
-	public function GetPostImages($postId) {
+    public function GetPostImages($postId) {
 
-		$db_fields = array(
-			'image_id',
-			'image_file',
-			'image_type',
-			'image_description',
-		);
+        $db_fields = array(
+            'image_id',
+            'image_file',
+            'image_type',
+            'image_description',
+        );
 
-		$db_options['conditions'][] = array('post_id', $postId);
+        $db_options['conditions'][] = array('post_id', $postId);
 
-		$db_options['order'][] = array('image_order', 'asc');
+        $db_options['order'][] = array('image_order', 'asc');
 
-		$db_options['order'][] = array('image_id', 'asc');
+        $db_options['order'][] = array('image_id', 'asc');
 
-		return Core::Database()->Retrieve($db_fields, 'r_viblog_images', $db_options);
-	}
+        return Core::Database()->Retrieve($db_fields, 'r_viblog_images', $db_options);
+    }
 
-	public function GetPostVideos($postId) {
+    public function GetPostVideos($postId) {
 
-		$db_fields = array(
-			'video_id',
-			'video_file',
-			'video_type',
-			'video_description',
-		);
+        $db_fields = array(
+            'video_id',
+            'video_file',
+            'video_type',
+            'video_description',
+        );
 
-		$db_options['conditions'][] = array('post_id', $postId);
+        $db_options['conditions'][] = array('post_id', $postId);
 
-		$db_options['order'][] = array('video_order', 'asc');
+        $db_options['order'][] = array('video_order', 'asc');
 
-		$db_options['order'][] = array('video_id', 'asc');
+        $db_options['order'][] = array('video_id', 'asc');
 
-		return Core::Database()->Retrieve($db_fields, 'r_viblog_videos', $db_options);
-	}
-	
-	public function GetPosts() {
-	
-		$db_fields = array(
-					'post_id',
-					'post_thumbnail',
-					'post_title',
-					'post_description',
-					'post_date',
-					'total_images',
-					'total_videos'
-		);
-	
-		$db_options['order'][] = array('post_date', 'desc');
-	
-		$db_options['order'][] = array('post_id', 'desc');
-	
-		return Core::Database()->Retrieve($db_fields, 'r_viblog_v_posts', $db_options);
-	}
+        return Core::Database()->Retrieve($db_fields, 'r_viblog_videos', $db_options);
+    }
+    
+    public function GetPosts() {
+    
+        $db_fields = array(
+                    'post_id',
+                    'post_thumbnail',
+                    'post_title',
+                    'post_description',
+                    'post_date',
+                    'total_images',
+                    'total_videos'
+        );
+    
+        $db_options['order'][] = array('post_date', 'desc');
+    
+        $db_options['order'][] = array('post_id', 'desc');
+    
+        return Core::Database()->Retrieve($db_fields, 'r_viblog_v_posts', $db_options);
+    }
 }
 ?>

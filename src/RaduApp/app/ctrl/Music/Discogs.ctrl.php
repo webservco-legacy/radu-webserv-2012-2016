@@ -17,7 +17,7 @@
  * @filesource
  */
 if (!defined('_WEB')) {
-	exit();
+    exit();
 }
 
 /**
@@ -30,39 +30,39 @@ if (!defined('_WEB')) {
  */
 class Controller_Music_Discogs extends ControllerApp {
 
-	public function Edit() {
-		
-		$this->Init();
-		
-		$data = $this->Module()->GetData($this->_mRequest);
-		
-		if (!$this->CheckAdminAccess($data)) {
-			
-			return FALSE;
-		}
-		
-		$data['strings']['title'] = 'Edit Stock';
-		
-		$data['stock'] = $this->Module()->DiscogsGetStock();
-		
-		echo $this->GetOutput($data);
-		
-		return TRUE;
-	}
-	
-	public function Distro() {
-		
-		$this->Init();
-		
-		$data = $this->Module()->GetData($this->_mRequest);
-		
-		$data['strings']['title'] = 'Distro';
-		
-		$data['stock'] = $this->Module()->DiscogsGetStock();
-		
-		echo $this->GetOutput($data);
-		
-		return TRUE;
-	}
+    public function Edit() {
+        
+        $this->Init();
+        
+        $data = $this->Module()->GetData($this->_mRequest);
+        
+        if (!$this->CheckAdminAccess($data)) {
+            
+            return FALSE;
+        }
+        
+        $data['strings']['title'] = 'Edit Stock';
+        
+        $data['stock'] = $this->Module()->DiscogsGetStock();
+        
+        echo $this->GetOutput($data);
+        
+        return TRUE;
+    }
+    
+    public function Distro() {
+        
+        $this->Init();
+        
+        $data = $this->Module()->GetData($this->_mRequest);
+        
+        $data['strings']['title'] = 'Distro';
+        
+        $data['stock'] = $this->Module()->DiscogsGetStock();
+        
+        echo $this->GetOutput($data);
+        
+        return TRUE;
+    }
 }
 ?>

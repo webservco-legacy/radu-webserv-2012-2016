@@ -1,6 +1,6 @@
 $(document).ready(function () {//debugger;
 
-		var cache = window.applicationCache;
+        var cache = window.applicationCache;
 
         cache.addEventListener("cached", function () {
             console.log("All resources for this web app have now been downloaded. You can run this application while not connected to the internet");
@@ -29,7 +29,7 @@ $(document).ready(function () {//debugger;
             console.log("Window reloaded");
         }, false);	
 
-		
+        
 
     $(document.body).bind("online", checkNetworkStatus);
     $(document.body).bind("offline", checkNetworkStatus);

@@ -24,18 +24,18 @@ function p_footer
 
 function show_gui
 {
-	while [ 0 ]; do
-		dialog --title "${P_NAME}" --menu \
-		"Hello $P_USER!" \
-		20 60 13 \
-		"b" "VIBlog >>" \
-		"h" "Help" \
-		"a" "About" \
-		"x" "Exit" \
-		2> "/tmp/${P_NAME}"
-		if [ $? = 1 ]; then
-			exit_ok
-		fi
-		handle_menu
-	done;
+    while [ 0 ]; do
+        dialog --title "${P_NAME}" --menu \
+        "Hello $P_USER!" \
+        20 60 13 \
+        "b" "VIBlog >>" \
+        "h" "Help" \
+        "a" "About" \
+        "x" "Exit" \
+        2> "/tmp/${P_NAME}"
+        if [ $? = 1 ]; then
+            exit_ok
+        fi
+        handle_menu
+    done;
 }

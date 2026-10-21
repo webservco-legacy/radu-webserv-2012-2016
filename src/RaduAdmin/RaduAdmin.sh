@@ -30,19 +30,19 @@ P_USER=$USER
 check_user
 
 if [ "$1" != "" ]; then
-	while [ "$1" != "" ]; do
-		case $1 in
-			-h | --help )	page_help
-							exit_ok
-							;;
-							
-			-a | --about )	page_about
-							exit_ok
-							;;
-							
-			* )				show_gui
-		esac
-	done
+    while [ "$1" != "" ]; do
+        case $1 in
+            -h | --help )	page_help
+                            exit_ok
+                            ;;
+                            
+            -a | --about )	page_about
+                            exit_ok
+                            ;;
+                            
+            * )				show_gui
+        esac
+    done
 else
-	show_gui
+    show_gui
 fi

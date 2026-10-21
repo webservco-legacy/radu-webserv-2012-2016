@@ -3,40 +3,40 @@
    License: none (public domain)
 */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
-	{
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section
-	{
-	display: block;
+    {
+    display: block;
 }
 
 body {
-	line-height: 1;
+    line-height: 1;
 }
 
 ol,ul {
-	list-style: none;
+    list-style: none;
 }
 
 blockquote,q {
-	quotes: none;
+    quotes: none;
 }
 
 blockquote:before,blockquote:after,q:before,q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 @font-face {
@@ -64,320 +64,320 @@ table {
 
 /* body instead of html, otherwise bg doesn't cover full page */
 body,button,input,select,textarea {
-	font-size: 1.2em;
-	background: #fff;
-	color: #333;
-	font-family: truetypewriter_polyglottRg, Verdana, Geneva, sans-serif;
-	
-	letter-spacing: .07em;
-	word-spacing: -.1em;
+    font-size: 1.2em;
+    background: #fff;
+    color: #333;
+    font-family: truetypewriter_polyglottRg, Verdana, Geneva, sans-serif;
+    
+    letter-spacing: .07em;
+    word-spacing: -.1em;
 }
 
 button,input,select,textarea {
-	font-size: 1em;
+    font-size: 1em;
 }
 
 hr {
-	border: 0;
-	height: 2px;
-	background-image: -webkit-linear-gradient(left, rgba(51, 51, 51, 0),
-		rgba(68, 68, 68, 0.75), rgba(51, 51, 51, 0));
-	background-image: -moz-linear-gradient(left, rgba(51, 51, 51, 0),
-		rgba(68, 68, 68, 0.75), rgba(51, 51, 51, 0));
-	background-image: -ms-linear-gradient(left, rgba(51, 51, 51, 0),
-		rgba(68, 68, 68, 0.75), rgba(51, 51, 51, 0));
-	background-image: -o-linear-gradient(left, rgba(51, 51, 51, 0),
-		rgba(68, 68, 68, 0.75), rgba(51, 51, 51, 0));
+    border: 0;
+    height: 2px;
+    background-image: -webkit-linear-gradient(left, rgba(51, 51, 51, 0),
+        rgba(68, 68, 68, 0.75), rgba(51, 51, 51, 0));
+    background-image: -moz-linear-gradient(left, rgba(51, 51, 51, 0),
+        rgba(68, 68, 68, 0.75), rgba(51, 51, 51, 0));
+    background-image: -ms-linear-gradient(left, rgba(51, 51, 51, 0),
+        rgba(68, 68, 68, 0.75), rgba(51, 51, 51, 0));
+    background-image: -o-linear-gradient(left, rgba(51, 51, 51, 0),
+        rgba(68, 68, 68, 0.75), rgba(51, 51, 51, 0));
 }
 
 ul {
-	font-size: 1em;
+    font-size: 1em;
 }
 
 a,a:visited {
-	color: #111;
-	text-decoration: none;
-	border-bottom: 1px dashed #111;
+    color: #111;
+    text-decoration: none;
+    border-bottom: 1px dashed #111;
 }
 
 a:hover {
-	border-bottom: 1px dotted #111;
+    border-bottom: 1px dotted #111;
 }
 
 #layout {
-	/*
-	position: relative;
-	width: 96%;
-	margin: 0 auto;
-	*/
-	padding-bottom: 20px;
+    /*
+    position: relative;
+    width: 96%;
+    margin: 0 auto;
+    */
+    padding-bottom: 20px;
 }
 
 #layout header {
-	width: auto;
-	margin: 0 auto;
-	margin-top: 13px;
-	overflow: hidden;
-	padding: 0px 0px 10px 0;
-	/*
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border: 2px solid #444;
-	*/
+    width: auto;
+    margin: 0 auto;
+    margin-top: 13px;
+    overflow: hidden;
+    padding: 0px 0px 10px 0;
+    /*
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 2px solid #444;
+    */
 }
 
 #content {
-	/*
-	position: relative;
-	*/
+    /*
+    position: relative;
+    */
 }
 
 /*
 #layout header #title a {
-	
-	border: 0;
+    
+    border: 0;
 }
 
 #layout header #title a span.logo {
-	
-	font-family: monospace,serif;
-	
+    
+    font-family: monospace,serif;
+    
 }
 
 #layout header #title a:hover span.logo {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 #layout header #title a span.title {
-	font-family: bloodfeastregular, Verdana, Geneva, sans-serif;
-	
+    font-family: bloodfeastregular, Verdana, Geneva, sans-serif;
+    
 }
 */
 
 strong {
-	font-weight: 600;
+    font-weight: 600;
 }
 
 #bct_fixed {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 500px;
-	height: 50px;
-	margin-left: -250px; /* half of width */
-	margin-top: -25px;  /* half of height */
-	text-align: center;
-	font-size: 1.1em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 50px;
+    margin-left: -250px; /* half of width */
+    margin-top: -25px;  /* half of height */
+    text-align: center;
+    font-size: 1.1em;
 }
 
 #bct_fixed a {
-	border: 0;
-	color: #111;
+    border: 0;
+    color: #111;
 }
 
 #bct_fixed a span {
-	
+    
 }
 #bct_fixed a span.logo {
-	font-family: monospace,serif;
+    font-family: monospace,serif;
 }
 
 #bct_fixed a:hover span.logo {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 #bct_fixed a span.title {
-	font-family: bloodfeastregular, Verdana, Geneva, sans-serif;
-	
+    font-family: bloodfeastregular, Verdana, Geneva, sans-serif;
+    
 }
 
 .discogs_stock {
-	
-	border: 1px solid #111;
-	margin: .5em;
+    
+    border: 1px solid #111;
+    margin: .5em;
 }
 
 .discogs_stock tr.one {
-	background: #ddd;
+    background: #ddd;
 }
 
 .discogs_stock tr.two {
-	background: #eee;
+    background: #eee;
 }
-	
+    
 .discogs_stock th {
-	font-size: .8em;
+    font-size: .8em;
 }
 
 .discogs_stock td {
-	padding: .2em .2em;
-	font-size: .8em;
-	border-top: 1px solid #111;
+    padding: .2em .2em;
+    font-size: .8em;
+    border-top: 1px solid #111;
 }
 
 .discogs_stock td.artist {
-	text-align: right;
+    text-align: right;
 }
 
 .discogs_stock td.info {
-	text-align: left;
-	font-size: 0.6em;
+    text-align: left;
+    font-size: 0.6em;
 }
 
 .discogs_stock td.price {
-	text-align: right;
+    text-align: right;
 }
 
 .discogs_stock td.price input {
-	width: 3em;
-	text-align: right;
-	border: 1px dotted #111;
-	background: transparent;
-	padding: .2em;
+    width: 3em;
+    text-align: right;
+    border: 1px dotted #111;
+    background: transparent;
+    padding: .2em;
 }
 
 .discogs_stock td.location {
-	font-size: .5em;
+    font-size: .5em;
 }
 
 .discogs_stock td.location input {
-	width: 18em;
-	border: 1px dotted #111;
-	background: transparent;
-	padding: .2em;
+    width: 18em;
+    border: 1px dotted #111;
+    background: transparent;
+    padding: .2em;
 }
 
 .discogs_stock td.market {
-	font-size: .7em;
+    font-size: .7em;
 }
 
 .discogs_stock td.comments {
-	font-size: .6em;
-	padding: .2em 0;
+    font-size: .6em;
+    padding: .2em 0;
 }
 
 .discogs_stock td.comments input {
-	width: 83em;
-	border: 1px dotted #111;
-	background: transparent;
-	padding: .2em;
+    width: 83em;
+    border: 1px dotted #111;
+    background: transparent;
+    padding: .2em;
 }
 
 .noborder {
-	border: 0 !important;
+    border: 0 !important;
 }
 
 .trade_item_container {
-	width: 70%;
-	margin: 0 auto;
+    width: 70%;
+    margin: 0 auto;
 }
 
 .trade_item_container h3 {
-	float: left;
-	display: inline;
-	width: 100%;
-	font-size: 1.4em;
-	padding: 1em;
+    float: left;
+    display: inline;
+    width: 100%;
+    font-size: 1.4em;
+    padding: 1em;
 }
 
 .trade_item_box {
-	float: left;
-	display: inline;
-	width: 100%;
-	/*
-	min-width: 330px;
-	*/
-	
-	height: 96px;
-	/*margin: 10px 10px;*/
-	padding: 10px 10px 10px 10px !important;
-	overflow: hidden;
-	/*
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	*/
-	/*border: 2px solid #444;*/
-	border-bottom: 1px solid #ddd;
-	text-align: left;
-	font-size: .9em;
-	line-height: 1.1em;
-	
+    float: left;
+    display: inline;
+    width: 100%;
+    /*
+    min-width: 330px;
+    */
+    
+    height: 96px;
+    /*margin: 10px 10px;*/
+    padding: 10px 10px 10px 10px !important;
+    overflow: hidden;
+    /*
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    */
+    /*border: 2px solid #444;*/
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: .9em;
+    line-height: 1.1em;
+    
 }
 
 .trade_item_box:nth-of-type(1) {
-	border-top: 1px solid #ddd;
+    border-top: 1px solid #ddd;
 }
 
 .trade_item_box a.discogs {
-	/*
-	float: right;
-	display: inline;
-	width: auto;
-	*/
-	font-size: 1.3em;
+    /*
+    float: right;
+    display: inline;
+    width: auto;
+    */
+    font-size: 1.3em;
 }
 .trade_item_box a {
-	/*text-decoration: none;
-	border: 0;*/
+    /*text-decoration: none;
+    border: 0;*/
 }
 
 .trade_item_box strong {
-	font-size: 1.1em;
+    font-size: 1.1em;
 }
 
 .trade_item_thumb {
-	float: left;
-	display: inline;
-	width: 96px;
-	height: 96px;
-	margin: 0 10px 0 0;
-	text-align: center;
+    float: left;
+    display: inline;
+    width: 96px;
+    height: 96px;
+    margin: 0 10px 0 0;
+    text-align: center;
 }
 
 
 .trade_item_thumb img {
-	max-height: 96px;
-	max-width: 96px;
-	}
+    max-height: 96px;
+    max-width: 96px;
+    }
 
 .trade_item_thumb img, .popup-gallery a img {
-	
-	-webkit-filter: grayscale(100%);
+    
+    -webkit-filter: grayscale(100%);
 
-	filter: grayscale(100%);
+    filter: grayscale(100%);
 
-	filter: gray;
+    filter: gray;
 
-	filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+    filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
 } 
 
 .bct_box {
-	text-align: center;
-	font-size: 1.1em;
-	padding: .5em;
+    text-align: center;
+    font-size: 1.1em;
+    padding: .5em;
 }
 
 .bct_box span.logo {
-	font-family: monospace,serif;
-	letter-spacing: -.2em;
+    font-family: monospace,serif;
+    letter-spacing: -.2em;
 }
 
 .bct_box span.title {
-	font-family: bloodfeastregular, Verdana, Geneva, sans-serif;
-	
+    font-family: bloodfeastregular, Verdana, Geneva, sans-serif;
+    
 }
 
 .last_update {
-	
-	font-size: .6em;
+    
+    font-size: .6em;
 }
 
 .clear {
-	clear: both;
+    clear: both;
 }
 
 .popup-gallery a {
-	border: 0;
+    border: 0;
 }

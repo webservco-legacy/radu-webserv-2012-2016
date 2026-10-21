@@ -7,22 +7,22 @@ class Module_Bct extends ModuleApp
 {
 
     public function GetDiscogsCollectionFolders() {
-    	
-    	$data = array();
-    	
-    	$folders = $this->Discogs()->GetDiscogsCollectionFolders('radum');
-    	
-    	if (!empty($folders['folders'])) {
-    		
-    		foreach ($folders['folders'] as $item) {
-    			$data[$item['id']] = $item['name'];
-    		}
-    	}
-    	
-    	return $data;
+        
+        $data = array();
+        
+        $folders = $this->Discogs()->GetDiscogsCollectionFolders('radum');
+        
+        if (!empty($folders['folders'])) {
+            
+            foreach ($folders['folders'] as $item) {
+                $data[$item['id']] = $item['name'];
+            }
+        }
+        
+        return $data;
     }
-	
-	public function DiscogsCollectionLocalInsert()
+    
+    public function DiscogsCollectionLocalInsert()
     {
         $log = 'DiscogsCollectionLocalInsert' . PHP_EOL;
         
@@ -51,11 +51,11 @@ class Module_Bct extends ModuleApp
                 $log .= 'got ' . count($items['releases']) . " items for page {$page}" . PHP_EOL;
                 
                 foreach ($items['releases'] as $release) {
-                	
-                	$folder = array_key_exists($release['folder_id'], $folders) ? $folders[$release['folder_id']] : NULL;
+                    
+                    $folder = array_key_exists($release['folder_id'], $folders) ? $folders[$release['folder_id']] : NULL;
                     
                     $q = "INSERT INTO r_music_discogs_collection (instance_id, release_id, folder, instance_data, processed)
-					VALUES ('{$release['instance_id']}', '{$release['id']}', '{$folder}', '', '0000-00-00 00:00:00')";
+                    VALUES ('{$release['instance_id']}', '{$release['id']}', '{$folder}', '', '0000-00-00 00:00:00')";
                     Core::Database()->Query($q);
                     
                     $log .= "processed item {$release['instance_id']}" . PHP_EOL;
@@ -165,8 +165,8 @@ class Module_Bct extends ModuleApp
                             switch ($notes['field_id']) {
                                 
                                 case 4 : /* trade */
-									
-									if (1 == $notes['value']) {
+                                    
+                                    if (1 == $notes['value']) {
                                         
                                         $log .= "Adding {$item['instance_id']}" . PHP_EOL;
                                         $data[$item['instance_id']] = $item['instance_data_decoded'];
@@ -248,13 +248,13 @@ class Module_Bct extends ModuleApp
                             switch ($note['field_id']) {
                                 
                                 case 1 : /* media condition */
-									$condition_media = $this->Discogs()->GetGradingCode($note['value']);
+                                    $condition_media = $this->Discogs()->GetGradingCode($note['value']);
                                     break;
                                 case 2 : /* sleeve condition */
-									$condition_sleeve = $this->Discogs()->GetGradingCode($note['value']);
+                                    $condition_sleeve = $this->Discogs()->GetGradingCode($note['value']);
                                     break;
                                 case 3 : /* comments */
-									$item['notes'] = $note['value'];
+                                    $item['notes'] = $note['value'];
                                     break;
                                 case 4: /* trade */
                                 default:
@@ -323,10 +323,10 @@ class Module_Bct extends ModuleApp
         ), $item);
         
         $q = "INSERT INTO r_tradelist_discogs (`instance_id`, `release_id`, `category`, `subcategory`, `type`, `title`, `year`, `condition`, `notes`, `thumb`) VALUES (
-				'{$item_escaped['instance_id']}', '{$item_escaped['release_id']}', '{$item_escaped['category']}', '{$item_escaped['subcategory']}', 
-				'{$item_escaped['type']}', '{$item_escaped['title']}', '{$item_escaped['year']}',
-				'{$item_escaped['condition']}', '{$item_escaped['notes']}', '{$item_escaped['thumb']}'
-				)";
+                '{$item_escaped['instance_id']}', '{$item_escaped['release_id']}', '{$item_escaped['category']}', '{$item_escaped['subcategory']}', 
+                '{$item_escaped['type']}', '{$item_escaped['title']}', '{$item_escaped['year']}',
+                '{$item_escaped['condition']}', '{$item_escaped['notes']}', '{$item_escaped['thumb']}'
+                )";
         
         Core::Database()->Query($q);
         
@@ -338,7 +338,7 @@ class Module_Bct extends ModuleApp
         $data = array();
         
         $q = "SELECT `instance_id`, `release_id`, `category`, `subcategory`, `type`, `title`, `year`, `condition`, `notes`, `thumb`
-				FROM r_tradelist_discogs ORDER BY subcategory, title";
+                FROM r_tradelist_discogs ORDER BY subcategory, title";
         
         $rs = Core::Database()->Query($q);
         
@@ -366,8 +366,8 @@ class Module_Bct extends ModuleApp
         $data = array();
         
         $q = "SELECT _id, category, subcategory, type, title, year, notes FROM r_tradelist
-				WHERE active = '1'
-				ORDER BY category, subcategory, title";
+                WHERE active = '1'
+                ORDER BY category, subcategory, title";
         
         $rs = Core::Database()->Query($q);
         
@@ -558,7 +558,7 @@ class Module_Bct extends ModuleApp
                  * 
                  $cond_media = $tr->find('.item_media_condition');
                 if (!empty($cond_media[0])) {
-                	$data[$i]['cond_media'] = trim($cond_media[0]->plaintext);
+                    $data[$i]['cond_media'] = trim($cond_media[0]->plaintext);
                 }
                 
                 $cond_media = $tr->find('.media-condition-tooltip');
@@ -622,11 +622,11 @@ class Module_Bct extends ModuleApp
         
         $i = 0;
         foreach ($data as $item) {
-        	
-        	$x = $i%25;
-        	if (empty($x)) {
-        		sleep(1);
-        	}
+            
+            $x = $i%25;
+            if (empty($x)) {
+                sleep(1);
+            }
             
             echo "processing: {$item['listing_id']}<br />";
             
@@ -663,7 +663,7 @@ class Module_Bct extends ModuleApp
         /**
          * Step 2 - get rest of data from Discogs (run multiple times?)
          */
-	//$log = $this->DiscogsCollectionLocalUpdate();
+    //$log = $this->DiscogsCollectionLocalUpdate();
         
         /**
          * Step 3 - process local data.

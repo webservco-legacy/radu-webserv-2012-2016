@@ -2,26 +2,26 @@
 
 <!-- Configuration -->
 <config>
-	<!-- Development Environment -->
-	<dev>
-		<!-- Users module settings -->
-		<items>
-		    <pagination>
-		        <items>3</items>
-		    </pagination>
-		</items>
-	</dev>
-	<!-- Test Environment -->
-	<test>
-	</test>
-	<!-- Production Environment -->
-	<prod>
-	    <!-- Users module settings -->
-		<items>
-		    <pagination>
-		        <items>3</items>
-		    </pagination>
-		</items>
-	</prod>
+    <!-- Development Environment -->
+    <dev>
+        <!-- Users module settings -->
+        <items>
+            <pagination>
+                <items>3</items>
+            </pagination>
+        </items>
+    </dev>
+    <!-- Test Environment -->
+    <test>
+    </test>
+    <!-- Production Environment -->
+    <prod>
+        <!-- Users module settings -->
+        <items>
+            <pagination>
+                <items>3</items>
+            </pagination>
+        </items>
+    </prod>
 </config>
 <!-- $Id: items.cfg.xml 156 2015-04-19 11:11:01Z radu $ -->

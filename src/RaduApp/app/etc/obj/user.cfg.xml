@@ -3,29 +3,29 @@
 
 <!-- Configuration -->
 <config>
-	<!-- Development Environment -->
-	<dev>
-		
-	</dev>
-	<!-- Test Environment -->
-	<test></test>
-	<!-- Production Environment -->
-	<prod>
-		<!-- User object settings -->
-		<user>
-			<login>
-				<!-- Failed logins timeout (minutes) -->
-				<timeout>5</timeout>
-				<!-- Maximum failed login attempts permitted -->
-				<attempts>10</attempts>
-			</login>
-			<props>
-			    <item>user_social_id</item>
-			    <item>user_social_type</item>
-				<item>user_name_first</item>
-				<item>user_name_last</item>
-				<item>user_country</item>
-			</props>
-		</user>
-	</prod>
+    <!-- Development Environment -->
+    <dev>
+        
+    </dev>
+    <!-- Test Environment -->
+    <test></test>
+    <!-- Production Environment -->
+    <prod>
+        <!-- User object settings -->
+        <user>
+            <login>
+                <!-- Failed logins timeout (minutes) -->
+                <timeout>5</timeout>
+                <!-- Maximum failed login attempts permitted -->
+                <attempts>10</attempts>
+            </login>
+            <props>
+                <item>user_social_id</item>
+                <item>user_social_type</item>
+                <item>user_name_first</item>
+                <item>user_name_last</item>
+                <item>user_country</item>
+            </props>
+        </user>
+    </prod>
 </config>

@@ -17,7 +17,7 @@
  * @filesource
  */
 if (! defined('_WEB')) {
-	exit();
+    exit();
 }
 
 /**
@@ -30,45 +30,45 @@ if (! defined('_WEB')) {
  */
 class Controller_Music_Ajax extends ControllerApp {
 
-	public function Post() {
+    public function Post() {
 
-		$this->Init();
-		
-		$data = $this->Module()->GetData($this->_mRequest);
-		
-		if (! empty($_POST['cmd'])) {
-			
-			switch ($_POST['cmd']) {
-				
-				case 'discogs_update_field' :
-					
-					$data['listing_id'] = ! empty($_POST['listing_id']) ? $_POST['listing_id'] : NULL;
-					$data['field'] = ! empty($_POST['field']) ? $_POST['field'] : NULL;
-					$data['value'] = ! empty($_POST['value']) ? $_POST['value'] : NULL;
-					
-					if (! empty($data['user']['Logged'])) {
-						
-						if (! empty($data['listing_id']) && ! empty($data['field']) && !empty($data['value'])) {
-							
-							if ($this->Module()->DiscogsUpdateField($data['listing_id'], $data['field'], $data['value'])) {
-							
-								echo $this->Module()->DiscogsGetField($data['listing_id'], $data['field']);
-							
-								return;
-							}
-						}
-					}
-					
-					echo 'error';
-					
-					return;
-					
-					break;
-				
-				default :
-					break;
-			}
-		}
-	}
+        $this->Init();
+        
+        $data = $this->Module()->GetData($this->_mRequest);
+        
+        if (! empty($_POST['cmd'])) {
+            
+            switch ($_POST['cmd']) {
+                
+                case 'discogs_update_field' :
+                    
+                    $data['listing_id'] = ! empty($_POST['listing_id']) ? $_POST['listing_id'] : NULL;
+                    $data['field'] = ! empty($_POST['field']) ? $_POST['field'] : NULL;
+                    $data['value'] = ! empty($_POST['value']) ? $_POST['value'] : NULL;
+                    
+                    if (! empty($data['user']['Logged'])) {
+                        
+                        if (! empty($data['listing_id']) && ! empty($data['field']) && !empty($data['value'])) {
+                            
+                            if ($this->Module()->DiscogsUpdateField($data['listing_id'], $data['field'], $data['value'])) {
+                            
+                                echo $this->Module()->DiscogsGetField($data['listing_id'], $data['field']);
+                            
+                                return;
+                            }
+                        }
+                    }
+                    
+                    echo 'error';
+                    
+                    return;
+                    
+                    break;
+                
+                default :
+                    break;
+            }
+        }
+    }
 }
 ?>
