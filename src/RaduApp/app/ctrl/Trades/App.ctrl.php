@@ -17,7 +17,7 @@
  * @filesource
  */
 if (!defined('_WEB')) {
-	exit();
+    exit();
 }
 
 /**
@@ -30,27 +30,27 @@ if (!defined('_WEB')) {
  */
 class Controller_Trades_App extends ControllerApp {
 
-	public function Tradelist() {
+    public function Tradelist() {
 
-		$this->Init();
-		
-		$data = $this->Module()->GetData($this->_mRequest);
-		
-		$data['strings']['title'] = $data['facebook']['meta']['og']['title'] = __('Trades');
-		$data['strings']['description'] = $data['facebook']['meta']['og']['description'] = __('Looking for vinyl records. Any genre, any period. Offering in exchange records, CDs, fanzines, badges, patches and more.');
-		
-		$data['facebook']['meta']['og']['image'] = "{$data['url']['media']}records1.jpg";
-		$data['header_image'] = "{$data['url']['media']}trades.jpg";
-		
-		$data['categories'] = $this->Module()->GetCategories();
-		
-		$data['tradelist'] = $this->Module()->GetTradelist($data['url'], $data['path']);
-		
-		$data['tradelist_badges'] = $this->Module()->GetTradelistBadges();
-		
-		echo $this->GetOutput($data);
-		
-		return TRUE;
-	}
+        $this->Init();
+        
+        $data = $this->Module()->GetData($this->_mRequest);
+        
+        $data['strings']['title'] = $data['facebook']['meta']['og']['title'] = __('Trades');
+        $data['strings']['description'] = $data['facebook']['meta']['og']['description'] = __('Looking for vinyl records. Any genre, any period. Offering in exchange records, CDs, fanzines, badges, patches and more.');
+        
+        $data['facebook']['meta']['og']['image'] = "{$data['url']['media']}records1.jpg";
+        $data['header_image'] = "{$data['url']['media']}trades.jpg";
+        
+        $data['categories'] = $this->Module()->GetCategories();
+        
+        $data['tradelist'] = $this->Module()->GetTradelist($data['url'], $data['path']);
+        
+        $data['tradelist_badges'] = $this->Module()->GetTradelistBadges();
+        
+        echo $this->GetOutput($data);
+        
+        return TRUE;
+    }
 }
 ?>

@@ -17,7 +17,7 @@
  * @filesource
  */
 if (!defined('_WEB')) {
-	exit();
+    exit();
 }
 
 /**
@@ -30,49 +30,49 @@ if (!defined('_WEB')) {
  */
 class Controller_Music_App extends ControllerApp {
 
-	public function Items() {
+    public function Items() {
 
-		$this->Init();
-		
-		$data = $this->Module()->GetData($this->_mRequest);
-		
-		$data['strings']['title'] = $data['facebook']['meta']['og']['title'] = __('Music');
-		$data['strings']['description'] = $data['facebook']['meta']['og']['description'] = __('Opinions about underground releases.');
-		
-		$data['facebook']['meta']['og']['image'] = "{$data['url']['media']}music.jpg";
-		
-		$data['items'] = $this->Module()->GetItems($data['url'], $data['path']);
-		
-		echo $this->GetOutput($data);
-		
-		return TRUE;
-	}
+        $this->Init();
+        
+        $data = $this->Module()->GetData($this->_mRequest);
+        
+        $data['strings']['title'] = $data['facebook']['meta']['og']['title'] = __('Music');
+        $data['strings']['description'] = $data['facebook']['meta']['og']['description'] = __('Opinions about underground releases.');
+        
+        $data['facebook']['meta']['og']['image'] = "{$data['url']['media']}music.jpg";
+        
+        $data['items'] = $this->Module()->GetItems($data['url'], $data['path']);
+        
+        echo $this->GetOutput($data);
+        
+        return TRUE;
+    }
 
-	public function Item() {
+    public function Item() {
 
-		$this->Init();
-		
-		$data = $this->Module()->GetData($this->_mRequest);
-		
-		$data['item_id'] = !empty($data['query']['id']) ? $data['query']['id'] : NULL;
-		
-		$data['item'] = $this->Module()->GetItem($data['item_id'], $data['url'], $data['path']);
-		
-		$data['strings']['title'] = $data['facebook']['meta']['og']['title'] = $data['item']['review_title'];
-		$data['strings']['description'] = $data['facebook']['meta']['og']['description'] = $data['item']['review_summary'];
-		
-		if (!empty($data['item']['media']['image'])) {
-			
-			$id = key($data['item']['media']['image']);
-			
-			$data['facebook']['meta']['og']['image'] = $data['item']['media']['image'][$id];
-		}
-		
-		$data['comments'] = $this->GetComments('music', $data['item_id'], $data);
-		
-		echo $this->GetOutput($data);
-		
-		return TRUE;
-	}
+        $this->Init();
+        
+        $data = $this->Module()->GetData($this->_mRequest);
+        
+        $data['item_id'] = !empty($data['query']['id']) ? $data['query']['id'] : NULL;
+        
+        $data['item'] = $this->Module()->GetItem($data['item_id'], $data['url'], $data['path']);
+        
+        $data['strings']['title'] = $data['facebook']['meta']['og']['title'] = $data['item']['review_title'];
+        $data['strings']['description'] = $data['facebook']['meta']['og']['description'] = $data['item']['review_summary'];
+        
+        if (!empty($data['item']['media']['image'])) {
+            
+            $id = key($data['item']['media']['image']);
+            
+            $data['facebook']['meta']['og']['image'] = $data['item']['media']['image'][$id];
+        }
+        
+        $data['comments'] = $this->GetComments('music', $data['item_id'], $data);
+        
+        echo $this->GetOutput($data);
+        
+        return TRUE;
+    }
 }
 ?>

@@ -1,5 +1,5 @@
 <article>
-	<section class="box_border">
+    <section class="box_border">
 
 <!-- 
 <pre>
@@ -11,7 +11,7 @@ $ cat hello_world.sh
 #!/bin/bash
 
 MESSAGE='Hello World!'
-		
+        
 echo ${MESSAGE}
 </pre>
 
@@ -24,5 +24,5 @@ $ . hello_world.sh
 Hello World!
 </pre>
 -->
-	</section>
+    </section>
 </article>

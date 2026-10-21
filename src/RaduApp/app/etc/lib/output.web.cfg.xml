@@ -2,54 +2,54 @@
 
 <!-- Configuration -->
 <config>
-	<!-- Development Environment -->
-	<dev>
-		<!-- Output library settings -->
-		<output>
-			<skin>Webapp</skin>
-			<template>layout</template>
-			<templates_extra>
-				<item>header</item>
-				<item>left</item>
-				<item>right</item>
-				<item>footer</item>
-				<item>scripts</item>
-			</templates_extra>
-			<extension>.tpl.php</extension>
-		</output>
-	</dev>
-	<!-- Test Environment -->
-	<test>
-		<!-- Output library settings -->
-		<output>
-			<skin>Webapp</skin>
-			<template>layout</template>
-			<templates_extra>
-				<item>header</item>
-				<item>left</item>
-				<item>right</item>
-				<item>footer</item>
-				<item>scripts</item>
-			</templates_extra>
-			<extension>.tpl.php</extension>
-		</output>
-	</test>
-	<!-- Production Environment -->
-	<prod>
-		<!-- Output library settings -->
-		<output>
-			<skin>Webapp</skin>
-			<template>layout</template>
-			<templates_extra>
-				<item>header</item>
-				<item>left</item>
-				<item>right</item>
-				<item>footer</item>
-				<item>scripts</item>
-				<item>comments</item>
-			</templates_extra>
-			<extension>.tpl.php</extension>
-		</output>
-	</prod>
+    <!-- Development Environment -->
+    <dev>
+        <!-- Output library settings -->
+        <output>
+            <skin>Webapp</skin>
+            <template>layout</template>
+            <templates_extra>
+                <item>header</item>
+                <item>left</item>
+                <item>right</item>
+                <item>footer</item>
+                <item>scripts</item>
+            </templates_extra>
+            <extension>.tpl.php</extension>
+        </output>
+    </dev>
+    <!-- Test Environment -->
+    <test>
+        <!-- Output library settings -->
+        <output>
+            <skin>Webapp</skin>
+            <template>layout</template>
+            <templates_extra>
+                <item>header</item>
+                <item>left</item>
+                <item>right</item>
+                <item>footer</item>
+                <item>scripts</item>
+            </templates_extra>
+            <extension>.tpl.php</extension>
+        </output>
+    </test>
+    <!-- Production Environment -->
+    <prod>
+        <!-- Output library settings -->
+        <output>
+            <skin>Webapp</skin>
+            <template>layout</template>
+            <templates_extra>
+                <item>header</item>
+                <item>left</item>
+                <item>right</item>
+                <item>footer</item>
+                <item>scripts</item>
+                <item>comments</item>
+            </templates_extra>
+            <extension>.tpl.php</extension>
+        </output>
+    </prod>
 </config>
 <!-- $Id: output.web.cfg.xml 98 2013-07-26 16:47:44Z radu $ -->

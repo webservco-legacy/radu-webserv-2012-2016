@@ -1,0 +1,24 @@
+# Line endings: LF in the repository and in working copies
+* text eol=lf
+
+# Binary files: no line-ending conversion
+*.bak binary
+*.egg binary
+*.eot binary
+*.exe binary
+*.gif binary
+*.ico binary
+*.jpg binary
+*.mp3 binary
+*.mp4 binary
+*.mwb binary
+*.odt binary
+*.ogg binary
+*.ogv binary
+*.pdf binary
+*.png binary
+*.ttf binary
+*.webm binary
+*.woff binary
+*.woff2 binary
+*.zip binary

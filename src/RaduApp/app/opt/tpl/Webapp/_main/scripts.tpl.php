@@ -1,4 +1,4 @@
-		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         
         <script src="<?php echo $url['scripts']; ?>vendor/prettify/prettify.js"></script>
@@ -17,7 +17,7 @@ prettyPrint();
         <script src="<?php echo $url['scripts']; ?>main.js"></script>
 
 
-		<?php /*
+        <?php /*
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

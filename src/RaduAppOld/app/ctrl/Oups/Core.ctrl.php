@@ -21,10 +21,10 @@
  * Security check.
  */
 if (!defined('_WEB')) {
-	/**
-	 * Stop script execution.
-	 */
-	exit();
+    /**
+     * Stop script execution.
+     */
+    exit();
 }
 
 /**
@@ -39,42 +39,42 @@ if (!defined('_WEB')) {
  */
 class Controller_Oups_Core extends ControllerApp {
 
-	public function Oups404() {
-		
-		/**
-		 * Initialize controller.
-		 */
-		$this->InitController();
-		
-		/**
-		 * Initialize default data.
-		 * 
-		 * @var array
-		 */
-		$data = $this->Module()->GetDefaultData($this->_mRequest);
-		
-		/**
-		 * @var string
-		 */
-		$data['title'] = __('Page not found');
-				
-		/**
-		 * @var string
-		 */
-		$data['message'] = __('Sorry! Page not found.');
-		
-		/**
-		 * Set 404 header.
-		 */
-		header(__('HTTP/1.1 404 Not Found'));
-			
-		/**
-		 * Display processed output data.
-		 */
-		echo $this->GetOutput($data, 'error');
+    public function Oups404() {
+        
+        /**
+         * Initialize controller.
+         */
+        $this->InitController();
+        
+        /**
+         * Initialize default data.
+         * 
+         * @var array
+         */
+        $data = $this->Module()->GetDefaultData($this->_mRequest);
+        
+        /**
+         * @var string
+         */
+        $data['title'] = __('Page not found');
+                
+        /**
+         * @var string
+         */
+        $data['message'] = __('Sorry! Page not found.');
+        
+        /**
+         * Set 404 header.
+         */
+        header(__('HTTP/1.1 404 Not Found'));
+            
+        /**
+         * Display processed output data.
+         */
+        echo $this->GetOutput($data, 'error');
 
-		return TRUE;
-	}
+        return TRUE;
+    }
 
 }
 ?>

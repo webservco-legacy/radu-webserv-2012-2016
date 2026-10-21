@@ -21,10 +21,10 @@
  * Security check.
  */
 if (!defined('_WEB')) {
-	/**
-	 * Stop script execution.
-	 */
-	exit ();
+    /**
+     * Stop script execution.
+     */
+    exit ();
 }
 
 /**
@@ -39,55 +39,55 @@ if (!defined('_WEB')) {
  */
 class Controller_Sandbox_App extends ControllerApp {
 
-	public function Sandbox() {
-	
-		$this->InitController();
-	
-		$data = $this->Module()->GetDefaultData($this->_mRequest);
-	
-		$data['title'] = 'Sandbox';
-		
-		$data['message'] = 'Sandbox';
-		
-		$data['section_id'] = 2;
-		
-		echo $this->GetOutput($data, 'display');
-	
-		return TRUE;
-	}
-	
-	public function Datetime() {
-	
-		$this->InitController();
-	
-		$data = $this->Module()->GetDefaultData($this->_mRequest);
-	
-		$data['title'] = 'Date &amp; Time Calculations';
-		
-		$data['section_id'] = 2;
-		
-		$data['cst'] = $this->Module()->CalculateStartTime();
-		
-		$data['cet'] = $this->Module()->CalculateEndTime();
-	
-		echo $this->GetOutput($data);
-	
-		return TRUE;
-	}
-	
-	public function Oimoroi() {
-	
-		$this->InitController();
-	
-		$data = $this->Module()->GetDefaultData($this->_mRequest);
-	
-		$data['title'] = 'Oi MoRoi';
-	
-		$data['message'] = '';
-	
-		echo $this->GetOutput($data);
-	
-		return TRUE;
-	}
+    public function Sandbox() {
+    
+        $this->InitController();
+    
+        $data = $this->Module()->GetDefaultData($this->_mRequest);
+    
+        $data['title'] = 'Sandbox';
+        
+        $data['message'] = 'Sandbox';
+        
+        $data['section_id'] = 2;
+        
+        echo $this->GetOutput($data, 'display');
+    
+        return TRUE;
+    }
+    
+    public function Datetime() {
+    
+        $this->InitController();
+    
+        $data = $this->Module()->GetDefaultData($this->_mRequest);
+    
+        $data['title'] = 'Date &amp; Time Calculations';
+        
+        $data['section_id'] = 2;
+        
+        $data['cst'] = $this->Module()->CalculateStartTime();
+        
+        $data['cet'] = $this->Module()->CalculateEndTime();
+    
+        echo $this->GetOutput($data);
+    
+        return TRUE;
+    }
+    
+    public function Oimoroi() {
+    
+        $this->InitController();
+    
+        $data = $this->Module()->GetDefaultData($this->_mRequest);
+    
+        $data['title'] = 'Oi MoRoi';
+    
+        $data['message'] = '';
+    
+        echo $this->GetOutput($data);
+    
+        return TRUE;
+    }
 }
 ?>

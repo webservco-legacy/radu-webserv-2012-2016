@@ -2,266 +2,266 @@
 
 <!-- Configuration -->
 <config>
-	<!-- Development Environment -->
-	<dev>
-		<!-- Default configuration -->
-		<router>
-			<default>
-				<module>Content</module>
-				<controller>App</controller>
-				<action>Home</action>
-			</default>
-		</router>
-		
-		<!-- SEO settings -->
-		<seo>
-			<full>1</full>
-			<extension>.html</extension>
-			<extension>.htm</extension>
-			<extension>.appcache</extension>
-		</seo>
-		
-		<!-- Custom routes configuration -->
-		<route>
-			<!-- "index" is the default route. It doesn't have to be the fist one. -->
-			<name>index</name>
-			<value>Content/App/Home</value>
-		</route>
-		
-		<route>
-			<name>cache</name>
-			<value>Cache/App/Cache</value>
-		</route>
-		
-		<route>
-			<name>offline</name>
-			<value>Cache/App/Offline</value>
-		</route>
-		
-		<route>
-			<name>home</name>
-			<value>Content/App/Home</value>
-		</route>
-		
-		<route>
-			<name>sandbox</name>
-			<value>Sandbox/App/Sandbox</value>
-		</route>
-		
-		<route>
-			<name>datetime</name>
-			<value>Sandbox/App/Datetime</value>
-		</route>
-		
-		<route>
-			<name>contact</name>
-			<value>Content/App/Contact</value>
-		</route>
-		
-		<route>
-			<name>captcha.png</name>
-			<value>Users/App/Captcha</value>
-		</route>
-		
-		<route>
-			<name>account</name>
-			<value>Users/App/Account</value>
-		</route>
-		
-		<route>
-			<name>logout</name>
-			<value>Users/App/Logout</value>
-		</route>
-		
-		<route>
-			<name>viblog</name>
-			<value>Viblog/App/Browse</value>
-		</route>
-		
-		<route>
-			<name>viblog-({num})</name>
-			<value>Viblog/App/Post/id/$1</value>
-		</route>
-		
-		<route>
-			<name>oimoroi</name>
-			<value>Sandbox/App/Oimoroi</value>
-		</route>
-		
-	</dev>
-	<!-- Test Environment -->
-	<test>
-		<!-- Default configuration -->
-		<router>
-			<default>
-				<module>Content</module>
-				<controller>App</controller>
-				<action>Home</action>
-			</default>
-		</router>
-		
-		<!-- SEO settings -->
-		<seo>
-			<full>1</full>
-			<extension>.html</extension>
-			<extension>.htm</extension>
-			<extension>.appcache</extension>
-		</seo>
-		
-		<!-- Custom routes configuration -->
-		<route>
-			<!-- "index" is the default route. It doesn't have to be the fist one. -->
-			<name>index</name>
-			<value>Content/App/Home</value>
-		</route>
-		
-		<route>
-			<name>cache</name>
-			<value>Cache/App/Cache</value>
-		</route>
-		
-		<route>
-			<name>offline</name>
-			<value>Cache/App/Offline</value>
-		</route>
-		
-		<route>
-			<name>home</name>
-			<value>Content/App/Home</value>
-		</route>
-		
-		<route>
-			<name>sandbox</name>
-			<value>Sandbox/App/Sandbox</value>
-		</route>
-		
-		<route>
-			<name>datetime</name>
-			<value>Sandbox/App/Datetime</value>
-		</route>
-		
-		<route>
-			<name>contact</name>
-			<value>Content/App/Contact</value>
-		</route>
-		
-		<route>
-			<name>captcha.png</name>
-			<value>Users/App/Captcha</value>
-		</route>
-		
-		<route>
-			<name>account</name>
-			<value>Users/App/Account</value>
-		</route>
-		
-		<route>
-			<name>logout</name>
-			<value>Users/App/Logout</value>
-		</route>
-		
-		<route>
-			<name>viblog</name>
-			<value>Viblog/App/Browse</value>
-		</route>
-		
-		<route>
-			<name>viblog-({num})</name>
-			<value>Viblog/App/Post/id/$1</value>
-		</route>
-		
-		<route>
-			<name>oimoroi</name>
-			<value>Sandbox/App/Oimoroi</value>
-		</route>
-				
-	</test>
-	<!-- Production Environment -->
-	<prod>
-		<!-- Default configuration -->
-		<router>
-			<default>
-				<module>Content</module>
-				<controller>App</controller>
-				<action>Home</action>
-			</default>
-		</router>
-		
-		<!-- SEO settings -->
-		<seo>
-			<full>1</full>
-			<extension>.html</extension>
-			<extension>.htm</extension>
-			<extension>.appcache</extension>
-		</seo>
-		
-		<!-- Custom routes configuration -->
-		<route>
-			<!-- "index" is the default route. It doesn't have to be the fist one. -->
-			<name>index</name>
-			<value>Content/App/Home</value>
-		</route>
-		
-		<route>
-			<name>cache</name>
-			<value>Cache/App/Cache</value>
-		</route>
-		
-		<route>
-			<name>offline</name>
-			<value>Cache/App/Offline</value>
-		</route>
-		
-		<route>
-			<name>home</name>
-			<value>Content/App/Home</value>
-		</route>
-		
-		<route>
-			<name>sandbox</name>
-			<value>Sandbox/App/Sandbox</value>
-		</route>
-		
-		<route>
-			<name>datetime</name>
-			<value>Sandbox/App/Datetime</value>
-		</route>
-		
-		<route>
-			<name>contact</name>
-			<value>Content/App/Contact</value>
-		</route>
-		
-		<route>
-			<name>captcha.png</name>
-			<value>Users/App/Captcha</value>
-		</route>
-		
-		<route>
-			<name>account</name>
-			<value>Users/App/Account</value>
-		</route>
-		
-		<route>
-			<name>logout</name>
-			<value>Users/App/Logout</value>
-		</route>
-		
-		<route>
-			<name>viblog</name>
-			<value>Viblog/App/Browse</value>
-		</route>
-		
-		<route>
-			<name>viblog-({num})</name>
-			<value>Viblog/App/Post/id/$1</value>
-		</route>
-		
-		<route>
-			<name>oimoroi</name>
-			<value>Sandbox/App/Oimoroi</value>
-		</route>
-		
-	</prod>
+    <!-- Development Environment -->
+    <dev>
+        <!-- Default configuration -->
+        <router>
+            <default>
+                <module>Content</module>
+                <controller>App</controller>
+                <action>Home</action>
+            </default>
+        </router>
+        
+        <!-- SEO settings -->
+        <seo>
+            <full>1</full>
+            <extension>.html</extension>
+            <extension>.htm</extension>
+            <extension>.appcache</extension>
+        </seo>
+        
+        <!-- Custom routes configuration -->
+        <route>
+            <!-- "index" is the default route. It doesn't have to be the fist one. -->
+            <name>index</name>
+            <value>Content/App/Home</value>
+        </route>
+        
+        <route>
+            <name>cache</name>
+            <value>Cache/App/Cache</value>
+        </route>
+        
+        <route>
+            <name>offline</name>
+            <value>Cache/App/Offline</value>
+        </route>
+        
+        <route>
+            <name>home</name>
+            <value>Content/App/Home</value>
+        </route>
+        
+        <route>
+            <name>sandbox</name>
+            <value>Sandbox/App/Sandbox</value>
+        </route>
+        
+        <route>
+            <name>datetime</name>
+            <value>Sandbox/App/Datetime</value>
+        </route>
+        
+        <route>
+            <name>contact</name>
+            <value>Content/App/Contact</value>
+        </route>
+        
+        <route>
+            <name>captcha.png</name>
+            <value>Users/App/Captcha</value>
+        </route>
+        
+        <route>
+            <name>account</name>
+            <value>Users/App/Account</value>
+        </route>
+        
+        <route>
+            <name>logout</name>
+            <value>Users/App/Logout</value>
+        </route>
+        
+        <route>
+            <name>viblog</name>
+            <value>Viblog/App/Browse</value>
+        </route>
+        
+        <route>
+            <name>viblog-({num})</name>
+            <value>Viblog/App/Post/id/$1</value>
+        </route>
+        
+        <route>
+            <name>oimoroi</name>
+            <value>Sandbox/App/Oimoroi</value>
+        </route>
+        
+    </dev>
+    <!-- Test Environment -->
+    <test>
+        <!-- Default configuration -->
+        <router>
+            <default>
+                <module>Content</module>
+                <controller>App</controller>
+                <action>Home</action>
+            </default>
+        </router>
+        
+        <!-- SEO settings -->
+        <seo>
+            <full>1</full>
+            <extension>.html</extension>
+            <extension>.htm</extension>
+            <extension>.appcache</extension>
+        </seo>
+        
+        <!-- Custom routes configuration -->
+        <route>
+            <!-- "index" is the default route. It doesn't have to be the fist one. -->
+            <name>index</name>
+            <value>Content/App/Home</value>
+        </route>
+        
+        <route>
+            <name>cache</name>
+            <value>Cache/App/Cache</value>
+        </route>
+        
+        <route>
+            <name>offline</name>
+            <value>Cache/App/Offline</value>
+        </route>
+        
+        <route>
+            <name>home</name>
+            <value>Content/App/Home</value>
+        </route>
+        
+        <route>
+            <name>sandbox</name>
+            <value>Sandbox/App/Sandbox</value>
+        </route>
+        
+        <route>
+            <name>datetime</name>
+            <value>Sandbox/App/Datetime</value>
+        </route>
+        
+        <route>
+            <name>contact</name>
+            <value>Content/App/Contact</value>
+        </route>
+        
+        <route>
+            <name>captcha.png</name>
+            <value>Users/App/Captcha</value>
+        </route>
+        
+        <route>
+            <name>account</name>
+            <value>Users/App/Account</value>
+        </route>
+        
+        <route>
+            <name>logout</name>
+            <value>Users/App/Logout</value>
+        </route>
+        
+        <route>
+            <name>viblog</name>
+            <value>Viblog/App/Browse</value>
+        </route>
+        
+        <route>
+            <name>viblog-({num})</name>
+            <value>Viblog/App/Post/id/$1</value>
+        </route>
+        
+        <route>
+            <name>oimoroi</name>
+            <value>Sandbox/App/Oimoroi</value>
+        </route>
+                
+    </test>
+    <!-- Production Environment -->
+    <prod>
+        <!-- Default configuration -->
+        <router>
+            <default>
+                <module>Content</module>
+                <controller>App</controller>
+                <action>Home</action>
+            </default>
+        </router>
+        
+        <!-- SEO settings -->
+        <seo>
+            <full>1</full>
+            <extension>.html</extension>
+            <extension>.htm</extension>
+            <extension>.appcache</extension>
+        </seo>
+        
+        <!-- Custom routes configuration -->
+        <route>
+            <!-- "index" is the default route. It doesn't have to be the fist one. -->
+            <name>index</name>
+            <value>Content/App/Home</value>
+        </route>
+        
+        <route>
+            <name>cache</name>
+            <value>Cache/App/Cache</value>
+        </route>
+        
+        <route>
+            <name>offline</name>
+            <value>Cache/App/Offline</value>
+        </route>
+        
+        <route>
+            <name>home</name>
+            <value>Content/App/Home</value>
+        </route>
+        
+        <route>
+            <name>sandbox</name>
+            <value>Sandbox/App/Sandbox</value>
+        </route>
+        
+        <route>
+            <name>datetime</name>
+            <value>Sandbox/App/Datetime</value>
+        </route>
+        
+        <route>
+            <name>contact</name>
+            <value>Content/App/Contact</value>
+        </route>
+        
+        <route>
+            <name>captcha.png</name>
+            <value>Users/App/Captcha</value>
+        </route>
+        
+        <route>
+            <name>account</name>
+            <value>Users/App/Account</value>
+        </route>
+        
+        <route>
+            <name>logout</name>
+            <value>Users/App/Logout</value>
+        </route>
+        
+        <route>
+            <name>viblog</name>
+            <value>Viblog/App/Browse</value>
+        </route>
+        
+        <route>
+            <name>viblog-({num})</name>
+            <value>Viblog/App/Post/id/$1</value>
+        </route>
+        
+        <route>
+            <name>oimoroi</name>
+            <value>Sandbox/App/Oimoroi</value>
+        </route>
+        
+    </prod>
 </config>
 <!-- $Id$ -->
