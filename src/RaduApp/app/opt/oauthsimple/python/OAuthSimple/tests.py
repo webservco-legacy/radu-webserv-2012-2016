@@ -7,8 +7,8 @@ from OAuthSimple import OAuthSimple
 
 class TestOAuth(unittest.TestCase):
     
-    signatures = {'consumer_key': 'v9s778n692e9qvd83wfj9t8c',
-            'shared_secret':'54XqbMADta'};
+    signatures = {'consumer_key': 'REDACTED',
+            'shared_secret':'REDACTED'};
     test_url = 'http://api.netflix.com/catalog/titles';
     parameters = \
         'term=mac%20and+me&expand=formats,' +\

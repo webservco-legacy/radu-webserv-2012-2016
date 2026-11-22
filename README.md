@@ -46,7 +46,9 @@ The site runs on WEb, which is not in this repository: see
 
 From the dump of my Subversion repository (r1 to r153; the `git-svn-id` lines name them) and copies of trunk for the later
 revisions (their log messages lost), turned into git in 2026 (121 commits on all branches), the dates kept. The
-last commit before this README sets LF line endings and indents with spaces. Passwords and keys in the configs read
+last commit before this README sets LF line endings and indents with spaces.
+The earlier commits have LF line endings too: 5 files had CRLF line endings in the originals.
+Passwords and keys in the configs read
 `REDACTED`; the mail addresses in the mail configs read `user@example.com`; the database and FTP logins in RaduAdmin's configs read `example`. The database dumps that Subversion held were
 never part of the git history.
 
